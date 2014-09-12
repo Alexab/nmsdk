@@ -141,6 +141,19 @@
 				<DependentOn>..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.h</DependentOn>
 				<BuildOrder>55</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.cpp">
+				<Form>ApplicationOptionsForm</Form>
+				<FormType>dfm</FormType>
+				<DependentOn>..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.cpp">
+				<Form>ApplicationOptionsFrame</Form>
+				<FormType>dfm</FormType>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.cpp">
 				<Form>EnchancedSG</Form>
 				<DesignClass>TFrame</DesignClass>
@@ -172,6 +185,13 @@
 			<CppCompile Include="..\..\..\RDK\GUI\BCB\TServerBroadcasterCommonUnit.cpp">
 				<DependentOn>..\..\..\RDK\GUI\BCB\TServerBroadcasterCommonUnit.h</DependentOn>
 				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.cpp">
+				<Form>ServerOptionsFrame</Form>
+				<FormType>dfm</FormType>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="..\..\..\RDK\GUI\BCB\TUBitmap.cpp">
 				<BuildOrder>22</BuildOrder>
@@ -371,18 +391,18 @@
 			<ResFiles Include="MotionControl.res">
 				<BuildOrder>1</BuildOrder>
 			</ResFiles>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
@@ -393,6 +413,7 @@
 			<FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
@@ -402,18 +423,20 @@
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

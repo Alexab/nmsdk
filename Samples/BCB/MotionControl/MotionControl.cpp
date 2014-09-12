@@ -6,18 +6,27 @@
 #include "rdk_cpp_initdll.h"
 //---------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+USEFORM("..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.cpp", UDrawEngineFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.cpp", UCRTeacherPerseptronDLForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.cpp", UCRTeacherPerseptronBPForm);
+USEFORM("..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.cpp", UFavoriteComponentInfoForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.cpp", UEngineMonitorFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.cpp", UEngineMonitorForm);
-USEFORM("..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.cpp", UDrawEngineFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.cpp", UCreateProjectWizardForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.cpp", UComponentsPerformanceFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.cpp", UComponentsPerformanceForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.cpp", UCRTeacherCVNetworkBPForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.cpp", UCRSampleForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.cpp", UCRPerseptronForm);
-USEFORM("..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.cpp", UFavoriteComponentInfoForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UWatchFormUnit.cpp", UWatchForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.cpp", UShowProgressBarForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UServerControlFormUnit.cpp", UServerControlForm);
@@ -28,6 +37,7 @@ USEFORM("..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.cpp", UFavoriteCom
 USEFORM("..\..\..\RDK\GUI\BCB\USeriesControlUnit.cpp", USeriesControlForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UListInputFormUnit.cpp", UListInputForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UImagesFrameUnit.cpp", UImagesFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.cpp", UComponentsListFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.cpp", IdTcpResultBroadcasterForm);
 USEFORM("..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.cpp", IdHttpResultBroadcasterFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.cpp", IdHttpResultBroadcasterForm);
@@ -37,18 +47,20 @@ USEFORM("..\..\..\GUI\BCB\TNAstaticGyroUnit.cpp", NAstaticGyro);
 USEFORM("..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.cpp", EnchancedSG); /* TFrame: File Type */
 USEFORM("..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.cpp", NNewPositionControlElementForm);
 USEFORM("..\..\..\GUI\BCB\TNManipulatorControlForm.cpp", NManipulatorControlForm);
-USEFORM("..\..\..\RDK\GUI\BCB\TUHttpServerUnit.cpp", UHttpServerFrame); /* TFrame: File Type */
-USEFORM("..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.cpp", UComponentsControlForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.cpp", UComponentLinksFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.cpp", UComponentLinksForm);
-USEFORM("..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.cpp", UComponentsListFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.cpp", UComponentIOFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.cpp", UComponentsListForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.cpp", UComponentsControlFrame); /* TFrame: File Type */
-USEFORM("..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.cpp", UVisualControllerFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.cpp", UComponentsControlForm);
 USEFORM("..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.cpp", UVisualControllerForm);
-USEFORM("..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.cpp", UComponentIOFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\TUHttpServerUnit.cpp", UHttpServerFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.cpp", UClassesListFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\UClassesListFormUnit.cpp", UClassesListForm);
+USEFORM("..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.cpp", UVisualControllerFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.cpp", ApplicationOptionsFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.cpp", ServerOptionsFrame); /* TFrame: File Type */
+USEFORM("..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.cpp", ApplicationOptionsForm);
 //---------------------------------------------------------------------------
 extern HANDLE RdkLockStartapMutex;
 bool RdkIsApplicationRunning(void);
@@ -90,6 +102,7 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TNAstaticGyro), &NAstaticGyro);
 		Application->CreateForm(__classid(TNewManipulatorControlForm), &NewManipulatorControlForm);
 		Application->CreateForm(__classid(TNNewPositionControlElementForm), &NNewPositionControlElementForm);
+		Application->CreateForm(__classid(TApplicationOptionsForm), &ApplicationOptionsForm);
 		ApplicationInitialized=true;
    		Application->Run();
 		CloseHandle(RdkLockStartapMutex);
