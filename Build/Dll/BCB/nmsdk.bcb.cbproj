@@ -103,10 +103,9 @@
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<LinkPackageImports>rtl.bpi;vcl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi</LinkPackageImports>
 			<BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
 			<FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
-			<LinkPackageStatics>rtl.lib;vcl.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib</LinkPackageStatics>
-			<UsePackages>false</UsePackages>
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
@@ -225,7 +224,6 @@
 						<Parameters Name="RemoteDebug">False</Parameters>
 					</Parameters>
 					<Excluded_Packages>
-						<Excluded_Packages Name="c:\Program Files (x86)\Embarcadero\RAD Studio\TeeChart 2011 for Delphi 2012\Delphi16.win32\Bin\DclFMXTeePro916.bpl">TeeChart Pro 2011 for FireMonkey Components</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>

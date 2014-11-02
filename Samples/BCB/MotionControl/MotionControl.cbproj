@@ -41,6 +41,7 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<UsePackages>true</UsePackages>
 			<Defines>LIBRDK_LIBRARY_IMPORT;$(Defines)</Defines>
 			<DynamicRTL>true</DynamicRTL>
 			<UsingDelphiRTL>true</UsingDelphiRTL>
@@ -391,52 +392,52 @@
 			<ResFiles Include="MotionControl.res">
 				<BuildOrder>1</BuildOrder>
 			</ResFiles>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
+			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -499,7 +500,6 @@
 						<Parameters Name="RemoteDebug">False</Parameters>
 					</Parameters>
 					<Excluded_Packages>
-						<Excluded_Packages Name="c:\Program Files (x86)\Embarcadero\RAD Studio\TeeChart 2011 for Delphi 2012\Delphi16.win32\Bin\DclFMXTeePro916.bpl">TeeChart Pro 2011 for FireMonkey Components</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
