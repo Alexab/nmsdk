@@ -32,10 +32,10 @@ public:		// User declarations
 
 public:		// User declarations
 	// Указатель на рабочую сеть
-	NANet *Network;
+	NNet *Network;
 
 	// Инициализация интерфейса перед первым отображением
-	void __fastcall Init(NANet *net);
+	void __fastcall Init(NNet *net);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TNLinksFrame *NLinksFrame;

@@ -9,7 +9,7 @@
 #include <Forms.hpp>
 #include <Grids.hpp>
 
-#include "../../Kernel/NBios.h"
+#include "nmsdk.h"
 
 using namespace NMSDK;
 //---------------------------------------------------------------------------
@@ -26,7 +26,7 @@ public:		// User declarations
 // Данные
 // -----------------
 // Указатель на рассматриваемую сеть
-NANet* Net;
+NNet* Net;
 
 // Режим работы:
 // 1 - показывать входы
