@@ -27,6 +27,8 @@
 
 WORD Saved8087CW;
 
+//#pragma link "inetwinsockets.lib"
+
 #pragma argsused
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fwdreason, LPVOID lpvReserved)
 {

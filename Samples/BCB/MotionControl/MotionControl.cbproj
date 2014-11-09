@@ -1,521 +1,548 @@
-﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-		<PropertyGroup>
-			<ProjectGuid>{EA2A2E14-8613-421D-960A-955A2EA60655}</ProjectGuid>
-			<ProjectVersion>13.4</ProjectVersion>
-			<MainSource>MotionControl.cpp</MainSource>
-			<Config Condition="'$(Config)'==''">Debug</Config>
-			<Base>True</Base>
-			<AppType>Application</AppType>
-			<FrameworkType>VCL</FrameworkType>
-			<Platform Condition="'$(Platform)'==''">Win32</Platform>
-			<TargetedPlatforms>1</TargetedPlatforms>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
-			<Base_Win32>true</Base_Win32>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
-			<Cfg_1>true</Cfg_1>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
-			<Cfg_1_Win32>true</Cfg_1_Win32>
-			<CfgParent>Cfg_1</CfgParent>
-			<Cfg_1>true</Cfg_1>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
-			<Cfg_2>true</Cfg_2>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
-			<Cfg_2_Win32>true</Cfg_2_Win32>
-			<CfgParent>Cfg_2</CfgParent>
-			<Cfg_2>true</Cfg_2>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Base)'!=''">
-			<UsePackages>true</UsePackages>
-			<Defines>LIBRDK_LIBRARY_IMPORT;$(Defines)</Defines>
-			<DynamicRTL>true</DynamicRTL>
-			<UsingDelphiRTL>true</UsingDelphiRTL>
-			<Manifest_File>None</Manifest_File>
-			<Icon_MainIcon>MotionControl_Icon1.ico</Icon_MainIcon>
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<VerInfo_Keys>CompanyName=AI Lab;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=Alexandr Bakhshiev;LegalTrademarks=;OriginalFilename=;ProductName=Motion Control Test Application;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-			<VerInfo_Locale>1049</VerInfo_Locale>
-			<BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
-			<BCC_AllCodeguardOptions>true</BCC_AllCodeguardOptions>
-			<BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
-			<BCC_MonitorThis>true</BCC_MonitorThis>
-			<FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
-			<BCC_PCHUsage>None</BCC_PCHUsage>
-			<OutputExt>exe</OutputExt>
-			<LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
-			<PackageImports>vclx.bpi;vcl.bpi;vclimg.bpi;dbrtl.bpi;Rave77VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vcldb.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_140.bpi;Intraweb_100_140.bpi;VclSmp.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapServer.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;TVidGrab.bpi;$(PackageImports)</PackageImports>
-			<Multithreaded>true</Multithreaded>
-			<AllPackageLibs>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib</AllPackageLibs>
-			<ProjectType>CppVCLApplication</ProjectType>
-			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-			<IncludePath>..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\include;$(BDS)\include\dinkumware;..\..\..\Deploy\Include\;$(IncludePath)</IncludePath>
-			<ILINK_LibraryPath>..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\lib;..\..\..\Deploy\Include\;..\..\..\Deploy\Dll\;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<BCC_wpar>false</BCC_wpar>
-			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
-			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Base_Win32)'!=''">
-			<ILINK_LibraryPath>E:\Science\AI\AISD\NMSDK\Bin\Platform\Win\;E:\Science\AI\AISD\Nmsdk\Bin\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
-			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-			<VerInfo_Locale>1033</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_1)'!=''">
-			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
-			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
-			<DCC_Optimize>false</DCC_Optimize>
-			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
-			<Defines>_DEBUG;$(Defines)</Defines>
-			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
-			<IntermediateOutputDir>Debug</IntermediateOutputDir>
-			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
-			<DCC_Define>DEBUG</DCC_Define>
-			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
-			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
-			<BCC_StackFrames>true</BCC_StackFrames>
-			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
-			<TASM_Debugging>Full</TASM_Debugging>
-			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_Debug>true</VerInfo_Debug>
-			<VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
-			<BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
-			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-			<LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib</LinkPackageStatics>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-			<VerInfo_Locale>1033</VerInfo_Locale>
-			<Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_2)'!=''">
-			<Defines>NDEBUG;$(Defines)</Defines>
-			<IntermediateOutputDir>Release</IntermediateOutputDir>
-			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<TASM_Debugging>None</TASM_Debugging>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-			<VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
-			<VerInfo_Locale>1033</VerInfo_Locale>
-			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-		</PropertyGroup>
-		<ItemGroup>
-			<LibFiles Condition="'$(Platform)'=='Win32'" Include="..\..\..\Bin\Platform\Win\nmsdk.bcb.lib">
-				<BuildOrder>48</BuildOrder>
-			</LibFiles>
-			<CppCompile Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.cpp">
-				<Form>NAstaticGyro</Form>
-				<DependentOn>..\..\..\GUI\BCB\TNAstaticGyroUnit.h</DependentOn>
-				<BuildOrder>50</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.cpp">
-				<Form>NewManipulatorControlForm</Form>
-				<DependentOn>..\..\..\GUI\BCB\TNewManipulatorControlForm.h</DependentOn>
-				<BuildOrder>52</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\GUI\BCB\TNManipulatorControlForm.cpp">
-				<Form>NManipulatorControlForm</Form>
-				<DependentOn>..\..\..\GUI\BCB\TNManipulatorControlForm.h</DependentOn>
-				<BuildOrder>28</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.cpp">
-				<Form>NNewPositionControlElementForm</Form>
-				<DependentOn>..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.h</DependentOn>
-				<BuildOrder>55</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.cpp">
-				<Form>ApplicationOptionsForm</Form>
-				<FormType>dfm</FormType>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.h</DependentOn>
-				<BuildOrder>51</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.cpp">
-				<Form>ApplicationOptionsFrame</Form>
-				<FormType>dfm</FormType>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.h</DependentOn>
-				<BuildOrder>49</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.cpp">
-				<Form>EnchancedSG</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.h</DependentOn>
-				<BuildOrder>51</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.cpp">
-				<Form>IdHttpResultBroadcasterForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.h</DependentOn>
-				<BuildOrder>48</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.cpp">
-				<Form>IdHttpResultBroadcasterFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.h</DependentOn>
-				<BuildOrder>43</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.cpp">
-				<Form>IdTcpResultBroadcasterForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.h</DependentOn>
-				<BuildOrder>49</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.cpp">
-				<Form>IdTcpResultBroadcasterFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.h</DependentOn>
-				<BuildOrder>44</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TServerBroadcasterCommonUnit.cpp">
-				<DependentOn>..\..\..\RDK\GUI\BCB\TServerBroadcasterCommonUnit.h</DependentOn>
-				<BuildOrder>45</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.cpp">
-				<Form>ServerOptionsFrame</Form>
-				<FormType>dfm</FormType>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.h</DependentOn>
-				<BuildOrder>50</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TUBitmap.cpp">
-				<BuildOrder>22</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.cpp">
-				<Form>UHttpServerFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TUHttpServerUnit.h</DependentOn>
-				<BuildOrder>47</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TUVisualController.cpp">
-				<DependentOn>..\..\..\RDK\GUI\BCB\TUVisualController.h</DependentOn>
-				<BuildOrder>27</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.cpp">
-				<Form>UVisualControllerForm</Form>
-				<FormType>dfm</FormType>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.h</DependentOn>
-				<BuildOrder>32</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.cpp">
-				<Form>UVisualControllerFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.h</DependentOn>
-				<BuildOrder>30</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.cpp">
-				<Form>UClassesListForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UClassesListFormUnit.h</DependentOn>
-				<BuildOrder>13</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.cpp">
-				<Form>UClassesListFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.h</DependentOn>
-				<BuildOrder>34</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.cpp">
-				<Form>UComponentIOFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.h</DependentOn>
-				<BuildOrder>21</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.cpp">
-				<Form>UComponentLinksForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.h</DependentOn>
-				<BuildOrder>22</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.cpp">
-				<Form>UComponentLinksFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.h</DependentOn>
-				<BuildOrder>22</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.cpp">
-				<Form>UComponentsControlForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.h</DependentOn>
-				<BuildOrder>38</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.cpp">
-				<Form>UComponentsControlFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.h</DependentOn>
-				<BuildOrder>14</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.cpp">
-				<Form>UComponentsListForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.h</DependentOn>
-				<BuildOrder>15</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.cpp">
-				<Form>UComponentsListFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.h</DependentOn>
-				<BuildOrder>10</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.cpp">
-				<Form>UComponentsPerformanceForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.h</DependentOn>
-				<BuildOrder>16</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.cpp">
-				<Form>UComponentsPerformanceFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.h</DependentOn>
-				<BuildOrder>11</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.cpp">
-				<Form>UCreateProjectWizardForm</Form>
-				<FormType>dfm</FormType>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.h</DependentOn>
-				<BuildOrder>35</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.cpp">
-				<Form>UCRPerseptronForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.h</DependentOn>
-				<BuildOrder>31</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.cpp">
-				<Form>UCRSampleForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.h</DependentOn>
-				<BuildOrder>39</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.cpp">
-				<Form>UCRTeacherCVNetworkBPForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.h</DependentOn>
-				<BuildOrder>48</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.cpp">
-				<Form>UCRTeacherPerseptronBPForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.h</DependentOn>
-				<BuildOrder>39</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.cpp">
-				<Form>UCRTeacherPerseptronDLForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.h</DependentOn>
-				<BuildOrder>40</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.cpp">
-				<Form>UDrawEngineFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.h</DependentOn>
-				<BuildOrder>41</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.cpp">
-				<Form>UEngineMonitorForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.h</DependentOn>
-				<BuildOrder>18</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.cpp">
-				<Form>UEngineMonitorFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.h</DependentOn>
-				<BuildOrder>12</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.cpp">
-				<Form>UFavoriteComponentInfoForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.h</DependentOn>
-				<BuildOrder>33</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.cpp">
-				<Form>UFavoriteComponentInfoFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.h</DependentOn>
-				<BuildOrder>34</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.cpp">
-				<Form>UGEngineControlForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.h</DependentOn>
-				<BuildOrder>42</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.cpp">
-				<Form>UImagesForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UImagesFormUnit.h</DependentOn>
-				<BuildOrder>43</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.cpp">
-				<Form>UImagesFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UImagesFrameUnit.h</DependentOn>
-				<BuildOrder>42</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.cpp">
-				<Form>UListInputForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UListInputFormUnit.h</DependentOn>
-				<BuildOrder>26</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.cpp">
-				<Form>USeriesControlForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\USeriesControlUnit.h</DependentOn>
-				<BuildOrder>25</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.cpp">
-				<Form>UServerControlForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UServerControlFormUnit.h</DependentOn>
-				<BuildOrder>49</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.cpp">
-				<Form>UShowProgressBarForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.h</DependentOn>
-				<BuildOrder>30</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.cpp">
-				<Form>UWatchForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UWatchFormUnit.h</DependentOn>
-				<BuildOrder>24</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.cpp">
-				<Form>UWatchFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UWatchFrameUnit.h</DependentOn>
-				<BuildOrder>23</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="MotionControl.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="MotionControl.res">
-				<BuildOrder>1</BuildOrder>
-			</ResFiles>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
-			<FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
-			<FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
-			<FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
-			<BuildConfiguration Include="Release">
-				<Key>Cfg_2</Key>
-				<CfgParent>Base</CfgParent>
-			</BuildConfiguration>
-			<BuildConfiguration Include="Base">
-				<Key>Base</Key>
-			</BuildConfiguration>
-			<BuildConfiguration Include="Debug">
-				<Key>Cfg_1</Key>
-				<CfgParent>Base</CfgParent>
-			</BuildConfiguration>
-		</ItemGroup>
-		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
-		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
-		<ProjectExtensions>
-			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
-			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
-			<BorlandProject>
-				<CPlusPlusBuilder.Personality>
-					<Source>
-						<Source Name="MainSource">MotionControl.cpp</Source>
-					</Source>
-					<VersionInfo>
-						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
-						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
-						<VersionInfo Name="MajorVer">1</VersionInfo>
-						<VersionInfo Name="MinorVer">0</VersionInfo>
-						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">0</VersionInfo>
-						<VersionInfo Name="Debug">False</VersionInfo>
-						<VersionInfo Name="PreRelease">False</VersionInfo>
-						<VersionInfo Name="Special">False</VersionInfo>
-						<VersionInfo Name="Private">False</VersionInfo>
-						<VersionInfo Name="DLL">False</VersionInfo>
-						<VersionInfo Name="Locale">1049</VersionInfo>
-						<VersionInfo Name="CodePage">1251</VersionInfo>
-					</VersionInfo>
-					<VersionInfoKeys>
-						<VersionInfoKeys Name="CompanyName">AI Lab</VersionInfoKeys>
-						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
-						<VersionInfoKeys Name="InternalName"/>
-						<VersionInfoKeys Name="LegalCopyright">Alexandr Bakhshiev</VersionInfoKeys>
-						<VersionInfoKeys Name="LegalTrademarks"/>
-						<VersionInfoKeys Name="OriginalFilename"/>
-						<VersionInfoKeys Name="ProductName">Motion Control Test Application</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
-						<VersionInfoKeys Name="Comments"/>
-					</VersionInfoKeys>
-					<Debugging>
-						<Debugging Name="DebugSourceDirs">E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\</Debugging>
-					</Debugging>
-					<Parameters>
-						<Parameters Name="RemoteHost"/>
-						<Parameters Name="RemotePath"/>
-						<Parameters Name="RemoteParams"/>
-						<Parameters Name="RemoteLauncher"/>
-						<Parameters Name="UseRemoteLauncher">False</Parameters>
-						<Parameters Name="RemoteCWD"/>
-						<Parameters Name="RemoteDebug">False</Parameters>
-					</Parameters>
-					<Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-					</Excluded_Packages>
-					<ProjectProperties>
-						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
-						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
-						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
-					</ProjectProperties>
-				</CPlusPlusBuilder.Personality>
-				<Platforms>
-					<Platform value="Win32">True</Platform>
-				</Platforms>
-				<ModelSupport>False</ModelSupport>
-			</BorlandProject>
-			<ProjectFileVersion>12</ProjectFileVersion>
-		</ProjectExtensions>
-	</Project>
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EA2A2E14-8613-421D-960A-955A2EA60655}</ProjectGuid>
+        <ProjectVersion>15.3</ProjectVersion>
+        <MainSource>MotionControl.cpp</MainSource>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Base>True</Base>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <UsePackages>true</UsePackages>
+        <DynamicRTL>true</DynamicRTL>
+        <UsingDelphiRTL>true</UsingDelphiRTL>
+        <Manifest_File>None</Manifest_File>
+        <Icon_MainIcon>MotionControl_Icon1.ico</Icon_MainIcon>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=AI Lab;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=Alexandr Bakhshiev;LegalTrademarks=;OriginalFilename=;ProductName=Motion Control Test Application;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
+        <BCC_AllCodeguardOptions>true</BCC_AllCodeguardOptions>
+        <BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
+        <BCC_MonitorThis>true</BCC_MonitorThis>
+        <FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
+        <BCC_PCHUsage>None</BCC_PCHUsage>
+        <OutputExt>exe</OutputExt>
+        <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
+        <PackageImports>vclx.bpi;vcl.bpi;vclimg.bpi;dbrtl.bpi;Rave77VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vcldb.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_140.bpi;Intraweb_100_140.bpi;VclSmp.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapServer.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;TVidGrab.bpi;$(PackageImports)</PackageImports>
+        <Multithreaded>true</Multithreaded>
+        <AllPackageLibs>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib</AllPackageLibs>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <IncludePath>..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\include;..\..\..\Deploy\Include\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\lib;..\..\..\Deploy\Include\;..\..\..\Deploy\Dll\;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <BCC_wpar>false</BCC_wpar>
+        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+        <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Defines>LIBRDK_LIBRARY_IMPORT;$(Defines)</Defines>
+        <ILINK_LibraryPath>E:\Science\AI\AISD\NMSDK\Bin\Platform\Win\;E:\Science\AI\AISD\Nmsdk\Bin\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Defines>LIBRDK_LIBRARY_IMPORT;$(Defines)</Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <IntermediateOutputDir>Debug</IntermediateOutputDir>
+        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+        <DCC_Define>DEBUG</DCC_Define>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+        <BCC_StackFrames>true</BCC_StackFrames>
+        <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <LinkPackageImports>rtl.bpi;vcl.bpi;vclimg.bpi;TVidGrab.bpi;vclx.bpi;VclSmp.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;Tee.bpi</LinkPackageImports>
+        <Defines>_DEBUG;$(Defines)</Defines>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+        <BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <Defines>_DEBUG;$(Defines)</Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <IntermediateOutputDir>Release</IntermediateOutputDir>
+        <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <TASM_Debugging>None</TASM_Debugging>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Defines>NDEBUG;$(Defines)</Defines>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <Defines>NDEBUG;$(Defines)</Defines>
+    </PropertyGroup>
+    <ItemGroup>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\nmsdk.bcb.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>48</BuildOrder>
+        </LibFiles>
+        <CppCompile Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.cpp">
+            <Form>NAstaticGyro</Form>
+            <DependentOn>..\..\..\GUI\BCB\TNAstaticGyroUnit.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.cpp">
+            <Form>NewManipulatorControlForm</Form>
+            <DependentOn>..\..\..\GUI\BCB\TNewManipulatorControlForm.h</DependentOn>
+            <BuildOrder>52</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\GUI\BCB\TNManipulatorControlForm.cpp">
+            <Form>NManipulatorControlForm</Form>
+            <DependentOn>..\..\..\GUI\BCB\TNManipulatorControlForm.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.cpp">
+            <Form>NNewPositionControlElementForm</Form>
+            <DependentOn>..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.h</DependentOn>
+            <BuildOrder>55</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.cpp">
+            <Form>ApplicationOptionsForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.h</DependentOn>
+            <BuildOrder>51</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.cpp">
+            <Form>ApplicationOptionsFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.h</DependentOn>
+            <BuildOrder>49</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.cpp">
+            <Form>EnchancedSG</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.h</DependentOn>
+            <BuildOrder>51</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.cpp">
+            <Form>IdHttpResultBroadcasterForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.h</DependentOn>
+            <BuildOrder>48</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.cpp">
+            <Form>IdHttpResultBroadcasterFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.h</DependentOn>
+            <BuildOrder>43</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.cpp">
+            <Form>IdTcpResultBroadcasterForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.h</DependentOn>
+            <BuildOrder>49</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.cpp">
+            <Form>IdTcpResultBroadcasterFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.h</DependentOn>
+            <BuildOrder>44</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TServerBroadcasterCommonUnit.cpp">
+            <DependentOn>..\..\..\RDK\GUI\BCB\TServerBroadcasterCommonUnit.h</DependentOn>
+            <BuildOrder>45</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.cpp">
+            <Form>ServerOptionsFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TUBitmap.cpp">
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.cpp">
+            <Form>UHttpServerFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TUHttpServerUnit.h</DependentOn>
+            <BuildOrder>47</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TUVisualController.cpp">
+            <DependentOn>..\..\..\RDK\GUI\BCB\TUVisualController.h</DependentOn>
+            <BuildOrder>27</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.cpp">
+            <Form>UVisualControllerForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.h</DependentOn>
+            <BuildOrder>32</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.cpp">
+            <Form>UVisualControllerFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.h</DependentOn>
+            <BuildOrder>30</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.cpp">
+            <Form>UClassesListForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UClassesListFormUnit.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.cpp">
+            <Form>UClassesListFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.h</DependentOn>
+            <BuildOrder>34</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.cpp">
+            <Form>UComponentIOFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.cpp">
+            <Form>UComponentLinksForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.cpp">
+            <Form>UComponentLinksFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.cpp">
+            <Form>UComponentsControlForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.h</DependentOn>
+            <BuildOrder>38</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.cpp">
+            <Form>UComponentsControlFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.cpp">
+            <Form>UComponentsListForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.cpp">
+            <Form>UComponentsListFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.cpp">
+            <Form>UComponentsPerformanceForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.cpp">
+            <Form>UComponentsPerformanceFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.cpp">
+            <Form>UCreateProjectWizardForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.h</DependentOn>
+            <BuildOrder>35</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.cpp">
+            <Form>UCRPerseptronForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.h</DependentOn>
+            <BuildOrder>31</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.cpp">
+            <Form>UCRSampleForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.h</DependentOn>
+            <BuildOrder>39</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.cpp">
+            <Form>UCRTeacherCVNetworkBPForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.h</DependentOn>
+            <BuildOrder>48</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.cpp">
+            <Form>UCRTeacherPerseptronBPForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.h</DependentOn>
+            <BuildOrder>39</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.cpp">
+            <Form>UCRTeacherPerseptronDLForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.h</DependentOn>
+            <BuildOrder>40</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.cpp">
+            <Form>UDrawEngineFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.h</DependentOn>
+            <BuildOrder>41</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.cpp">
+            <Form>UEngineMonitorForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.h</DependentOn>
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.cpp">
+            <Form>UEngineMonitorFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.cpp">
+            <Form>UFavoriteComponentInfoForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.h</DependentOn>
+            <BuildOrder>33</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.cpp">
+            <Form>UFavoriteComponentInfoFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.h</DependentOn>
+            <BuildOrder>34</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.cpp">
+            <Form>UGEngineControlForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.h</DependentOn>
+            <BuildOrder>42</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.cpp">
+            <Form>UImagesForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UImagesFormUnit.h</DependentOn>
+            <BuildOrder>43</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.cpp">
+            <Form>UImagesFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UImagesFrameUnit.h</DependentOn>
+            <BuildOrder>42</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.cpp">
+            <Form>UListInputForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UListInputFormUnit.h</DependentOn>
+            <BuildOrder>26</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.cpp">
+            <Form>USeriesControlForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\USeriesControlUnit.h</DependentOn>
+            <BuildOrder>25</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.cpp">
+            <Form>UServerControlForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UServerControlFormUnit.h</DependentOn>
+            <BuildOrder>49</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.cpp">
+            <Form>UShowProgressBarForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.h</DependentOn>
+            <BuildOrder>30</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.cpp">
+            <Form>UWatchForm</Form>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UWatchFormUnit.h</DependentOn>
+            <BuildOrder>24</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.cpp">
+            <Form>UWatchFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>..\..\..\RDK\GUI\BCB\UWatchFrameUnit.h</DependentOn>
+            <BuildOrder>23</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MotionControl.cpp">
+            <BuildOrder>0</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="MotionControl.res">
+            <BuildOrder>1</BuildOrder>
+        </ResFiles>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCRPerseptronFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <Source>
+                    <Source Name="MainSource">MotionControl.cpp</Source>
+                </Source>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">AI Lab</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright">Alexandr Bakhshiev</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName">Motion Control Test Application</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Debugging>
+                    <Debugging Name="DebugSourceDirs">E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\</Debugging>
+                </Debugging>
+                <Parameters>
+                    <Parameters Name="RemoteHost"/>
+                    <Parameters Name="RemotePath"/>
+                    <Parameters Name="RemoteParams"/>
+                    <Parameters Name="RemoteLauncher"/>
+                    <Parameters Name="UseRemoteLauncher">False</Parameters>
+                    <Parameters Name="RemoteCWD"/>
+                    <Parameters Name="RemoteDebug">False</Parameters>
+                </Parameters>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                </ProjectProperties>
+            </CPlusPlusBuilder.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <ModelSupport>False</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>
