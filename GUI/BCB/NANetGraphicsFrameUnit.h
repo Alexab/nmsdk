@@ -9,7 +9,8 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include "NGraphics.h"
-#include "rdk.h"
+//#include "rdk.h"
+#include "nmsdk_cpp_initdll.h"
 
 using namespace NMSDK;
 
@@ -29,7 +30,7 @@ UGraphics Graph;
 NGraphics NetGraphics;
 
 // Управляемый компонент
-NANet *Network;
+NNet *Network;
 
 // Флаг обновления интерфейса
 bool UpdateInterfaceFlag;
@@ -38,8 +39,8 @@ public: // Методы
 // -------------------------
 // Методы управления данными
 // -------------------------
-NANet* GetNetwork(void);
-bool SetNetwork(NANet *net);
+NNet* GetNetwork(void);
+bool SetNetwork(NNet *net);
 
 void UpdateInterface(void);
 // -------------------------
