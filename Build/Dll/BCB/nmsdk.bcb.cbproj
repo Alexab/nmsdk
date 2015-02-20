@@ -1,272 +1,279 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <ProjectGuid>{3B5B2515-0BE1-4E46-A7C4-EAD0320F98CF}</ProjectGuid>
-        <ProjectVersion>15.3</ProjectVersion>
-        <Config Condition="'$(Config)'==''">Debug</Config>
-        <Base>True</Base>
-        <AppType>Library</AppType>
-        <FrameworkType>VCL</FrameworkType>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>1</TargetedPlatforms>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
-        <Base_Win32>true</Base_Win32>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
-        <Base_Win64>true</Base_Win64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
-        <Cfg_1>true</Cfg_1>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
-        <Cfg_1_Win32>true</Cfg_1_Win32>
-        <CfgParent>Cfg_1</CfgParent>
-        <Cfg_1>true</Cfg_1>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
-        <Cfg_1_Win64>true</Cfg_1_Win64>
-        <CfgParent>Cfg_1</CfgParent>
-        <Cfg_1>true</Cfg_1>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
-        <Cfg_2>true</Cfg_2>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
-        <Cfg_2_Win32>true</Cfg_2_Win32>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
-        <Cfg_2_Win64>true</Cfg_2_Win64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base)'!=''">
-        <UsingDelphiRTL>true</UsingDelphiRTL>
-        <DynamicRTL>true</DynamicRTL>
-        <FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
-        <Manifest_File>None</Manifest_File>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.1.0.19;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_DLL>true</VerInfo_DLL>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
-        <VerInfo_Build>19</VerInfo_Build>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Locale>1049</VerInfo_Locale>
-        <BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
-        <BCC_AllCodeguardOptions>true</BCC_AllCodeguardOptions>
-        <BCC_MonitorThis>true</BCC_MonitorThis>
-        <BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
-        <BCC_PCHUsage>None</BCC_PCHUsage>
-        <LinkPackageImports>rtl.bpi;vcl.bpi</LinkPackageImports>
-        <Multithreaded>true</Multithreaded>
-        <PackageImports>vclx.bpi;vcl.bpi;dbrtl.bpi;Rave76VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vcldb.bpi;vcldbx.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;adortl.bpi;vclib.bpi;ibxpress.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_120.bpi;Intraweb_100_120.bpi;VclSmp.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DataSnapServer.bpi;DbxClientDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;$(PackageImports)</PackageImports>
-        <NoVCL>true</NoVCL>
-        <ProjectType>VCppStyleDll</ProjectType>
-        <AllPackageLibs>rtl.lib;vcl.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib</AllPackageLibs>
-        <OutputExt>dll</OutputExt>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
-        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <UsePackages>true</UsePackages>
-        <IncludePath>..\..\..\RDK\Deploy\PtzLib\;..\..\..\RDK\Core\Graphics\Libraries\Hardware\;..\..\..\RDK\Core\Graphics\Libraries\SpatialGeometry\;..\..\..\RDK\Core\Graphics\Libraries\Detection\;..\..\..\RDK\ThirdParty\curl\lib\;..\..\..\RDK\ThirdParty\curl\;..\..\..\..\;..\..\..\RDK\Core\Graphics\Libraries\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\RDK\Deploy\Include\;..\..\..\Deploy\Include\;..\..\..\Deploy\Include;..\..\Dll;$(BDS)\include;..\..\..\RDK\Deploy\Include;..\..\..\RDK\ThirdParty\curl\include;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>..\..\..\RDK\Deploy\PtzLib\;..\..\..\RDK\Core\Graphics\Libraries\Hardware\;..\..\..\RDK\Core\Graphics\Libraries\SpatialGeometry\;..\..\..\RDK\Core\Graphics\Libraries\Detection\;..\..\..\..\;..\..\..\RDK\Core\Graphics\Libraries\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\RDK\Deploy\Include\;..\..\..\Deploy\Include\;..\..\..\Deploy\Include;..\..\Dll;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <BCC_wpar>false</BCC_wpar>
-        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <Defines>LIBRDK_LIBRARY_EXPORT;$(Defines)</Defines>
-        <ILINK_LibraryPath>E:\Science\AI\AISD\NMSDK\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
-        <Icon_MainIcon>nmsdk_Icon1.ico</Icon_MainIcon>
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <Defines>LIBRDK_LIBRARY_EXPORT;$(Defines)</Defines>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1)'!=''">
-        <FinalOutputDir>..\..\..\Bin\</FinalOutputDir>
-        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
-        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
-        <DCC_Optimize>false</DCC_Optimize>
-        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
-        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
-        <IntermediateOutputDir>Debug</IntermediateOutputDir>
-        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
-        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
-        <DCC_Define>DEBUG</DCC_Define>
-        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
-        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
-        <BCC_StackFrames>true</BCC_StackFrames>
-        <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
-        <TASM_Debugging>Full</TASM_Debugging>
-        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <Defines>_DEBUG;$(Defines)</Defines>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi</LinkPackageImports>
-        <BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
-        <FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <Defines>_DEBUG;$(Defines)</Defines>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2)'!=''">
-        <FinalOutputDir>..\..\..\Bin\</FinalOutputDir>
-        <IntermediateOutputDir>Release</IntermediateOutputDir>
-        <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <TASM_Debugging>None</TASM_Debugging>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <Defines>NDEBUG;$(Defines)</Defines>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <Defines>NDEBUG;$(Defines)</Defines>
-    </PropertyGroup>
-    <ItemGroup>
-        <ResFiles Include="nmsdk.bcb.res">
-            <BuildOrder>4</BuildOrder>
-        </ResFiles>
-        <CppCompile Include="nmsdkdll.cpp">
-            <BuildOrder>0</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\Deploy\Include\nmsdk.bcb.cpp">
-            <BuildOrder>5</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\Deploy\Include\nmsdk_cpp_initdll.cpp">
-            <DependentOn>..\..\..\Deploy\Include\nmsdk_cpp_initdll.h</DependentOn>
-            <BuildOrder>4</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\Deploy\Include\nmsdk_new.win.cpp">
-            <BuildOrder>4</BuildOrder>
-        </CppCompile>
-        <LibFiles Include="..\..\..\RDK\Bin\Platform\Win\libcurl.bcb.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>13</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <CppCompile Include="..\..\..\RDK\Core\Engine\Libraries\UELibraries.cpp">
-            <BuildOrder>7</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\Detection\Detection.cpp">
-            <BuildOrder>9</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\Hardware\Hardware.cpp">
-            <BuildOrder>11</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\Libraries.cpp">
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\SpatialGeometry\SpatialGeometry.cpp">
-            <BuildOrder>10</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Deploy\Include\myrdk.bcb.cpp">
-            <BuildOrder>6</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Deploy\Include\rdk.bcb.cpp">
-            <BuildOrder>3</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\..\RDK\Deploy\PtzLib\ptzlib_initdll.cpp">
-            <BuildOrder>12</BuildOrder>
-        </CppCompile>
-        <BuildConfiguration Include="Release">
-            <Key>Cfg_2</Key>
-            <CfgParent>Base</CfgParent>
-        </BuildConfiguration>
-        <BuildConfiguration Include="Base">
-            <Key>Base</Key>
-        </BuildConfiguration>
-        <BuildConfiguration Include="Debug">
-            <Key>Cfg_1</Key>
-            <CfgParent>Base</CfgParent>
-        </BuildConfiguration>
-    </ItemGroup>
-    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
-    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
-    <ProjectExtensions>
-        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
-        <Borland.ProjectType>VCppStyleDll</Borland.ProjectType>
-        <BorlandProject>
-            <CPlusPlusBuilder.Personality>
-                <VersionInfo>
-                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
-                    <VersionInfo Name="AutoIncBuild">True</VersionInfo>
-                    <VersionInfo Name="MajorVer">1</VersionInfo>
-                    <VersionInfo Name="MinorVer">1</VersionInfo>
-                    <VersionInfo Name="Release">0</VersionInfo>
-                    <VersionInfo Name="Build">51</VersionInfo>
-                    <VersionInfo Name="Debug">False</VersionInfo>
-                    <VersionInfo Name="PreRelease">False</VersionInfo>
-                    <VersionInfo Name="Special">False</VersionInfo>
-                    <VersionInfo Name="Private">False</VersionInfo>
-                    <VersionInfo Name="DLL">True</VersionInfo>
-                    <VersionInfo Name="Locale">1049</VersionInfo>
-                    <VersionInfo Name="CodePage">1251</VersionInfo>
-                </VersionInfo>
-                <VersionInfoKeys>
-                    <VersionInfoKeys Name="CompanyName"/>
-                    <VersionInfoKeys Name="FileDescription"/>
-                    <VersionInfoKeys Name="FileVersion">1.1.0.51</VersionInfoKeys>
-                    <VersionInfoKeys Name="InternalName"/>
-                    <VersionInfoKeys Name="LegalCopyright"/>
-                    <VersionInfoKeys Name="LegalTrademarks"/>
-                    <VersionInfoKeys Name="OriginalFilename"/>
-                    <VersionInfoKeys Name="ProductName"/>
-                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
-                    <VersionInfoKeys Name="Comments"/>
-                </VersionInfoKeys>
-                <Debugging>
-                    <Debugging Name="DebugSourceDirs"/>
-                </Debugging>
-                <Parameters>
-                    <Parameters Name="RemoteHost"/>
-                    <Parameters Name="RemotePath"/>
-                    <Parameters Name="RemoteParams"/>
-                    <Parameters Name="RemoteLauncher"/>
-                    <Parameters Name="UseRemoteLauncher">False</Parameters>
-                    <Parameters Name="RemoteCWD"/>
-                    <Parameters Name="RemoteDebug">False</Parameters>
-                </Parameters>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                </Excluded_Packages>
-                <ProjectProperties>
-                    <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
-                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
-                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
-                </ProjectProperties>
-            </CPlusPlusBuilder.Personality>
-            <Platforms>
-                <Platform value="OSX32">False</Platform>
-                <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
-            </Platforms>
-        </BorlandProject>
-        <ProjectFileVersion>12</ProjectFileVersion>
-    </ProjectExtensions>
-</Project>
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{3B5B2515-0BE1-4E46-A7C4-EAD0320F98CF}</ProjectGuid>
+			<ProjectVersion>15.3</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Base>True</Base>
+			<AppType>Library</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>1</TargetedPlatforms>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+			<Base_Win64>true</Base_Win64>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+			<Cfg_1_Win64>true</Cfg_1_Win64>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+			<Cfg_2_Win64>true</Cfg_2_Win64>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+			<Cfg_2_Win32>true</Cfg_2_Win32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<UsingDelphiRTL>true</UsingDelphiRTL>
+			<DynamicRTL>true</DynamicRTL>
+			<FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
+			<Manifest_File>None</Manifest_File>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.1.0.19;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_DLL>true</VerInfo_DLL>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+			<VerInfo_Build>19</VerInfo_Build>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_MinorVer>1</VerInfo_MinorVer>
+			<VerInfo_Locale>1049</VerInfo_Locale>
+			<BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
+			<BCC_AllCodeguardOptions>true</BCC_AllCodeguardOptions>
+			<BCC_MonitorThis>true</BCC_MonitorThis>
+			<BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
+			<BCC_PCHUsage>None</BCC_PCHUsage>
+			<LinkPackageImports>rtl.bpi;vcl.bpi</LinkPackageImports>
+			<Multithreaded>true</Multithreaded>
+			<PackageImports>vclx.bpi;vcl.bpi;dbrtl.bpi;Rave76VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vcldb.bpi;vcldbx.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;adortl.bpi;vclib.bpi;ibxpress.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_120.bpi;Intraweb_100_120.bpi;VclSmp.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DataSnapServer.bpi;DbxClientDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;$(PackageImports)</PackageImports>
+			<NoVCL>true</NoVCL>
+			<ProjectType>VCppStyleDll</ProjectType>
+			<AllPackageLibs>rtl.lib;vcl.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib</AllPackageLibs>
+			<OutputExt>dll</OutputExt>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<UsePackages>true</UsePackages>
+			<IncludePath>..\..\..\RDK\Deploy\PtzLib\;..\..\..\RDK\Core\Graphics\Libraries\Hardware\;..\..\..\RDK\Core\Graphics\Libraries\SpatialGeometry\;..\..\..\RDK\Core\Graphics\Libraries\Detection\;..\..\..\RDK\ThirdParty\curl\lib\;..\..\..\RDK\ThirdParty\curl\;..\..\..\..\;..\..\..\RDK\Core\Graphics\Libraries\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\RDK\Deploy\Include\;..\..\..\Deploy\Include\;..\..\..\Deploy\Include;..\..\Dll;$(BDS)\include;..\..\..\RDK\Deploy\Include;..\..\..\RDK\ThirdParty\curl\include;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\..\..\RDK\Deploy\PtzLib\;..\..\..\RDK\Core\Graphics\Libraries\Hardware\;..\..\..\RDK\Core\Graphics\Libraries\SpatialGeometry\;..\..\..\RDK\Core\Graphics\Libraries\Detection\;..\..\..\..\;..\..\..\RDK\Core\Graphics\Libraries\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\RDK\Deploy\Include\;..\..\..\Deploy\Include\;..\..\..\Deploy\Include;..\..\Dll;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win64)'!=''">
+			<Defines>LIBRDK_LIBRARY_EXPORT;$(Defines)</Defines>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<Defines>LIBRDK_LIBRARY_EXPORT;$(Defines)</Defines>
+			<ILINK_LibraryPath>E:\Science\AI\AISD\NMSDK\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+			<Icon_MainIcon>nmsdk_Icon1.ico</Icon_MainIcon>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<FinalOutputDir>..\..\..\Bin\</FinalOutputDir>
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<IntermediateOutputDir>Debug</IntermediateOutputDir>
+			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+			<Defines>_DEBUG;$(Defines)</Defines>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<Debugger_HostApplication>E:\Science\AI\AISD\NMSDK\Bin\Platform\Win\MotionControl.exe</Debugger_HostApplication>
+			<Debugger_CWD>E:\Science\AI\AISD\NMSDK\Bin\Platform\Win\</Debugger_CWD>
+			<Defines>_DEBUG;$(Defines)</Defines>
+			<LinkPackageImports>rtl.bpi;vcl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi</LinkPackageImports>
+			<BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
+			<FinalOutputDir>..\..\..\Bin\Platform\Win</FinalOutputDir>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<FinalOutputDir>..\..\..\Bin\</FinalOutputDir>
+			<IntermediateOutputDir>Release</IntermediateOutputDir>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+			<Defines>NDEBUG;$(Defines)</Defines>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+		</PropertyGroup>
+		<ItemGroup>
+			<ResFiles Include="nmsdk.bcb.res">
+				<BuildOrder>4</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="nmsdkdll.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\Deploy\Include\nmsdk.bcb.cpp">
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\Deploy\Include\nmsdk_cpp_initdll.cpp">
+				<DependentOn>..\..\..\Deploy\Include\nmsdk_cpp_initdll.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\Deploy\Include\nmsdk_new.win.cpp">
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<LibFiles Condition="'$(Platform)'=='Win32'" Include="..\..\..\RDK\Bin\Platform\Win\libcurl.bcb.lib">
+				<BuildOrder>13</BuildOrder>
+				<IgnorePath>true</IgnorePath>
+			</LibFiles>
+			<CppCompile Include="..\..\..\RDK\Core\Engine\Libraries\UELibraries.cpp">
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\Detection\Detection.cpp">
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\Hardware\Hardware.cpp">
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\Libraries.cpp">
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Core\Graphics\Libraries\SpatialGeometry\SpatialGeometry.cpp">
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Deploy\Include\myrdk.bcb.cpp">
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Deploy\Include\rdk.bcb.cpp">
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\..\RDK\Deploy\PtzLib\ptzlib_initdll.cpp">
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>VCppStyleDll</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">1</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">52</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">True</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.1.0.52</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs"/>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+					</Parameters>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfs16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfs16.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfrx16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfrx16.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfsDB16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfsDB16.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfrxDB16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfrxDB16.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfrxe16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfrxe16.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+				<Platforms>
+					<Platform value="OSX32">False</Platform>
+					<Platform value="Win64">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
