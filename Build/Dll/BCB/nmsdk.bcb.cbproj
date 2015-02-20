@@ -155,6 +155,7 @@
 			<CppCompile Include="nmsdkdll.cpp">
 				<BuildOrder>0</BuildOrder>
 			</CppCompile>
+			<None Include="Profiling\AQtimeModule1.aqt"/>
 			<CppCompile Include="..\..\..\Deploy\Include\nmsdk.bcb.cpp">
 				<BuildOrder>5</BuildOrder>
 			</CppCompile>
@@ -218,7 +219,7 @@
 						<VersionInfo Name="MajorVer">1</VersionInfo>
 						<VersionInfo Name="MinorVer">1</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">52</VersionInfo>
+						<VersionInfo Name="Build">53</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -230,7 +231,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName"/>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">1.1.0.52</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.1.0.53</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName"/>
 						<VersionInfoKeys Name="LegalCopyright"/>
 						<VersionInfoKeys Name="LegalTrademarks"/>

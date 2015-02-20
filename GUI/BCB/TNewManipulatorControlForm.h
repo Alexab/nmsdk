@@ -173,7 +173,7 @@ public:		// User declarations
 std::string ManipulatorName;
 
 std::string ControlSystemName;
-
+/*
 RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
 RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
 
@@ -183,7 +183,7 @@ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
 
 RDK::UEPtr<NMSDK::NPulseGenerator> IIPosAfferent,IINegAfferent;
 RDK::UEPtr<NMSDK::NPulseGenerator> MN1PosControl,MN1NegControl;
-
+  */
 // Отображаемое изображение
 RDK::UBitmap BmpCanvas;
 RDK::UGraphics BmpGraphics;

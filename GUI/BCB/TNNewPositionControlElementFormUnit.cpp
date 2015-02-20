@@ -33,8 +33,9 @@ void TNNewPositionControlElementForm::AUpdateInterface(void)
 {
  try
  {
+  RDK::UELockPtr<NMSDK::NModel> model=GetModelLock<NMSDK::NModel>();
   RDK::UEPtr<NMSDK::NNewPositionControlElement> position_control=
-	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(GetModel()->GetComponentL(ComponentControlName));
+	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(model->GetComponentL(ComponentControlName));
 
   int num_motion_elements=position_control->MotionControl->NumMotionElements;
   int num_control_loops=position_control->MotionControl->NumControlLoops;
@@ -145,8 +146,9 @@ void __fastcall TNNewPositionControlElementForm::SelectedStateStringGridSetEditT
 {
  try
  {
+  RDK::UELockPtr<NMSDK::NModel> model=GetModelLock<NMSDK::NModel>();
   RDK::UEPtr<NMSDK::NNewPositionControlElement> position_control=
-	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(GetModel()->GetComponentL(ComponentControlName));
+	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(model->GetComponentL(ComponentControlName));
 
   std::vector<std::vector<RDK::UNet*> > &left_generators=position_control->LeftGenerators;
   std::vector<std::vector<RDK::UNet*> > &right_generators=position_control->RightGenerators;
@@ -188,8 +190,9 @@ void __fastcall TNNewPositionControlElementForm::TrainPositionButtonClick(TObjec
 {
  try
  {
+  RDK::UELockPtr<NMSDK::NModel> model=GetModelLock<NMSDK::NModel>();
   RDK::UEPtr<NMSDK::NNewPositionControlElement> position_control=
-	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(GetModel()->GetComponentL(ComponentControlName));
+	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(model->GetComponentL(ComponentControlName));
 
   position_control->RememberState=true;
  }

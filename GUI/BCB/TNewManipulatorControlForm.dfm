@@ -29,8 +29,6 @@
     Margins.Right = 4
     Margins.Bottom = 4
     Panels = <>
-    ExplicitTop = 619
-    ExplicitWidth = 693
   end
   object PageControl1: TPageControl
     Left = 0
@@ -44,17 +42,12 @@
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 1
-    ExplicitHeight = 619
     object TabSheet1: TTabSheet
       Margins.Left = 4
       Margins.Top = 4
       Margins.Right = 4
       Margins.Bottom = 4
       Caption = 'Communication'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 0
         Top = 128
@@ -68,7 +61,6 @@
         Caption = ' Communication options '
         Enabled = False
         TabOrder = 0
-        ExplicitHeight = 449
         object Label1: TLabel
           Left = 9
           Top = 65
@@ -197,12 +189,11 @@
         Align = alTop
         Caption = ' Manipulator component name  '
         TabOrder = 1
-        ExplicitWidth = 896
         object ComponentSelectionPanel: TPanel
-          Left = 3
-          Top = 20
-          Width = 890
-          Height = 41
+          Left = 2
+          Top = 19
+          Width = 894
+          Height = 43
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -318,12 +309,11 @@
         Align = alTop
         Caption = ' Control system component name  '
         TabOrder = 3
-        ExplicitWidth = 896
         object ControlSystemSelectionPanel: TPanel
-          Left = 3
-          Top = 20
-          Width = 890
-          Height = 41
+          Left = 2
+          Top = 19
+          Width = 894
+          Height = 43
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -344,10 +334,6 @@
       Margins.Bottom = 4
       Caption = 'Manual Control'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox4: TGroupBox
         Left = 0
         Top = 0
@@ -360,7 +346,6 @@
         Align = alLeft
         Caption = ' Servo Control '
         TabOrder = 0
-        ExplicitHeight = 577
         object Время: TLabel
           Left = 10
           Top = 157
@@ -541,7 +526,7 @@
           Left = 194
           Top = 48
           Width = 57
-          Height = 21
+          Height = 25
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -568,7 +553,7 @@
           Left = 194
           Top = 122
           Width = 57
-          Height = 21
+          Height = 25
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -622,7 +607,6 @@
             Min = -10000
             TabOrder = 0
             OnChange = MomentTrackBarChange
-            ExplicitWidth = 152
           end
           object MomentProgressBar: TProgressBar
             Left = 17
@@ -636,13 +620,12 @@
             Anchors = [akLeft, akTop, akRight]
             Max = 1000
             TabOrder = 1
-            ExplicitWidth = 128
           end
           object ExtMomentEdit: TEdit
             Left = 155
             Top = 67
             Width = 95
-            Height = 21
+            Height = 25
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -652,7 +635,6 @@
             ReadOnly = True
             TabOrder = 2
             Text = '0'
-            ExplicitLeft = 153
           end
           object ResetToZeroButton2: TButton
             Left = 153
@@ -697,7 +679,6 @@
             Min = -1000
             TabOrder = 0
             OnChange = MovementControlTrackBarChange
-            ExplicitWidth = 151
           end
           object MovementControlProgressBar: TProgressBar
             Left = 17
@@ -711,13 +692,12 @@
             Anchors = [akLeft, akTop, akRight]
             Max = 1000
             TabOrder = 1
-            ExplicitWidth = 128
           end
           object MovementControlEdit: TEdit
             Left = 155
             Top = 67
             Width = 95
-            Height = 21
+            Height = 25
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -727,7 +707,6 @@
             ReadOnly = True
             TabOrder = 2
             Text = '0'
-            ExplicitLeft = 153
           end
           object ResetToZeroButton1: TButton
             Left = 153
@@ -781,12 +760,10 @@
         Margins.Bottom = 4
         Align = alClient
         TabOrder = 1
-        ExplicitWidth = 633
-        ExplicitHeight = 582
         object Splitter1: TSplitter
           Left = 1
-          Top = 269
-          Width = 631
+          Top = 279
+          Width = 633
           Height = 16
           Cursor = crVSplit
           Margins.Left = 4
@@ -794,12 +771,14 @@
           Margins.Right = 4
           Margins.Bottom = 4
           Align = alBottom
+          ExplicitTop = 269
+          ExplicitWidth = 631
         end
         object GroupBox7: TGroupBox
           Left = 1
           Top = 1
-          Width = 631
-          Height = 268
+          Width = 633
+          Height = 278
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -810,20 +789,23 @@
           ParentDoubleBuffered = False
           TabOrder = 0
           object Splitter2: TSplitter
-            Left = 286
-            Top = 20
+            Left = 285
+            Top = 19
             Width = 11
-            Height = 245
+            Height = 257
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
             Margins.Bottom = 4
+            ExplicitLeft = 286
+            ExplicitTop = 20
+            ExplicitHeight = 245
           end
           object Panel2: TPanel
-            Left = 3
-            Top = 20
+            Left = 2
+            Top = 19
             Width = 283
-            Height = 245
+            Height = 257
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -882,7 +864,7 @@
               Left = 188
               Top = 33
               Width = 63
-              Height = 21
+              Height = 25
               Margins.Left = 4
               Margins.Top = 4
               Margins.Right = 4
@@ -894,7 +876,7 @@
               Left = 191
               Top = 93
               Width = 63
-              Height = 21
+              Height = 25
               Margins.Left = 4
               Margins.Top = 4
               Margins.Right = 4
@@ -935,7 +917,7 @@
               Left = 191
               Top = 156
               Width = 63
-              Height = 21
+              Height = 25
               Margins.Left = 4
               Margins.Top = 4
               Margins.Right = 4
@@ -945,10 +927,10 @@
             end
           end
           object Panel3: TPanel
-            Left = 297
-            Top = 20
-            Width = 331
-            Height = 245
+            Left = 296
+            Top = 19
+            Width = 335
+            Height = 257
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -958,8 +940,8 @@
             object DrawGrid: TDrawGrid
               Left = 1
               Top = 1
-              Width = 329
-              Height = 244
+              Width = 333
+              Height = 255
               Margins.Left = 4
               Margins.Top = 4
               Margins.Right = 4
@@ -978,8 +960,8 @@
         end
         object GroupBox8: TGroupBox
           Left = 1
-          Top = 285
-          Width = 631
+          Top = 295
+          Width = 633
           Height = 296
           Margins.Left = 4
           Margins.Top = 4
@@ -1036,7 +1018,7 @@
             Left = 43
             Top = 135
             Width = 63
-            Height = 21
+            Height = 25
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -1048,7 +1030,7 @@
             Left = 145
             Top = 135
             Width = 63
-            Height = 21
+            Height = 25
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -1102,7 +1084,7 @@
             Left = 188
             Top = 42
             Width = 63
-            Height = 21
+            Height = 25
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4
@@ -1114,7 +1096,7 @@
             Left = 188
             Top = 97
             Width = 63
-            Height = 21
+            Height = 25
             Margins.Left = 4
             Margins.Top = 4
             Margins.Right = 4

@@ -158,11 +158,6 @@
 				<DependentOn>..\..\..\GUI\BCB\TNewManipulatorControlForm.h</DependentOn>
 				<BuildOrder>52</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\..\..\GUI\BCB\TNManipulatorControlForm.cpp">
-				<Form>NManipulatorControlForm</Form>
-				<DependentOn>..\..\..\GUI\BCB\TNManipulatorControlForm.h</DependentOn>
-				<BuildOrder>28</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.cpp">
 				<Form>NNewPositionControlElementForm</Form>
 				<DependentOn>..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.h</DependentOn>
@@ -465,7 +460,6 @@
 			<FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
 			<FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
-			<FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
