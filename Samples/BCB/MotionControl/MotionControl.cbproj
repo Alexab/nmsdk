@@ -329,21 +329,6 @@
 				<DependentOn>..\..\..\RDK\GUI\BCB\UCRSampleFormUnit.h</DependentOn>
 				<BuildOrder>39</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.cpp">
-				<Form>UCRTeacherCVNetworkBPForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.h</DependentOn>
-				<BuildOrder>48</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.cpp">
-				<Form>UCRTeacherPerseptronBPForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.h</DependentOn>
-				<BuildOrder>39</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.cpp">
-				<Form>UCRTeacherPerseptronDLForm</Form>
-				<DependentOn>..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.h</DependentOn>
-				<BuildOrder>40</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.cpp">
 				<Form>UDrawEngineFrame</Form>
 				<DesignClass>TFrame</DesignClass>
@@ -426,9 +411,6 @@
 				<BuildOrder>1</BuildOrder>
 			</ResFiles>
 			<None Include="Profiling\AQtimeModule1.aqt"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronDLFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherPerseptronBPFormUnit.dfm"/>
-			<FormResources Include="..\..\..\RDK\GUI\BCB\UCRTeacherCVNetworkBPFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
 			<FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
