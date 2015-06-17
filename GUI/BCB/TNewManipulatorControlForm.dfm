@@ -2,13 +2,13 @@
   Left = 0
   Top = 0
   Caption = 'NewManipulatorControlForm'
-  ClientHeight = 492
-  ClientWidth = 693
+  ClientHeight = 643
+  ClientWidth = 906
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'Tahoma'
   Font.Style = []
   Menu = MainMenu
@@ -17,53 +17,81 @@
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 17
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 473
-    Width = 693
+    Top = 624
+    Width = 906
     Height = 19
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Panels = <>
   end
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 693
-    Height = 473
+    Width = 906
+    Height = 624
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 1
     object TabSheet1: TTabSheet
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = 'Communication'
       object GroupBox1: TGroupBox
         Left = 0
-        Top = 98
-        Width = 233
-        Height = 347
+        Top = 128
+        Width = 305
+        Height = 464
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alLeft
         Caption = ' Communication options '
         Enabled = False
         TabOrder = 0
         object Label1: TLabel
-          Left = 7
-          Top = 50
-          Width = 61
-          Height = 13
+          Left = 9
+          Top = 65
+          Width = 78
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'COM port #:'
         end
         object Label2: TLabel
-          Left = 18
-          Top = 77
-          Width = 50
-          Height = 13
+          Left = 24
+          Top = 101
+          Width = 63
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Ctrl Mode:'
         end
         object ComPortComboBox: TComboBox
-          Left = 74
-          Top = 47
-          Width = 151
-          Height = 21
+          Left = 97
+          Top = 61
+          Width = 197
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ItemIndex = 7
           TabOrder = 0
@@ -102,10 +130,14 @@
             '30')
         end
         object DeviceModeRadioButton: TRadioButton
-          Left = 7
-          Top = 24
-          Width = 218
-          Height = 17
+          Left = 9
+          Top = 31
+          Width = 285
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Device mode'
           Checked = True
           TabOrder = 1
@@ -113,19 +145,27 @@
           OnClick = DeviceModeRadioButtonClick
         end
         object EmulatorModeRadioButton: TRadioButton
-          Left = 3
-          Top = 103
-          Width = 113
-          Height = 17
+          Left = 4
+          Top = 135
+          Width = 148
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Emulator mode'
           TabOrder = 2
           OnClick = EmulatorModeRadioButtonClick
         end
         object ControlModeComboBox: TComboBox
-          Left = 74
-          Top = 74
-          Width = 151
-          Height = 21
+          Left = 97
+          Top = 97
+          Width = 197
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ItemIndex = 2
           TabOrder = 3
@@ -140,16 +180,24 @@
       object GroupBox2: TGroupBox
         Left = 0
         Top = 0
-        Width = 685
-        Height = 49
+        Width = 898
+        Height = 64
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alTop
         Caption = ' Manipulator component name  '
         TabOrder = 1
         object ComponentSelectionPanel: TPanel
           Left = 2
-          Top = 15
-          Width = 681
-          Height = 32
+          Top = 19
+          Width = 894
+          Height = 43
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alClient
           Caption = 'Double click to select control object component '
           Color = clRed
@@ -159,32 +207,44 @@
         end
       end
       object GroupBox3: TGroupBox
-        Left = 233
-        Top = 98
-        Width = 452
-        Height = 347
+        Left = 305
+        Top = 128
+        Width = 593
+        Height = 464
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alClient
         Caption = ' Communication control '
         Enabled = False
         TabOrder = 2
         DesignSize = (
-          452
-          347)
+          593
+          464)
         object ConnectButton: TButton
-          Left = 6
-          Top = 20
-          Width = 443
-          Height = 25
+          Left = 8
+          Top = 26
+          Width = 579
+          Height = 33
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akLeft, akTop, akRight]
           Caption = ' Connect '
           TabOrder = 0
           OnClick = ConnectButtonClick
         end
         object DisconnectButton: TButton
-          Left = 6
-          Top = 51
-          Width = 443
-          Height = 25
+          Left = 8
+          Top = 67
+          Width = 579
+          Height = 32
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akLeft, akTop, akRight]
           Caption = ' Disconnect '
           Enabled = False
@@ -192,10 +252,14 @@
           OnClick = DisconnectButtonClick
         end
         object ResetButton: TButton
-          Left = 6
-          Top = 144
-          Width = 443
-          Height = 25
+          Left = 8
+          Top = 188
+          Width = 579
+          Height = 33
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akLeft, akTop, akRight]
           Caption = ' Reset '
           Enabled = False
@@ -203,10 +267,14 @@
           OnClick = ResetButtonClick
         end
         object StartButton: TButton
-          Left = 6
-          Top = 82
-          Width = 443
-          Height = 25
+          Left = 8
+          Top = 107
+          Width = 579
+          Height = 33
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akLeft, akTop, akRight]
           Caption = ' Start '
           Enabled = False
@@ -214,10 +282,14 @@
           OnClick = StartButtonClick
         end
         object StopButton: TButton
-          Left = 6
-          Top = 113
-          Width = 443
-          Height = 25
+          Left = 8
+          Top = 148
+          Width = 579
+          Height = 32
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akLeft, akTop, akRight]
           Caption = ' Stop '
           Enabled = False
@@ -227,17 +299,25 @@
       end
       object GroupBox6: TGroupBox
         Left = 0
-        Top = 49
-        Width = 685
-        Height = 49
+        Top = 64
+        Width = 898
+        Height = 64
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alTop
         Caption = ' Control system component name  '
         TabOrder = 3
         object ControlSystemSelectionPanel: TPanel
           Left = 2
-          Top = 15
-          Width = 681
-          Height = 32
+          Top = 19
+          Width = 894
+          Height = 43
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alClient
           Caption = 'Double click to select control system'
           Color = clRed
@@ -248,58 +328,90 @@
       end
     end
     object TabSheet2: TTabSheet
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = 'Manual Control'
       ImageIndex = 1
       object GroupBox4: TGroupBox
         Left = 0
         Top = 0
-        Width = 185
-        Height = 445
+        Width = 242
+        Height = 592
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alLeft
         Caption = ' Servo Control '
         TabOrder = 0
         object Время: TLabel
-          Left = 8
-          Top = 120
-          Width = 22
-          Height = 13
+          Left = 10
+          Top = 157
+          Width = 29
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Time'
         end
         object Скорость: TLabel
-          Left = 8
-          Top = 65
-          Width = 30
-          Height = 13
+          Left = 10
+          Top = 85
+          Width = 38
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Speed'
         end
         object Label3: TLabel
-          Left = 55
-          Top = 19
-          Width = 42
-          Height = 13
+          Left = 72
+          Top = 25
+          Width = 54
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Direction'
         end
         object Label4: TLabel
-          Left = 7
-          Top = 19
-          Width = 39
-          Height = 13
+          Left = 9
+          Top = 25
+          Width = 50
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Servo #'
         end
         object Button2: TButton
-          Left = 4
-          Top = 175
-          Width = 171
-          Height = 25
+          Left = 5
+          Top = 229
+          Width = 224
+          Height = 33
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Move'
           TabOrder = 0
           OnClick = Button2Click
         end
         object TrackBarTime: TTrackBar
           Left = 0
-          Top = 136
-          Width = 182
-          Height = 33
+          Top = 178
+          Width = 238
+          Height = 43
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Max = 255
           Frequency = 8
           Position = 32
@@ -307,19 +419,27 @@
         end
         object TrackBarPWM: TTrackBar
           Left = 0
-          Top = 81
-          Width = 182
-          Height = 33
+          Top = 106
+          Width = 238
+          Height = 43
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Max = 255
           Frequency = 8
           Position = 128
           TabOrder = 2
         end
         object ComboBoxDir: TComboBox
-          Left = 55
-          Top = 38
-          Width = 119
-          Height = 21
+          Left = 72
+          Top = 50
+          Width = 156
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ItemIndex = 0
           TabOrder = 3
@@ -329,10 +449,14 @@
             'CCV')
         end
         object CBoxServoMove: TComboBox
-          Left = 7
-          Top = 38
-          Width = 41
-          Height = 21
+          Left = 9
+          Top = 50
+          Width = 54
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ItemIndex = 0
           TabOrder = 4
@@ -344,74 +468,110 @@
       end
     end
     object TabSheet3: TTabSheet
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = 'Neuro Control'
       ImageIndex = 2
       object GroupBox5: TGroupBox
         Left = 0
         Top = 0
-        Width = 201
-        Height = 445
+        Width = 263
+        Height = 592
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alLeft
         Caption = ' External control '
         TabOrder = 0
         object Label5: TLabel
-          Left = 12
-          Top = 18
-          Width = 163
-          Height = 13
+          Left = 16
+          Top = 24
+          Width = 201
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'II Afferent ext. control frequency'
         end
         object Label6: TLabel
-          Left = 12
-          Top = 77
-          Width = 174
-          Height = 13
+          Left = 16
+          Top = 101
+          Width = 216
+          Height = 17
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Number of II Afferents ext. controls'
         end
         object IIAfferentTrackBar: TTrackBar
-          Left = 4
-          Top = 37
-          Width = 146
-          Height = 27
+          Left = 5
+          Top = 48
+          Width = 191
+          Height = 36
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Max = 200
           Min = -200
           TabOrder = 0
           OnChange = IIAfferentTrackBarChange
         end
         object IIAfferentEdit: TEdit
-          Left = 148
-          Top = 37
-          Width = 44
-          Height = 21
+          Left = 194
+          Top = 48
+          Width = 57
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clBtnFace
           ReadOnly = True
           TabOrder = 1
           Text = '0'
         end
         object IINumAfferentTrackBar: TTrackBar
-          Left = 2
-          Top = 93
-          Width = 146
-          Height = 27
+          Left = 3
+          Top = 122
+          Width = 191
+          Height = 35
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Max = 5
           TabOrder = 2
           OnChange = IINumAfferentTrackBarChange
         end
         object IINumAfferentEdit: TEdit
-          Left = 148
-          Top = 93
-          Width = 44
-          Height = 21
+          Left = 194
+          Top = 122
+          Width = 57
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clBtnFace
           ReadOnly = True
           TabOrder = 3
           Text = '0'
         end
         object ControlVoltageCheckBox: TCheckBox
-          Left = 12
-          Top = 229
-          Width = 183
-          Height = 17
+          Left = 16
+          Top = 299
+          Width = 239
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Control power (U) '
           Checked = True
           State = cbChecked
@@ -420,20 +580,28 @@
         end
         object GroupBox10: TGroupBox
           Left = 2
-          Top = 361
-          Width = 197
-          Height = 82
+          Top = 483
+          Width = 259
+          Height = 107
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alBottom
           Caption = ' Target position '
           TabOrder = 5
           DesignSize = (
-            197
-            82)
+            259
+            107)
           object MomentTrackBar: TTrackBar
-            Left = 3
-            Top = 18
-            Width = 116
-            Height = 27
+            Left = 4
+            Top = 24
+            Width = 154
+            Height = 35
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Anchors = [akLeft, akTop, akRight]
             Max = 10000
             Min = -10000
@@ -441,19 +609,27 @@
             OnChange = MomentTrackBarChange
           end
           object MomentProgressBar: TProgressBar
-            Left = 13
-            Top = 53
-            Width = 98
-            Height = 17
+            Left = 17
+            Top = 69
+            Width = 130
+            Height = 23
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Anchors = [akLeft, akTop, akRight]
             Max = 1000
             TabOrder = 1
           end
           object ExtMomentEdit: TEdit
-            Left = 117
-            Top = 51
-            Width = 73
-            Height = 21
+            Left = 155
+            Top = 67
+            Width = 95
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Anchors = [akTop, akRight]
             Color = clBtnFace
             ReadOnly = True
@@ -461,10 +637,14 @@
             Text = '0'
           end
           object ResetToZeroButton2: TButton
-            Left = 117
-            Top = 17
-            Width = 76
-            Height = 28
+            Left = 153
+            Top = 22
+            Width = 99
+            Height = 37
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = 'Reset to 0'
             TabOrder = 3
             OnClick = ResetToZeroButton2Click
@@ -472,20 +652,28 @@
         end
         object GroupBox11: TGroupBox
           Left = 2
-          Top = 279
-          Width = 197
-          Height = 82
+          Top = 376
+          Width = 259
+          Height = 107
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alBottom
           Caption = ' External power  '
           TabOrder = 6
           DesignSize = (
-            197
-            82)
+            259
+            107)
           object MovementControlTrackBar: TTrackBar
-            Left = 5
-            Top = 18
-            Width = 116
-            Height = 27
+            Left = 7
+            Top = 24
+            Width = 153
+            Height = 35
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Anchors = [akLeft, akTop, akRight]
             Max = 1000
             Min = -1000
@@ -493,19 +681,27 @@
             OnChange = MovementControlTrackBarChange
           end
           object MovementControlProgressBar: TProgressBar
-            Left = 13
-            Top = 53
-            Width = 98
-            Height = 17
+            Left = 17
+            Top = 69
+            Width = 130
+            Height = 23
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Anchors = [akLeft, akTop, akRight]
             Max = 1000
             TabOrder = 1
           end
           object MovementControlEdit: TEdit
-            Left = 117
-            Top = 51
-            Width = 73
-            Height = 21
+            Left = 155
+            Top = 67
+            Width = 95
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Anchors = [akTop, akRight]
             Color = clBtnFace
             ReadOnly = True
@@ -513,101 +709,151 @@
             Text = '0'
           end
           object ResetToZeroButton1: TButton
-            Left = 117
-            Top = 17
-            Width = 76
-            Height = 28
+            Left = 153
+            Top = 22
+            Width = 99
+            Height = 37
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = 'Reset to 0'
             TabOrder = 3
             OnClick = ResetToZeroButton1Click
           end
         end
         object HideSecondaryGuiCheckBox: TCheckBox
-          Left = 12
-          Top = 252
-          Width = 189
-          Height = 17
+          Left = 16
+          Top = 330
+          Width = 247
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = 'Hide secondary GUI'
           TabOrder = 7
           OnClick = HideSecondaryGuiCheckBoxClick
         end
         object CheckListBox1: TCheckListBox
-          Left = 12
-          Top = 126
-          Width = 183
-          Height = 97
-          ItemHeight = 13
+          Left = 16
+          Top = 165
+          Width = 239
+          Height = 127
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          ItemHeight = 17
           TabOrder = 8
           OnClick = CheckListBox1Click
         end
       end
       object Panel1: TPanel
-        Left = 201
+        Left = 263
         Top = 0
-        Width = 484
-        Height = 445
+        Width = 635
+        Height = 592
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alClient
         TabOrder = 1
         object Splitter1: TSplitter
           Left = 1
-          Top = 206
-          Width = 482
-          Height = 12
+          Top = 279
+          Width = 633
+          Height = 16
           Cursor = crVSplit
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alBottom
-          ExplicitTop = 177
+          ExplicitTop = 269
+          ExplicitWidth = 631
         end
         object GroupBox7: TGroupBox
           Left = 1
           Top = 1
-          Width = 482
-          Height = 205
+          Width = 633
+          Height = 278
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alClient
           Caption = ' Visual output '
           DoubleBuffered = False
           ParentDoubleBuffered = False
           TabOrder = 0
           object Splitter2: TSplitter
-            Left = 219
-            Top = 15
-            Width = 8
-            Height = 188
-            ExplicitLeft = 2
-            ExplicitHeight = 159
+            Left = 285
+            Top = 19
+            Width = 11
+            Height = 257
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
+            ExplicitLeft = 286
+            ExplicitTop = 20
+            ExplicitHeight = 245
           end
           object Panel2: TPanel
             Left = 2
-            Top = 15
-            Width = 217
-            Height = 188
+            Top = 19
+            Width = 283
+            Height = 257
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Align = alLeft
             TabOrder = 0
             object Label13: TLabel
-              Left = 12
-              Top = 9
-              Width = 130
-              Height = 13
+              Left = 16
+              Top = 12
+              Width = 166
+              Height = 17
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Caption = 'Charge PAC time constant:'
             end
             object Label8: TLabel
-              Left = 16
-              Top = 54
-              Width = 142
-              Height = 13
+              Left = 21
+              Top = 71
+              Width = 182
+              Height = 17
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Caption = 'Discharge PAC time constant:'
             end
             object Label10: TLabel
-              Left = 14
-              Top = 103
-              Width = 69
-              Height = 13
+              Left = 18
+              Top = 135
+              Width = 87
+              Height = 17
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Caption = 'PAC multiplier:'
             end
             object PACActivatorTimeTrackBar: TTrackBar
-              Left = 5
-              Top = 23
-              Width = 141
-              Height = 27
+              Left = 7
+              Top = 30
+              Width = 184
+              Height = 35
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Max = 10000
               Min = 10
               Position = 10
@@ -615,26 +861,38 @@
               OnChange = PACActivatorTimeTrackBarChange
             end
             object PACActivatorTimeEdit: TEdit
-              Left = 144
-              Top = 25
-              Width = 48
-              Height = 21
+              Left = 188
+              Top = 33
+              Width = 63
+              Height = 25
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               TabOrder = 1
               Text = '1'
             end
             object PACDeactivatorTimeEdit: TEdit
-              Left = 146
-              Top = 71
-              Width = 48
-              Height = 21
+              Left = 191
+              Top = 93
+              Width = 63
+              Height = 25
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               TabOrder = 2
               Text = '1'
             end
             object PACDeactivatorTimeTrackBar: TTrackBar
-              Left = 7
-              Top = 69
-              Width = 141
-              Height = 27
+              Left = 9
+              Top = 90
+              Width = 185
+              Height = 36
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Max = 10000
               Min = 10
               Position = 100
@@ -642,36 +900,52 @@
               OnChange = PACDeactivatorTimeTrackBarChange
             end
             object PACMultiplicatorTrackBar: TTrackBar
-              Left = 7
-              Top = 116
-              Width = 141
-              Height = 27
+              Left = 9
+              Top = 152
+              Width = 185
+              Height = 35
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Max = 1000
               Position = 10
               TabOrder = 4
               OnChange = PACMultiplicatorTrackBarChange
             end
             object PACMultiplicatorEdit: TEdit
-              Left = 146
-              Top = 119
-              Width = 48
-              Height = 21
+              Left = 191
+              Top = 156
+              Width = 63
+              Height = 25
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               TabOrder = 5
               Text = '1'
             end
           end
           object Panel3: TPanel
-            Left = 227
-            Top = 15
-            Width = 253
-            Height = 188
+            Left = 296
+            Top = 19
+            Width = 335
+            Height = 257
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Align = alClient
             TabOrder = 1
             object DrawGrid: TDrawGrid
               Left = 1
               Top = 1
-              Width = 251
-              Height = 186
+              Width = 333
+              Height = 255
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Align = alClient
               ColCount = 1
               DoubleBuffered = True
@@ -686,80 +960,120 @@
         end
         object GroupBox8: TGroupBox
           Left = 1
-          Top = 218
-          Width = 482
-          Height = 226
+          Top = 295
+          Width = 633
+          Height = 296
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alBottom
           Caption = ' Neuro manipulator parameters '
           TabOrder = 1
           object Label12: TLabel
-            Left = 14
-            Top = 106
-            Width = 16
-            Height = 13
+            Left = 18
+            Top = 139
+            Width = 20
+            Height = 17
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = 'Va:'
           end
           object Label11: TLabel
-            Left = 92
-            Top = 106
-            Width = 16
-            Height = 13
+            Left = 120
+            Top = 139
+            Width = 21
+            Height = 17
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = 'Vd:'
           end
           object Label7: TLabel
-            Left = 14
-            Top = 57
-            Width = 174
-            Height = 13
+            Left = 18
+            Top = 75
+            Width = 223
+            Height = 17
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = 'Controller power time duration (ms):'
           end
           object Label9: TLabel
-            Left = 12
-            Top = 16
-            Width = 85
-            Height = 13
+            Left = 16
+            Top = 21
+            Width = 107
+            Height = 17
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = 'Voltage multiplier:'
           end
           object VaEdit: TEdit
-            Left = 33
-            Top = 103
-            Width = 48
-            Height = 21
+            Left = 43
+            Top = 135
+            Width = 63
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             TabOrder = 0
             Text = '100'
           end
           object VdEdit: TEdit
-            Left = 111
-            Top = 103
-            Width = 48
-            Height = 21
+            Left = 145
+            Top = 135
+            Width = 63
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             TabOrder = 1
             Text = '5'
           end
           object SendVButton: TButton
-            Left = 165
-            Top = 101
-            Width = 91
-            Height = 25
+            Left = 216
+            Top = 132
+            Width = 119
+            Height = 33
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #1054#1090#1087#1088#1072#1074#1080#1090#1100
             TabOrder = 2
             OnClick = SendVButtonClick
           end
           object VoltageMulTrackBar: TTrackBar
-            Left = 5
-            Top = 30
-            Width = 141
-            Height = 27
+            Left = 7
+            Top = 39
+            Width = 184
+            Height = 36
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Max = 5000
             Position = 200
             TabOrder = 3
             OnChange = VoltageMulTrackBarChange
           end
           object TimeDurationTrackBar: TTrackBar
-            Left = 5
-            Top = 72
-            Width = 141
-            Height = 27
+            Left = 7
+            Top = 94
+            Width = 184
+            Height = 35
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Max = 256
             Min = 1
             Position = 1
@@ -767,26 +1081,38 @@
             OnChange = TimeDurationTrackBarChange
           end
           object VoltageMulEdit: TEdit
-            Left = 144
-            Top = 32
-            Width = 48
-            Height = 21
+            Left = 188
+            Top = 42
+            Width = 63
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             TabOrder = 5
             Text = '1'
           end
           object TimeDurationEdit: TEdit
-            Left = 144
-            Top = 74
-            Width = 48
-            Height = 21
+            Left = 188
+            Top = 97
+            Width = 63
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             TabOrder = 6
             Text = '1'
           end
           object MulToNumberOfControlElementsCheckBox: TCheckBox
-            Left = 198
-            Top = 34
-            Width = 50
-            Height = 17
+            Left = 259
+            Top = 44
+            Width = 65
+            Height = 23
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #1087#1086' N'
             TabOrder = 7
           end

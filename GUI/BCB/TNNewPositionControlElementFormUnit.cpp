@@ -33,8 +33,9 @@ void TNNewPositionControlElementForm::AUpdateInterface(void)
 {
  try
  {
+  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
   RDK::UEPtr<NMSDK::NNewPositionControlElement> position_control=
-	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(GetModel()->GetComponentL(ComponentControlName));
+	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(model->GetComponentL(ComponentControlName));
 
   int num_motion_elements=position_control->MotionControl->NumMotionElements;
   int num_control_loops=position_control->MotionControl->NumControlLoops;
@@ -78,10 +79,10 @@ void TNNewPositionControlElementForm::AUpdateInterface(void)
    for(int n=0;n<num_motion_elements;n++)
    {
 	RDK::UEPtr<NMSDK::NPulseNeuron> gen=dynamic_cast<NMSDK::NPulseNeuron*>(left_neurons[m][n]);
-	RDK::UEPtr<NMSDK::NPulseLTZone> ltzone=dynamic_pointer_cast<NMSDK::NPulseLTZone>(gen->GetComponentL("LTZone"));
+	RDK::UEPtr<NMSDK::NPulseLTZone> ltzone=RDK::dynamic_pointer_cast<NMSDK::NPulseLTZone>(gen->GetComponentL("LTZone"));
 	TrainedStateStringGrid->Cells[num_motion_elements-1-n+1][m+1]=FloatToStrF(ltzone->GetOutputData(2).Double[0],ffFixed,3,3);
 	gen=dynamic_cast<NMSDK::NPulseNeuron*>(right_neurons[m][n]);
-	ltzone=dynamic_pointer_cast<NMSDK::NPulseLTZone>(gen->GetComponentL("LTZone"));
+	ltzone=RDK::dynamic_pointer_cast<NMSDK::NPulseLTZone>(gen->GetComponentL("LTZone"));
 	TrainedStateStringGrid->Cells[n+num_motion_elements+1][m+1]=FloatToStrF(ltzone->GetOutputData(2).Double[0],ffFixed,3,3);
 	TrainedStateStringGrid->Cells[num_motion_elements-1-n+1][0]=String("ML")+n;
 	TrainedStateStringGrid->Cells[n+num_motion_elements+1][0]=String("MR")+n;
@@ -145,8 +146,9 @@ void __fastcall TNNewPositionControlElementForm::SelectedStateStringGridSetEditT
 {
  try
  {
+  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
   RDK::UEPtr<NMSDK::NNewPositionControlElement> position_control=
-	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(GetModel()->GetComponentL(ComponentControlName));
+	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(model->GetComponentL(ComponentControlName));
 
   std::vector<std::vector<RDK::UNet*> > &left_generators=position_control->LeftGenerators;
   std::vector<std::vector<RDK::UNet*> > &right_generators=position_control->RightGenerators;
@@ -176,7 +178,7 @@ void __fastcall TNNewPositionControlElementForm::SelectedStateStringGridSetEditT
 
   }
  }
- catch(UException &exception)
+ catch(RDK::UException &exception)
  {
 
  }
@@ -188,12 +190,13 @@ void __fastcall TNNewPositionControlElementForm::TrainPositionButtonClick(TObjec
 {
  try
  {
+  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
   RDK::UEPtr<NMSDK::NNewPositionControlElement> position_control=
-	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(GetModel()->GetComponentL(ComponentControlName));
+	RDK::dynamic_pointer_cast<NMSDK::NNewPositionControlElement>(model->GetComponentL(ComponentControlName));
 
   position_control->RememberState=true;
  }
- catch(UException &exception)
+ catch(RDK::UException &exception)
  {
 
  }

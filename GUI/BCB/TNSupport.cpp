@@ -9,26 +9,26 @@
 namespace NMSDK {
 
 // Добавляем объект в окно наблюдений (график по времени)
-void AddWatch(TWatchFrame *watch, RDK::UContainer *item, int output, int outindex, double watchinterval, double yshift, TPenStyle style, TColor color)
+void AddWatch(TUWatchFrame *watch, RDK::UContainer *item, int output, int outindex, double watchinterval, double yshift, TPenStyle style, TColor color)
 {
- NADItem *itemd=dynamic_cast<NADItem*>(item);
+ UADItem *itemd=dynamic_cast<UADItem*>(item);
 
  if(!watch || !itemd)
   return;
 
- OutGateWatchData wd;
+ TUWatchInfo wd;
  wd.FullUpdate=false;
  wd.WatchInterval=watchinterval;
- wd.X=&NAContainer::GetDoubleTime();
+// wd.X=&UContainer::GetDoubleTime();
 
  wd.YShift=yshift;
  if(itemd->GetOwner())
-  itemd->GetLongName(static_pointer_cast<NAContainer>(itemd->GetOwner()->GetOwner()),wd.Legend);
+  itemd->GetLongName(static_pointer_cast<UContainer>(itemd->GetOwner()->GetOwner()),wd.Legend);
  else
   itemd->GetLongName(0,wd.Legend);
  wd.Legend+=string("[")+RDK::sntoa(output)+string(":");
  wd.Legend+=RDK::sntoa(outindex)+string("]");
- wd.DataSource=item;
+// wd.DataSource=item;
 
  if(color == 0) // Подбор подходящего цвета
   wd.Color=watch->Chart1->GetFreeSeriesColor(true);
@@ -42,19 +42,19 @@ void AddWatch(TWatchFrame *watch, RDK::UContainer *item, int output, int outinde
 }
 
 // Добавляем посторонний объект в окно наблюдений (график по времени)
-void AddWatch(TWatchFrame *watch, NameT name, double *y, double watchinterval, double yshift, TPenStyle style, TColor color)
+void AddWatch(TUWatchFrame *watch, NameT name, double *y, double watchinterval, double yshift, TPenStyle style, TColor color)
 {
  if(!watch || !y)
   return;
 
- OutGateWatchData wd;
+ TUWatchInfo wd;
  wd.FullUpdate=false;
  wd.WatchInterval=watchinterval;
- wd.X=&NAContainer::GetDoubleTime();
+// wd.X=&UContainer::GetDoubleTime();
 
  wd.YShift=yshift;
  wd.Legend=name;
- wd.DataSource=0;
+// wd.DataSource=0;
 
  if(color == 0) // Подбор подходящего цвета
   wd.Color=watch->Chart1->GetFreeSeriesColor(true);
@@ -69,14 +69,14 @@ void AddWatch(TWatchFrame *watch, NameT name, double *y, double watchinterval, d
 
 
 // Добавляем объект в окно наблюдений (график по частоте)
-void AddFrequencyWatch(TWatchFrame *watch, RDK::UContainer* item, double watchinterval, double yshift, TPenStyle style, TColor color)
+void AddFrequencyWatch(TUWatchFrame *watch, RDK::UContainer* item, double watchinterval, double yshift, TPenStyle style, TColor color)
 {
  NFrequencyReceiver *itemd=dynamic_cast<NFrequencyReceiver*>(item);
 
  if(!itemd || !watch)
   return;
 
- OutGateWatchData wd;
+ TUWatchInfo wd;
  wd.FullUpdate=true;
  wd.WatchInterval=watchinterval;
  wd.X=&itemd->GetXResult()[0];
@@ -87,7 +87,7 @@ void AddFrequencyWatch(TWatchFrame *watch, RDK::UContainer* item, double watchin
  else
   itemd->GetLongName(0,wd.Legend);
 // wd.Legend+=string("[")+sntoa(output)+string(":")+sntoa(outindex)+string("]");
- wd.DataSource=item;
+// wd.DataSource=item;
 
  if(color == 0) // Подбор подходящего цвета
   wd.Color=watch->Chart1->GetFreeSeriesColor(true);

@@ -367,7 +367,7 @@ bool TNManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name, 
  RDK::UEPtr<RDK::UNet> net=RDK::dynamic_pointer_cast<RDK::UNet>(GetModel());
 
  bool res=true;
- string source_name=cs_name+".NManipulatorSource1";
+ std::string source_name=cs_name+".NManipulatorSource1";
  if(!cs_name.empty())
  {
  net->BreakConnectorLink(source_name,0);

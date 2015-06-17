@@ -20,16 +20,16 @@ namespace NMSDK {
 //using namespace RDK;
 
 // Записывает изображение в bitmap
-RDK::UBitmap& operator << (RDK::UBitmap &bmp, const RDK::UItemData &data);
+RDK_LIB_TYPE RDK::UBitmap& operator << (RDK::UBitmap &bmp, const RDK::UItemData &data);
 
 // Записывает изображение в data
 // data.DataSize устанавливается = 1
 // Формал записи: Width,Height,ColorModel,<данные>
-RDK::UItemData& operator >> (const RDK::UBitmap &bmp, RDK::UItemData &data);
+RDK_LIB_TYPE RDK::UItemData& operator >> (const RDK::UBitmap &bmp, RDK::UItemData &data);
 
 // Записывает изображение в data
 // Предполагает, что память уже выделена
 // Формал записи: Width,Height,ColorModel,<данные>
-const RDK::UItemData& operator >> (const RDK::UBitmap &bmp, const RDK::UItemData &data);
+RDK_LIB_TYPE const RDK::UItemData& operator >> (const RDK::UBitmap &bmp, const RDK::UItemData &data);
 }
 #endif
