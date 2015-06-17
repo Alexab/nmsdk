@@ -75,7 +75,7 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+sntoa(z+1)+".bmp";
+   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
@@ -114,7 +114,7 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+sntoa(z+1)+".bmp";
+   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
@@ -159,7 +159,7 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+sntoa(z+1)+".bmp";
+   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
@@ -198,7 +198,7 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+sntoa(z+1)+".bmp";
+   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
