@@ -1,0 +1,25 @@
+Rdk = Rdk
+Bin = Bin
+Libraries/Nmsdk-ActLib = Libraries/Nmsdk-ActLib
+Libraries/Nmsdk-BasicLib = Libraries/Nmsdk-BasicLib
+Libraries/Nmsdk-MathLib = Libraries/Nmsdk-MathLib
+Libraries/Nmsdk-MotionControlLib = Libraries/Nmsdk-MotionControlLib
+Libraries/Nmsdk-NeuronLifeLib = Libraries/Nmsdk-NeuronLifeLib
+Libraries/Nmsdk-PhysLib = Libraries/Nmsdk-PhysLib
+Libraries/Nmsdk-PulseLib = Libraries/Nmsdk-PulseLib
+Libraries/Nmsdk-PulseNeuronLib = Libraries/Nmsdk-PulseNeuronLib
+Libraries/Nmsdk-ReceiverLib = Libraries/Nmsdk-ReceiverLib
+Libraries/Nmsdk-SensorLib = Libraries/Nmsdk-SensorLib
+Libraries/Nmsdk-SourceLib = Libraries/Nmsdk-SourceLib
+Libraries/Rdk-BasicLib = Libraries/Rdk-BasicLib
+Libraries/Rdk-BasicStatisticLib = Libraries/Rdk-BasicStatisticLib
+Libraries/Rdk-IoLib = Libraries/Rdk-IoLib
+Libraries/Rdk-SourcesLib = Libraries/Rdk-SourcesLib
+
+[subpaths]
+https://bitbucket.org/Alexab/nmsdk/Rdk = https://bitbucket.org/Alexab/rdk
+https://bitbucket.org/Alexab/nmsdk/Bin = https://bitbucket.org/Alexab/nmsdkbin
+https://bitbucket.org/Alexab/Nmsdk/Bin = https://bitbucket.org/Alexab/nmsdkbin
+https://bitbucket.org/Alexab/NMSDK/Bin = https://bitbucket.org/Alexab/nmsdkbin
+https://bitbucket.org/alexab/nmsdk/Bin = https://bitbucket.org/Alexab/NmsdkBin
+https://bitbucket.org/alexab/nmsdk/Rdk = https://bitbucket.org/Alexab/rdk
