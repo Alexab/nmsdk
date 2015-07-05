@@ -1,60 +1,60 @@
-﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-		<PropertyGroup>
-			<ProjectGuid>{F9AEDC3D-A36B-4B4C-B8E6-162A6B233418}</ProjectGuid>
-		</PropertyGroup>
-		<ItemGroup>
-			<Projects Include="MotionControl.cbproj">
-				<Dependencies>..\..\..\Build\Dll\BCB\nmsdk.bcb.cbproj</Dependencies>
-			</Projects>
-			<Projects Include="..\..\..\Build\Dll\BCB\nmsdk.bcb.cbproj">
-				<Dependencies>..\..\..\RDK\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj</Dependencies>
-			</Projects>
-			<Projects Include="..\..\..\RDK\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj">
-				<Dependencies/>
-			</Projects>
-		</ItemGroup>
-		<ProjectExtensions>
-			<Borland.Personality>Default.Personality.12</Borland.Personality>
-			<Borland.ProjectType/>
-			<BorlandProject>
-				<Default.Personality/>
-			</BorlandProject>
-		</ProjectExtensions>
-		<Target Name="MotionControl" DependsOnTargets="nmsdk.bcb">
-			<MSBuild Projects="MotionControl.cbproj"/>
-		</Target>
-		<Target Name="MotionControl:Clean" DependsOnTargets="nmsdk.bcb:Clean">
-			<MSBuild Projects="MotionControl.cbproj" Targets="Clean"/>
-		</Target>
-		<Target Name="MotionControl:Make" DependsOnTargets="nmsdk.bcb:Make">
-			<MSBuild Projects="MotionControl.cbproj" Targets="Make"/>
-		</Target>
-		<Target Name="nmsdk_bcb" DependsOnTargets="libcurl.bcb">
-			<MSBuild Projects="..\..\..\Build\Dll\BCB\nmsdk.bcb.cbproj"/>
-		</Target>
-		<Target Name="nmsdk_bcb:Clean" DependsOnTargets="libcurl.bcb:Clean">
-			<MSBuild Projects="..\..\..\Build\Dll\BCB\nmsdk.bcb.cbproj" Targets="Clean"/>
-		</Target>
-		<Target Name="nmsdk_bcb:Make" DependsOnTargets="libcurl.bcb:Make">
-			<MSBuild Projects="..\..\..\Build\Dll\BCB\nmsdk.bcb.cbproj" Targets="Make"/>
-		</Target>
-		<Target Name="libcurl_bcb">
-			<MSBuild Projects="..\..\..\RDK\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj"/>
-		</Target>
-		<Target Name="libcurl_bcb:Clean">
-			<MSBuild Projects="..\..\..\RDK\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj" Targets="Clean"/>
-		</Target>
-		<Target Name="libcurl_bcb:Make">
-			<MSBuild Projects="..\..\..\RDK\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj" Targets="Make"/>
-		</Target>
-		<Target Name="Build">
-			<CallTarget Targets="MotionControl;nmsdk_bcb;libcurl_bcb"/>
-		</Target>
-		<Target Name="Clean">
-			<CallTarget Targets="MotionControl:Clean;nmsdk_bcb:Clean;libcurl_bcb:Clean"/>
-		</Target>
-		<Target Name="Make">
-			<CallTarget Targets="MotionControl:Make;nmsdk_bcb:Make;libcurl_bcb:Make"/>
-		</Target>
-		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
-	</Project>
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6DF09E06-9E38-4E96-A1C8-512178DD7DC5}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MotionControl.cbproj">
+            <Dependencies>..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj;..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj</Dependencies>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MotionControl" DependsOnTargets="Nmsdk-SourceLib;rdk.bcb.static">
+        <MSBuild Projects="MotionControl.cbproj"/>
+    </Target>
+    <Target Name="MotionControl:Clean" DependsOnTargets="Nmsdk-SourceLib:Clean;rdk.bcb.static:Clean">
+        <MSBuild Projects="MotionControl.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MotionControl:Make" DependsOnTargets="Nmsdk-SourceLib:Make;rdk.bcb.static:Make">
+        <MSBuild Projects="MotionControl.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Nmsdk-SourceLib">
+        <MSBuild Projects="..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj"/>
+    </Target>
+    <Target Name="Nmsdk-SourceLib:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Nmsdk-SourceLib:Make">
+        <MSBuild Projects="..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="rdk_bcb_static">
+        <MSBuild Projects="..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj"/>
+    </Target>
+    <Target Name="rdk_bcb_static:Clean">
+        <MSBuild Projects="..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rdk_bcb_static:Make">
+        <MSBuild Projects="..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MotionControl;Nmsdk-SourceLib;rdk_bcb_static"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MotionControl:Clean;Nmsdk-SourceLib:Clean;rdk_bcb_static:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MotionControl:Make;Nmsdk-SourceLib:Make;rdk_bcb_static:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

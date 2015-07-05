@@ -5,6 +5,9 @@
 
 #ifdef __BORLANDC__
 
+#pragma link "../../../Rdk/Bin/Platform/Win/libcurl.bcb.lib"
+#pragma link "../../../Rdk/Bin/Platform/Win/rdk.bcb.static.lib"
+#pragma link "../../../Libraries/Rdk-BasicLib/Bin/Bcb/Rdk-BasicLib.lib"
 #pragma link "../../../Libraries/Rdk-BasicLib/Bin/Bcb/Rdk-BasicLib.lib"
 #pragma link "../../../Libraries/Rdk-BasicStatisticLib/Bin/Bcb/Rdk-BasicStatisticLib.lib"
 #pragma link "../../../Libraries/Rdk-IoLib/Bin/Bcb/Rdk-IoLib.lib"
@@ -24,6 +27,8 @@
 #endif
 
 #ifdef _MSC_VER
+#pragma comment( lib, "../../../../Rdk/Bin/Platform/Win/libcurl.bcb.lib")
+#pragma comment( lib, "../../../../Rdk/Bin/Platform/Win/rdk.bcb.static.lib")
 #pragma comment( lib, "../../../../Libraries/Rdk-BasicLib/Bin/Vs/Rdk-BasicLib.lib")
 #pragma comment( lib, "../../../../Libraries/Rdk-BasicStatisticLib/Bin/Vs/Rdk-BasicStatisticLib.lib")
 #pragma comment( lib, "../../../../Libraries/Rdk-IoLib/Bin/Vs/Rdk-IoLib.lib")

@@ -14,8 +14,8 @@
 #ifndef NMSDK_H
 #define NMSDK_H
 
-#include "../../Kernel/NKernel.h"
-#include "../../Libraries/NLibraries.h"
+//#include "../../Kernel/NKernel.h"
+#include "../../Libraries/Libraries.h"
 #include "../../GUI/NGraphics.h"
           /*
 namespace NMSDK {

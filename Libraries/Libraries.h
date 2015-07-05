@@ -11,7 +11,7 @@
 #include "Nmsdk-BasicLib/Deploy/Include/Lib.h"
 #include "Nmsdk-MathLib/Deploy/Include/Lib.h"
 #include "Nmsdk-MotionControlLib/Deploy/Include/Lib.h"
-#include "Nmsdk-NeuronLib/Deploy/Include/Lib.h"
+#include "Nmsdk-NeuronLifeLib/Deploy/Include/Lib.h"
 #include "Nmsdk-PhysLib/Deploy/Include/Lib.h"
 #include "Nmsdk-PulseLib/Deploy/Include/Lib.h"
 #include "Nmsdk-PulseNeuronLib/Deploy/Include/Lib.h"
@@ -26,8 +26,6 @@ extern RDK_LIB_TYPE bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULib
 
 /// Функция должна быть реализована в конечном проекте
 extern RDK_LIB_TYPE bool RDK_CALL RdkCreatePredefinedStructure(RDK::UEnvironment* env, int predefined_structure);
-
-}
 
 }
 
