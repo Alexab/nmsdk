@@ -228,8 +228,6 @@
         Caption = ' Communication control '
         Enabled = False
         TabOrder = 2
-        ExplicitWidth = 591
-        ExplicitHeight = 449
         DesignSize = (
           593
           464)
@@ -491,15 +489,11 @@
       Margins.Bottom = 4
       Caption = 'Neuro Control'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox5: TGroupBox
         Left = 0
         Top = 0
         Width = 263
-        Height = 582
+        Height = 592
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -641,9 +635,9 @@
           OnClick = ControlVoltageCheckBoxClick
         end
         object GroupBox10: TGroupBox
-          Left = 3
-          Top = 472
-          Width = 257
+          Left = 2
+          Top = 483
+          Width = 259
           Height = 107
           Margins.Left = 4
           Margins.Top = 4
@@ -658,7 +652,7 @@
           object MomentTrackBar: TTrackBar
             Left = 4
             Top = 24
-            Width = 154
+            Width = 156
             Height = 35
             Margins.Left = 4
             Margins.Top = 4
@@ -674,7 +668,7 @@
           object MomentProgressBar: TProgressBar
             Left = 17
             Top = 69
-            Width = 130
+            Width = 132
             Height = 23
             Margins.Left = 4
             Margins.Top = 4
@@ -686,7 +680,7 @@
             ExplicitWidth = 128
           end
           object ExtMomentEdit: TEdit
-            Left = 155
+            Left = 157
             Top = 67
             Width = 95
             Height = 21
@@ -742,9 +736,6 @@
           Align = alBottom
           Caption = ' External power  '
           TabOrder = 10
-          ExplicitLeft = 3
-          ExplicitTop = 365
-          ExplicitWidth = 257
           DesignSize = (
             259
             107)

@@ -9,6 +9,7 @@
 #include <Vcl.Forms.hpp>
 #include "TUVisualControllerFormUnit.h"
 #include "NDrawManipulatorFrameUnit.h"
+#include "TUVisualControllerFrameUnit.h"
 //---------------------------------------------------------------------------
 class TNDrawManipulatorForm : public TUVisualControllerForm
 {

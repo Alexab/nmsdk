@@ -4,12 +4,15 @@
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="MotionControl.cbproj">
-            <Dependencies>..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj;..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj</Dependencies>
+            <Dependencies>..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj;..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj;..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj</Dependencies>
         </Projects>
         <Projects Include="..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -20,13 +23,13 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="MotionControl" DependsOnTargets="Nmsdk-SourceLib;rdk.bcb.static">
+    <Target Name="MotionControl" DependsOnTargets="Nmsdk-SourceLib;rdk.bcb.static;Nmsdk-BasicLib">
         <MSBuild Projects="MotionControl.cbproj"/>
     </Target>
-    <Target Name="MotionControl:Clean" DependsOnTargets="Nmsdk-SourceLib:Clean;rdk.bcb.static:Clean">
+    <Target Name="MotionControl:Clean" DependsOnTargets="Nmsdk-SourceLib:Clean;rdk.bcb.static:Clean;Nmsdk-BasicLib:Clean">
         <MSBuild Projects="MotionControl.cbproj" Targets="Clean"/>
     </Target>
-    <Target Name="MotionControl:Make" DependsOnTargets="Nmsdk-SourceLib:Make;rdk.bcb.static:Make">
+    <Target Name="MotionControl:Make" DependsOnTargets="Nmsdk-SourceLib:Make;rdk.bcb.static:Make;Nmsdk-BasicLib:Make">
         <MSBuild Projects="MotionControl.cbproj" Targets="Make"/>
     </Target>
     <Target Name="Nmsdk-SourceLib">
@@ -47,14 +50,23 @@
     <Target Name="rdk_bcb_static:Make">
         <MSBuild Projects="..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="Nmsdk-BasicLib">
+        <MSBuild Projects="..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj"/>
+    </Target>
+    <Target Name="Nmsdk-BasicLib:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Nmsdk-BasicLib:Make">
+        <MSBuild Projects="..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="MotionControl;Nmsdk-SourceLib;rdk_bcb_static"/>
+        <CallTarget Targets="MotionControl;Nmsdk-SourceLib;rdk_bcb_static;Nmsdk-BasicLib"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="MotionControl:Clean;Nmsdk-SourceLib:Clean;rdk_bcb_static:Clean"/>
+        <CallTarget Targets="MotionControl:Clean;Nmsdk-SourceLib:Clean;rdk_bcb_static:Clean;Nmsdk-BasicLib:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="MotionControl:Make;Nmsdk-SourceLib:Make;rdk_bcb_static:Make"/>
+        <CallTarget Targets="MotionControl:Make;Nmsdk-SourceLib:Make;rdk_bcb_static:Make;Nmsdk-BasicLib:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

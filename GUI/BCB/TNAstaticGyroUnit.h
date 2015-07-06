@@ -11,7 +11,7 @@
 #include <Vcl.ExtCtrls.hpp>
 
 #include "nmsdk_cpp_initdll.h"
-#include "nmsdk.bcb.h"
+//#include "nmsdk.bcb.h"
 //---------------------------------------------------------------------------
 class TNAstaticGyro : public TUVisualControllerForm
 {

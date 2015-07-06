@@ -2,43 +2,68 @@ object NDrawManipulatorForm: TNDrawManipulatorForm
   Left = 0
   Top = 0
   Caption = 'NDrawManipulatorForm'
-  ClientHeight = 526
-  ClientWidth = 553
+  ClientHeight = 658
+  ClientWidth = 691
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 17
   inline NDrawManipulatorFrame1: TNDrawManipulatorFrame
     Left = 0
     Top = 0
-    Width = 553
-    Height = 526
+    Width = 691
+    Height = 658
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
-    ExplicitLeft = 37
-    ExplicitTop = -41
+    ExplicitWidth = 691
+    ExplicitHeight = 658
     inherited Panel3: TPanel
-      Width = 553
-      Height = 526
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 513
-      ExplicitHeight = 382
+      Width = 691
+      Height = 658
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      ExplicitWidth = 691
+      ExplicitHeight = 658
       inherited Image: TImage
-        Width = 551
-        Height = 499
+        Width = 689
+        Height = 624
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        ExplicitLeft = 1
+        ExplicitTop = 1
+        ExplicitWidth = 689
+        ExplicitHeight = 624
       end
       inherited Button1: TButton
-        Top = 500
-        Width = 551
-        ExplicitLeft = 1
-        ExplicitTop = 315
-        ExplicitWidth = 548
+        Top = 625
+        Width = 689
+        Height = 31
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        ExplicitTop = 625
+        ExplicitWidth = 689
+        ExplicitHeight = 31
       end
     end
   end

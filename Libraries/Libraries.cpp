@@ -8,7 +8,6 @@
 #pragma link "../../../Rdk/Bin/Platform/Win/libcurl.bcb.lib"
 #pragma link "../../../Rdk/Bin/Platform/Win/rdk.bcb.static.lib"
 #pragma link "../../../Libraries/Rdk-BasicLib/Bin/Bcb/Rdk-BasicLib.lib"
-#pragma link "../../../Libraries/Rdk-BasicLib/Bin/Bcb/Rdk-BasicLib.lib"
 #pragma link "../../../Libraries/Rdk-BasicStatisticLib/Bin/Bcb/Rdk-BasicStatisticLib.lib"
 #pragma link "../../../Libraries/Rdk-IoLib/Bin/Bcb/Rdk-IoLib.lib"
 #pragma link "../../../Libraries/Rdk-SourcesLib/Bin/Bcb/Rdk-SourcesLib.lib"
@@ -53,6 +52,7 @@ namespace RDK {
 bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
 {
  using namespace NMSDK;
+ RDK::UItemData::DefaultDataSize=sizeof(double);
  libs_list.push_back(&RDK::BCLLibrary);
  libs_list.push_back(&RDK::IOLibrary);
 // libs_list.push_back(&CRLibrary);
@@ -64,7 +64,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&NMSDK::MathLibrary);
  libs_list.push_back(&NMSDK::PhysLibrary);
  libs_list.push_back(&NMSDK::SensorLibrary);
- libs_list.push_back(&NMSDK::SourceLibrary);
+ libs_list.push_back(&NMSDK::NeuronSourceLibrary);
  libs_list.push_back(&NMSDK::ReceiverLibrary);
  libs_list.push_back(&NMSDK::PulseLibrary);
  libs_list.push_back(&NMSDK::NeuronLifeLibrary);

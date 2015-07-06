@@ -2,10 +2,10 @@
 #define NMSDK_CPP
 
 #include "nmsdk.h"
-#include "../../Kernel/NKernel.cpp"
+/*#include "../../Kernel/NKernel.cpp"
 #include "../../Libraries/NLibraries.cpp"
 #include "../../GUI/NGraphics.cpp"
-
+  */
     /*
 namespace NMSDK {
 

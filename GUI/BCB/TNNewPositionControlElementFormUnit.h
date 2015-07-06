@@ -9,7 +9,7 @@
 #include <Vcl.Forms.hpp>
 #include "TUVisualControllerFormUnit.h"
 #include "nmsdk_cpp_initdll.h"
-#include "nmsdk.bcb.h"
+//#include "nmsdk.bcb.h"
 #include <Vcl.Grids.hpp>
 #include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------

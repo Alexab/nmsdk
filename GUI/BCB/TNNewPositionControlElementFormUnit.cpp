@@ -5,7 +5,7 @@
 
 #include "UComponentsListFormUnit.h"
 #include "TNNewPositionControlElementFormUnit.h"
-#include "nmsdk.h"
+//#include "nmsdk.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"

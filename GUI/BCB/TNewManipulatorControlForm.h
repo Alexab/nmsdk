@@ -22,10 +22,11 @@
 #include <Web.HTTPApp.hpp>
 #include <Web.HTTPProd.hpp>
 #include <Vcl.CheckLst.hpp>
+#include <System.ImageList.hpp>
 #include <string>
 
 #include "nmsdk_cpp_initdll.h"
-#include "nmsdk.bcb.h"
+//#include "nmsdk.bcb.h"
 #include "NDrawManipulatorFormUnit.h"
 
 //---------------------------------------------------------------------------

@@ -21,10 +21,11 @@
 #include <IdTCPConnection.hpp>
 #include <Web.HTTPApp.hpp>
 #include <Web.HTTPProd.hpp>
+#include <System.ImageList.hpp>
 #include <string>
 
 #include "nmsdk_cpp_initdll.h"
-#include "nmsdk.bcb.h"
+//#include "nmsdk.bcb.h"
 
 //---------------------------------------------------------------------------
 class TNManipulatorControlForm : public TUVisualControllerForm
