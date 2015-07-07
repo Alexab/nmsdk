@@ -17,9 +17,16 @@ Libraries/Rdk-IoLib = Libraries/Rdk-IoLib
 Libraries/Rdk-SourcesLib = Libraries/Rdk-SourcesLib
 
 [subpaths]
-https://bitbucket.org/Alexab/nmsdk/Rdk = https://bitbucket.org/Alexab/rdk
-https://bitbucket.org/Alexab/nmsdk/Bin = https://bitbucket.org/Alexab/nmsdkbin
-https://bitbucket.org/Alexab/Nmsdk/Bin = https://bitbucket.org/Alexab/nmsdkbin
-https://bitbucket.org/Alexab/NMSDK/Bin = https://bitbucket.org/Alexab/nmsdkbin
-https://bitbucket.org/alexab/nmsdk/Bin = https://bitbucket.org/Alexab/NmsdkBin
-https://bitbucket.org/alexab/nmsdk/Rdk = https://bitbucket.org/Alexab/rdk
+https://bitbucket.org/aicommunity/nmsdk/Rdk = https://bitbucket.org/aicommunity/rdk2
+https://bitbucket.org/aicommunity/nmsdk/Bin = https://bitbucket.org/aicommunity/nmsdk-bin
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-ActLib = https://bitbucket.org/aicommunity/Nmsdk-ActLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-BasicLib = https://bitbucket.org/aicommunity/Nmsdk-BasicLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-MathLib = https://bitbucket.org/aicommunity/Nmsdk-MathLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-MotionControlLib = https://bitbucket.org/aicommunity/Nmsdk-MotionControlLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-NeuronLifeLib = https://bitbucket.org/aicommunity/Nmsdk-NeuronLifeLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-PhysLib = https://bitbucket.org/aicommunity/Nmsdk-PhysLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-PulseLib = https://bitbucket.org/aicommunity/Nmsdk-PulseLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-PulseNeuronLib = https://bitbucket.org/aicommunity/Nmsdk-PulseNeuronLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-ReceiverLib = https://bitbucket.org/aicommunity/Nmsdk-ReceiverLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-SensorLib = https://bitbucket.org/aicommunity/Nmsdk-SensorLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-SourceLib = https://bitbucket.org/aicommunity/Nmsdk-SourceLib
