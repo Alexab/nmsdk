@@ -17,7 +17,7 @@ Libraries/Rdk-IoLib = Libraries/Rdk-IoLib
 Libraries/Rdk-SourcesLib = Libraries/Rdk-SourcesLib
 
 [subpaths]
-https://bitbucket.org/aicommunity/nmsdk/Rdk = https://bitbucket.org/aicommunity/rdk2
+https://bitbucket.org/aicommunity/nmsdk/Rdk = https://bitbucket.org/aicommunity/rdk
 https://bitbucket.org/aicommunity/nmsdk/Bin = https://bitbucket.org/aicommunity/nmsdk-bin
 https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-ActLib = https://bitbucket.org/aicommunity/Nmsdk-ActLib
 https://bitbucket.org/aicommunity/nmsdk/Libraries/Nmsdk-BasicLib = https://bitbucket.org/aicommunity/Nmsdk-BasicLib
