@@ -34,6 +34,12 @@ USEFORM("..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.cpp", ApplicationOptio
 USEFORM("..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.cpp", IdHttpResultBroadcasterFrame); /* TFrame: File Type */
 USEFORM("..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.cpp", IdHttpResultBroadcasterForm);
 USEFORM("..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.cpp", EnchancedSG); /* TFrame: File Type */
+USEFORM("..\..\..\GUI\BCB\TNAstaticGyroUnit.cpp", NAstaticGyro);
+USEFORM("..\..\..\GUI\BCB\NDrawManipulatorFrameUnit.cpp", NDrawManipulatorFrame); /* TFrame: File Type */
+USEFORM("..\..\..\GUI\BCB\NDrawManipulatorFormUnit.cpp", NDrawManipulatorForm);
+USEFORM("..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.cpp", NNewPositionControlElementForm);
+USEFORM("..\..\..\GUI\BCB\TNManipulatorControlForm.cpp", NManipulatorControlForm);
+USEFORM("..\..\..\GUI\BCB\TNewManipulatorControlForm.cpp", NewManipulatorControlForm);
 USEFORM("..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.cpp", IdTcpResultBroadcasterForm);
 USEFORM("..\..\..\RDK\GUI\BCB\UClassesDescriptionsFormUnit.cpp", UClassesDescriptionsForm);
 USEFORM("..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.cpp", UVisualControllerFrame); /* TFrame: File Type */
@@ -77,6 +83,11 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TUServerControlForm), &UServerControlForm);
 		Application->CreateForm(__classid(TApplicationOptionsForm), &ApplicationOptionsForm);
 		Application->CreateForm(__classid(TUClassesDescriptionsForm), &UClassesDescriptionsForm);
+		Application->CreateForm(__classid(TNDrawManipulatorForm), &NDrawManipulatorForm);
+		Application->CreateForm(__classid(TNNewPositionControlElementForm), &NNewPositionControlElementForm);
+		Application->CreateForm(__classid(TNManipulatorControlForm), &NManipulatorControlForm);
+		Application->CreateForm(__classid(TNewManipulatorControlForm), &NewManipulatorControlForm);
+		Application->CreateForm(__classid(TNAstaticGyro), &NAstaticGyro);
 		ApplicationInitialized=true;
    		Application->Run();
 		CloseHandle(RdkLockStartapMutex);
