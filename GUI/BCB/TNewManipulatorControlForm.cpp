@@ -74,6 +74,8 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
 
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
  if(Manipulator)
@@ -256,6 +258,8 @@ TUVisualControllerForm* TNewManipulatorControlForm::New(TComponent *owner)
 void TNewManipulatorControlForm::LoadInterfaceInfoFromNet(void)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
  if(!ControlSystem)
@@ -310,6 +314,8 @@ void TNewManipulatorControlForm::ASaveParameters(RDK::USerStorageXML &xml)
 void TNewManipulatorControlForm::ALoadParameters(RDK::USerStorageXML &xml)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  ManipulatorName.clear();
  ControlSystemName.clear();
 
@@ -370,6 +376,8 @@ void TNewManipulatorControlForm::ALoadParameters(RDK::USerStorageXML &xml)
 bool TNewManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name, const std::string &man_name)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return false;
  RDK::UEPtr<RDK::UNet> net=RDK::dynamic_pointer_cast<RDK::UNet>(model);
 
  if(cs_name.empty())
@@ -415,6 +423,8 @@ bool TNewManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name
 void TNewManipulatorControlForm::ReadComponentData(void)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
 
  if(!ControlSystem)
@@ -433,6 +443,8 @@ void TNewManipulatorControlForm::ReadComponentData(void)
 void TNewManipulatorControlForm::ReconnectCurrentManipulator(void)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  if(Manipulator)
@@ -452,6 +464,8 @@ void TNewManipulatorControlForm::ReconnectCurrentManipulator(void)
 void TNewManipulatorControlForm::ReconnectManipulator(void)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  if(Manipulator)
@@ -471,6 +485,8 @@ void TNewManipulatorControlForm::ReconnectManipulator(void)
 void __fastcall TNewManipulatorControlForm::Disconnect1Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -485,6 +501,8 @@ void __fastcall TNewManipulatorControlForm::Disconnect1Click(TObject *Sender)
 void __fastcall TNewManipulatorControlForm::MoveLeft1Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -520,6 +538,8 @@ void __fastcall TNewManipulatorControlForm::SelectManipulator1Click(TObject *Sen
 void __fastcall TNewManipulatorControlForm::Connect1Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -584,6 +604,8 @@ void __fastcall TNewManipulatorControlForm::DisconnectButtonClick(TObject *Sende
 void __fastcall TNewManipulatorControlForm::Reset1Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -616,6 +638,8 @@ void __fastcall TNewManipulatorControlForm::StopButtonClick(TObject *Sender)
 void __fastcall TNewManipulatorControlForm::Start1Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -630,6 +654,8 @@ void __fastcall TNewManipulatorControlForm::Start1Click(TObject *Sender)
 void __fastcall TNewManipulatorControlForm::Stop1Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -644,6 +670,8 @@ void __fastcall TNewManipulatorControlForm::Stop1Click(TObject *Sender)
 void __fastcall TNewManipulatorControlForm::Button2Click(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
@@ -673,6 +701,8 @@ void __fastcall TNewManipulatorControlForm::IIAfferentTrackBarChange(TObject *Se
   return;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -712,6 +742,8 @@ void __fastcall TNewManipulatorControlForm::IINumAfferentTrackBarChange(TObject 
  bool res=true;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -758,6 +790,8 @@ void __fastcall TNewManipulatorControlForm::ControlVoltageCheckBoxClick(TObject 
  bool res=true;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -790,6 +824,8 @@ void __fastcall TNewManipulatorControlForm::SelectControlSystem1Click(TObject *S
   return;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  ControlSystemName=UComponentsListForm->ComponentsListFrame1->GetSelectedComponentLongName();
 
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -821,6 +857,8 @@ void __fastcall TNewManipulatorControlForm::VoltageMulTrackBarChange(TObject *Se
  VoltageMulEdit->Text=FloatToStrF(value,ffFixed,3,3);
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -840,6 +878,8 @@ void __fastcall TNewManipulatorControlForm::TimeDurationTrackBarChange(TObject *
  TimeDurationEdit->Text=FloatToStrF(value,ffFixed,3,3);
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -855,6 +895,8 @@ void __fastcall TNewManipulatorControlForm::TimeDurationTrackBarChange(TObject *
 void __fastcall TNewManipulatorControlForm::PACDeactivatorTimeTrackBarChange(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -884,6 +926,8 @@ void __fastcall TNewManipulatorControlForm::PACActivatorTimeTrackBarChange(TObje
 
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
 // RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -913,6 +957,8 @@ void __fastcall TNewManipulatorControlForm::PACActivatorTimeTrackBarChange(TObje
 void __fastcall TNewManipulatorControlForm::SendVButtonClick(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
 // RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -933,6 +979,8 @@ void __fastcall TNewManipulatorControlForm::SendVButtonClick(TObject *Sender)
 void __fastcall TNewManipulatorControlForm::PACMultiplicatorTrackBarChange(TObject *Sender)
 {
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
 // RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -967,6 +1015,8 @@ void __fastcall TNewManipulatorControlForm::MomentTrackBarChange(TObject *Sender
   return;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -1013,6 +1063,8 @@ void __fastcall TNewManipulatorControlForm::MovementControlTrackBarChange(TObjec
   return;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
@@ -1126,6 +1178,8 @@ void __fastcall TNewManipulatorControlForm::CheckListBox1Click(TObject *Sender)
  bool res=true;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
  RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
