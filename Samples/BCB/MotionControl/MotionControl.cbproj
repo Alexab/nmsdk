@@ -81,8 +81,8 @@
         <AllPackageLibs>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib;inetwinsockets.lib;xmlrtl.lib;vclactnband.lib</AllPackageLibs>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <IncludePath>..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\include;..\..\..\Deploy\Include\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\lib;..\..\..\Deploy\Include\;..\..\..\Deploy\Dll\;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>..\..\..\Rdk\Core\Math\;..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\include;..\..\..\Deploy\Include\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\..\..\Rdk\Core\Math\;..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\lib;..\..\..\Deploy\Include\;..\..\..\Deploy\Dll\;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_wpar>false</BCC_wpar>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
@@ -177,6 +177,10 @@
         </CppCompile>
         <CppCompile Include="..\..\..\Libraries\Libraries.cpp">
             <BuildOrder>52</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\..\Rdk\Core\Math\MMatrixBase.cpp">
+            <DependentOn>..\..\..\Rdk\Core\Math\MMatrixBase.h</DependentOn>
+            <BuildOrder>51</BuildOrder>
         </CppCompile>
         <CppCompile Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.cpp">
             <Form>ApplicationOptionsForm</Form>
@@ -970,13 +974,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
