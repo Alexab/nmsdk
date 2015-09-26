@@ -52,7 +52,7 @@ namespace RDK {
 bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
 {
  using namespace NMSDK;
- RDK::UItemData::DefaultDataSize=sizeof(double);
+// RDK::UItemData::DefaultDataSize=sizeof(double);
  libs_list.push_back(&RDK::BCLLibrary);
  libs_list.push_back(&RDK::IOLibrary);
 // libs_list.push_back(&CRLibrary);
