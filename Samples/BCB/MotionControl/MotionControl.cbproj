@@ -8,7 +8,7 @@
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>1</TargetedPlatforms>
+        <TargetedPlatforms>3</TargetedPlatforms>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -88,13 +88,16 @@
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <ILINK_LibraryPath>E:\Science\AI\AISD\NMSDK\Bin\Platform\Win\;E:\Science\AI\AISD\Nmsdk\Bin\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>E:\Science\AI\AISD\Nmsdk\Bin\Platform\Win\Lib.Bcb\;E:\Science\AI\AISD\NMSDK\Bin\Platform\Win\;E:\Science\AI\AISD\Nmsdk\Bin\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <Defines>LIBRDK_LIBRARY_IMPORT;$(Defines)</Defines>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
@@ -142,6 +145,74 @@
         <Defines>NDEBUG;$(Defines)</Defines>
     </PropertyGroup>
     <ItemGroup>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>51</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>52</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>53</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>54</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MotionControlLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>55</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>56</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>57</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseNeuronLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ReceiverLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SensorLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SourceLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>58</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>59</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>59</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>59</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>51</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <CppCompile Include="..\..\..\GUI\BCB\NDrawManipulatorFormUnit.cpp">
             <Form>NDrawManipulatorForm</Form>
             <FormType>dfm</FormType>
@@ -411,51 +482,51 @@
         <ResFiles Include="MotionControl.res">
             <BuildOrder>1</BuildOrder>
         </ResFiles>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFormUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesDescriptionsFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesDescriptionsFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesDescriptionsFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFormUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -532,12 +603,75 @@
             </CPlusPlusBuilder.Personality>
             <Platforms>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
+                <Platform value="Win64">True</Platform>
             </Platforms>
             <ModelSupport>False</ModelSupport>
-            <Deployment Version="1">
+            <Deployment Version="2">
                 <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin64\borlndmm.dll" Class="DependencyModule">
                     <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MotionControlLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>MotionControl.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -552,8 +686,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -562,13 +697,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -579,12 +710,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>MotionControl.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -974,9 +1099,9 @@
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
