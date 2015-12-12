@@ -98,7 +98,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
     }
     catch (RDK::UException &exception)
     {
-     Engine_LogMessage(exception.GetType(), (std::string("Global Exception Catcher: ")+exception.CreateLogMessage()).c_str());
+     Engine_LogMessage(exception.GetType(), (std::string("Global Exception Catcher: ")+exception.what()).c_str());
     }
     catch (Exception &exception)
 	{
