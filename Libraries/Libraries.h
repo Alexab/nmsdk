@@ -18,6 +18,7 @@
 #include "Nmsdk-ReceiverLib/Deploy/Include/Lib.h"
 #include "Nmsdk-SensorLib/Deploy/Include/Lib.h"
 #include "Nmsdk-SourceLib/Deploy/Include/Lib.h"
+#include "Nmsdk-PulseClassicModelsLib/Core/Lib.h"
 
 namespace RDK {
 
