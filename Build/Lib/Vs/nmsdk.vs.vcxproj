@@ -14,6 +14,7 @@
     <ProjectGuid>{4E8B8138-5F61-4C82-848D-A8DCE290A343}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>nmsdk_vs</RootNamespace>
+    <ProjectName>nmsdk.vs</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -40,13 +41,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectPath)\..\..\..\..\ThirdParty\RDK\Deploy\Include;$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)\..\..\..\Deploy\Lib\</OutDir>
+    <OutDir>$(ProjectDir)\..\..\..\Bin\Platform\Win</OutDir>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProjectPath)\..\..\..\..\ThirdParty\RDK\Deploy\Include;$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)\..\..\..\Deploy\Lib\</OutDir>
+    <OutDir>$(ProjectDir)\..\..\..\Bin\Platform\Win</OutDir>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -90,14 +91,31 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Deploy\Include\nmsdk.h" />
-    <ClInclude Include="..\..\..\Deploy\Include\nmsdk_initlib.h" />
+    <ClInclude Include="..\..\..\Libraries\Libraries.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Deploy\Include\nmsdk.cpp" />
-    <ClCompile Include="..\..\..\Deploy\Include\nmsdk_initlib.cpp" />
-    <ClCompile Include="nmsdk_vs.cpp" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\libcurl.vs.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-ActLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-BasicLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-MathLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-MotionControlLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-NeuronLifeLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-PhysLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\NMSDK-PulseClassicModelsLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-PulseLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-PulseNeuronLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-ReceiverLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-SensorLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-SourceLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-BasicLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-BasicStatisticLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-IoLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-SourcesLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\rdk.vs.static.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Libraries\Libraries.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

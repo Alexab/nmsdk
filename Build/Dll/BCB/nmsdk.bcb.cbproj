@@ -146,6 +146,7 @@
     <ItemGroup>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>7</BuildOrder>
+            <IgnorePath>true</IgnorePath>
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>8</BuildOrder>
@@ -173,10 +174,6 @@
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseClassicModelsLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>14</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>51</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseLib.lib" Condition="'$(Platform)'=='Win32'">
@@ -213,6 +210,10 @@
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>51</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
         <ResFiles Include="nmsdk.bcb.res">
@@ -676,13 +677,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

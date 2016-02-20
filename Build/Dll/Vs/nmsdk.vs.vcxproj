@@ -14,6 +14,7 @@
     <ProjectGuid>{4E8B8138-5F61-4C82-848D-A8DCE290A343}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>nmsdk_vs</RootNamespace>
+    <ProjectName>nmsdk.vs</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -40,19 +41,19 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectPath)\..\..\..\..\RDK\Deploy\Include;$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)\..\..\..\Deploy\Dll\</OutDir>
+    <OutDir>$(ProjectDir)\..\..\..\Bin\Platform\Win</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProjectPath)\..\..\..\..\RDK\Deploy\Include;$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)\..\..\..\Deploy\Dll\</OutDir>
+    <OutDir>$(ProjectDir)\..\..\..\Bin\Platform\Win</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;NMSDK_VS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);RDK_UNICODE_RUN;LIBRDK_LIBRARY_EXPORT</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -60,7 +61,8 @@
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <PostBuildEvent>
-      <Command>del $(ProjectDir)\..\..\..\Deploy\Dll\*.i*;del $(ProjectDir)\..\..\..\Deploy\Dll\*.pdb;del $(ProjectDir)\..\..\..\Deploy\Dll\*.exp</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,7 +72,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;NMSDK_VS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);RDK_UNICODE_RUN;LIBRDK_LIBRARY_EXPORT</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -79,24 +81,20 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>del $(ProjectDir)\..\..\..\Deploy\Dll\*.i*;del $(ProjectDir)\..\..\..\Deploy\Dll\*.pdb;del $(ProjectDir)\..\..\..\Deploy\Dll\*.exp</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Deploy\Include\nmsdk.h" />
-    <ClInclude Include="..\..\..\Deploy\Include\nmsdk_initdll.h" />
+    <ClInclude Include="..\..\..\Libraries\Libraries.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Deploy\Include\nmsdk.cpp" />
-    <ClCompile Include="..\..\..\Deploy\Include\nmsdk_initdll.cpp" />
-    <ClCompile Include="..\..\..\Deploy\Include\nmsdk_new.win.cpp" />
-    <ClCompile Include="..\..\..\RDK\Deploy\Include\myrdk.win.cpp" />
-    <ClCompile Include="..\..\..\RDK\Deploy\Include\rdk.win.cpp" />
+    <ClCompile Include="..\..\..\Libraries\Libraries.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -105,11 +103,30 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="nmsdk_vs.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\libcurl.vs.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-ActLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-BasicLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-MathLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-MotionControlLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-NeuronLifeLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-PhysLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\NMSDK-PulseClassicModelsLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-PulseLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-PulseNeuronLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-ReceiverLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-SensorLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Nmsdk-SourceLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-BasicLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-BasicStatisticLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-IoLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\Rdk-SourcesLib.lib" />
+    <Library Include="..\..\..\Bin\Platform\Win\Lib.Vs\rdk.vs.static.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
