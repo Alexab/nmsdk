@@ -82,7 +82,7 @@
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <IncludePath>..\..\..\Rdk\Core\Math\;..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\include;..\..\..\Deploy\Include\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>..\..\..\Rdk\Core\Math\;..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\lib;..\..\..\Deploy\Include\;..\..\..\Deploy\Dll\;..\..\..\RDK\Bin\Platform\Win\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>..\..\..\Rdk\Core\Math\;..\..\..\Libraries\;..\..\..\Libraries\MotionControlLib\;..\..\..\RDK\Core\Engine\Libraries\;..\..\..\RDK\Core\Engine\;..\..\..\GUI\BCB\;..\..\..\RDK\GUI\BCB\;..\..\..\RDK\Deploy\Include\;$(BDS)\lib;..\..\..\Deploy\Include\;..\..\..\Deploy\Dll\;..\..\..\RDK\Bin\Platform\Win\;..\..\..\Bin\Platform\Win\Lib.Bcb;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_wpar>false</BCC_wpar>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
@@ -517,20 +517,20 @@
         <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFormUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFormUnit.dfm"/>
         <FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -610,13 +610,25 @@
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <ModelSupport>False</ModelSupport>
-            <Deployment Version="2">
+            <Deployment Version="1">
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -629,18 +641,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1153,13 +1153,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
