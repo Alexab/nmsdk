@@ -40,8 +40,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectPath)\..\..\..\..\RDK\Deploy\Include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\boost_1_54_0;$(ProjectPath)\..\..\..\..\RDK\Deploy\Include;$(IncludePath)</IncludePath>
     <OutDir>$(ProjectDir)\..\..\..\Bin\Platform\Win</OutDir>
+    <LibraryPath>D:\boost_1_54_0\bin.v2\libs\chrono\build\msvc-10.0\debug\link-static\threading-multi;D:\boost_1_54_0\bin.v2\libs\system\build\msvc-10.0\debug\link-static\threading-multi;D:\boost_1_54_0\bin.v2\libs\date_time\build\msvc-10.0\debug\link-static\threading-multi;D:\boost_1_54_0\bin.v2\libs\thread\build\msvc-10.0\debug\link-static\threading-multi;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
