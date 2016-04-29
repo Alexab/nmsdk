@@ -730,6 +730,11 @@ void __fastcall TNewManipulatorControlForm::IIAfferentTrackBarChange(TObject *Se
   IIPosAfferent->Frequency=0;
   IIAfferentEdit->Text=FloatToStrF(-IINegAfferent->Frequency,ffFixed,3,3);
  }
+
+ if(IIAfferentTrackBar->Position<0)
+  ControlSystem->SetInternalGeneratorFrequency(0,-IIAfferentTrackBar->Position);
+ else
+  ControlSystem->SetInternalGeneratorFrequency(0,IIAfferentTrackBar->Position);
 }
 //---------------------------------------------------------------------------
 
@@ -751,6 +756,14 @@ void __fastcall TNewManipulatorControlForm::IINumAfferentTrackBarChange(TObject 
  ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
  if(!ControlSystem)
   return;
+
+ if(IIAfferentTrackBar->Position<0)
+  ControlSystem->ConnectInternalGenerators(0,IINumAfferentTrackBar->Position,0);
+ else
+  ControlSystem->ConnectInternalGenerators(1,IINumAfferentTrackBar->Position,0);
+
+/// «адает частоту работы внутреннего генератора
+//void SetInternalGeneratorFrequency(int control_loop_index, double value);
 /*
  for(int i=0;i<IINumAfferentTrackBar->Position;i++)
  {
