@@ -36,6 +36,7 @@ __fastcall TNewManipulatorControlForm::TNewManipulatorControlForm(TComponent* Ow
 
 void TNewManipulatorControlForm::AUpdateInterface(void)
 {
+ UpdateInterval=100;
  LoadInterfaceInfoFromNet();
  if(ManipulatorName.empty())
  {
@@ -734,9 +735,9 @@ void __fastcall TNewManipulatorControlForm::IIAfferentTrackBarChange(TObject *Se
  }
 
  if(IIAfferentTrackBar->Position<0)
-  ControlSystem->SetInternalGeneratorFrequency(0,-IIAfferentTrackBar->Position);
+  ControlSystem->SetInternalGeneratorFrequency(0,IINumAfferentTrackBar->Position,0, -IIAfferentTrackBar->Position);
  else
-  ControlSystem->SetInternalGeneratorFrequency(0,IIAfferentTrackBar->Position);
+  ControlSystem->SetInternalGeneratorFrequency(1,IINumAfferentTrackBar->Position,0, IIAfferentTrackBar->Position);
 }
 //---------------------------------------------------------------------------
 

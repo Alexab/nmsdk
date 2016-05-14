@@ -36,6 +36,7 @@ __fastcall TNManipulatorControlForm::TNManipulatorControlForm(TComponent* Owner)
 
 void TNManipulatorControlForm::AUpdateInterface(void)
 {
+ UpdateInterval=100;
  LoadInterfaceInfoFromNet();
  if(ManipulatorName.empty())
  {
