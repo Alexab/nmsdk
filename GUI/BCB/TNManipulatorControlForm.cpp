@@ -358,6 +358,8 @@ void TNManipulatorControlForm::ALoadParameters(RDK::USerStorageXML &xml)
  IINumAfferentTrackBarChange(this);
  ResetToZeroButton1Click(this);
  ResetToZeroButton2Click(this);
+
+ UpdateInterval=100;
 }
 
 
@@ -714,6 +716,8 @@ void __fastcall TNManipulatorControlForm::IINumAfferentTrackBarChange(TObject *S
 
  try
  {
+  res&=ControlSystem->BreakAllOutgoingLinks("IIPosAfferentGenerator");
+  res&=ControlSystem->BreakAllOutgoingLinks("IINegAfferentGenerator");
  for(int i=0;i<IINumAfferentTrackBar->Position;i++)
  {
   // Вариант для отдельного участка мембраны для внешнего управления

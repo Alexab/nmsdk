@@ -369,6 +369,8 @@ void TNewManipulatorControlForm::ALoadParameters(RDK::USerStorageXML &xml)
  IINumAfferentTrackBarChange(this);
  ResetToZeroButton1Click(this);
  ResetToZeroButton2Click(this);
+
+ UpdateInterval=100;
 }
 
 
