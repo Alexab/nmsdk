@@ -189,23 +189,26 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
  if (ControlSystem)
  {
   int num_controls=ControlSystem->GetNumControlLoops();
-  if(CheckListBox1->Items->Count != num_controls)
+  if(ControlSystem->ActiveContours->size() == num_controls)
   {
-   CheckListBox1->Items->Clear();
+   if(CheckListBox1->Items->Count != num_controls)
+   {
+	CheckListBox1->Items->Clear();
 	 for (int i=0; i < num_controls; i++)
 	 {
 	   CheckListBox1->Items->Add("Afferent"+IntToStr(i+1));
 	   CheckListBox1->Checked[i]=(*ControlSystem->ActiveContours)[i];
 	 }
-  }
-  else
-  {
+   }
+   else
+   {
 	 for (int i=0; i < num_controls; i++)
 	 {
 	   CheckListBox1->Items->Strings[i]="Afferent"+IntToStr(i+1);
 	   if(CheckListBox1->Checked[i] != (*ControlSystem->ActiveContours)[i])
 		CheckListBox1->Checked[i]=(*ControlSystem->ActiveContours)[i];
 	 }
+   }
   }
  }
 
