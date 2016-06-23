@@ -624,14 +624,20 @@ void __fastcall TNManipulatorControlForm::IaCheckBoxClick(TObject *Sender)
  if(UpdateInterfaceFlag)
   return;
 
- bool res=true;
- RDK::UEPtr<NMSDK::UContainer> cont;
+// bool res=true;
+// RDK::UEPtr<NMSDK::UContainer> cont;
 
  if(!ControlSystem)
   return;
 
- int num_motions=ControlSystem->NumMotionElements;
+// int num_motions=ControlSystem->NumMotionElements;
 
+ std::vector<bool> act_conts=ControlSystem->ActiveContours;
+ if(act_conts.size()<2)
+  act_conts.resize(2,0);
+ act_conts[1]=(IaCheckBox->Checked)?true:false;
+ ControlSystem->ActiveContours=act_conts;
+/*
  if(IaCheckBox->Checked)
   {
    for(int i=0;i<num_motions;i++)
@@ -669,7 +675,7 @@ void __fastcall TNManipulatorControlForm::IaCheckBoxClick(TObject *Sender)
 
  if(!res)
   return;
-
+        */
 }
 //---------------------------------------------------------------------------
 
@@ -759,7 +765,13 @@ void __fastcall TNManipulatorControlForm::IbCheckBoxClick(TObject *Sender)
 
  if(!ControlSystem)
   return;
+ std::vector<bool> act_conts=ControlSystem->ActiveContours;
+ if(act_conts.size()<3)
+  act_conts.resize(3,0);
+ act_conts[2]=(IbCheckBox->Checked)?true:false;
+ ControlSystem->ActiveContours=act_conts;
 
+ /*
  int num_motions=ControlSystem->NumMotionElements;
   if(IbCheckBox->Checked)
   {
@@ -802,7 +814,7 @@ void __fastcall TNManipulatorControlForm::IbCheckBoxClick(TObject *Sender)
 
  if(!res)
   return;
-
+	   */
 }
 //---------------------------------------------------------------------------
 
@@ -816,7 +828,12 @@ void __fastcall TNManipulatorControlForm::IICheckBoxClick(TObject *Sender)
 
  if(!ControlSystem)
   return;
-
+ std::vector<bool> act_conts=ControlSystem->ActiveContours;
+ if(act_conts.size()<1)
+  act_conts.resize(1,0);
+ act_conts[0]=(IICheckBox->Checked)?true:false;
+ ControlSystem->ActiveContours=act_conts;
+/*
  int num_motions=ControlSystem->NumMotionElements;
 
   if(IICheckBox->Checked)
@@ -859,7 +876,7 @@ void __fastcall TNManipulatorControlForm::IICheckBoxClick(TObject *Sender)
   }
  if(!res)
   return;
-
+  */
 }
 //---------------------------------------------------------------------------
 
@@ -1072,6 +1089,14 @@ void __fastcall TNManipulatorControlForm::CheckBox1Click(TObject *Sender)
  if(!ControlSystem)
   return;
 
+ if(!Model_CheckComponent((ControlSystemName+std::string(".")+"MotionElement0.Afferent_Ic1.Receptor").c_str()))
+  return;
+ std::vector<bool> act_conts=ControlSystem->ActiveContours;
+ if(act_conts.size()<4)
+  act_conts.resize(4,0);
+ act_conts[3]=(CheckBox1->Checked)?true:false;
+ ControlSystem->ActiveContours=act_conts;
+/*
  int num_motions=ControlSystem->NumMotionElements;
 
   if(CheckBox1->Checked)
@@ -1114,7 +1139,7 @@ void __fastcall TNManipulatorControlForm::CheckBox1Click(TObject *Sender)
   }
  if(!res)
   return;
-
+		  */
 
 }
 //---------------------------------------------------------------------------
