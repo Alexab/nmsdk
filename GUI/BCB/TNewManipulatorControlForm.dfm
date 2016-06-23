@@ -791,8 +791,8 @@
             TabOrder = 7
           end
           object ManipDrawButton: TButton
-            Left = 14
-            Top = 116
+            Left = 13
+            Top = 134
             Width = 91
             Height = 20
             Margins.Left = 2
