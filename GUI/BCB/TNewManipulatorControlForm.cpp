@@ -1146,6 +1146,8 @@ void __fastcall TNewManipulatorControlForm::FormCreate(TObject *Sender)
  int max_number_of_mc=10;
 
  TUComponentsListFrame::ComponentControllers["N2AsfNewSimplestAfferentBranchedEngineControl"]=NewManipulatorControlForm;
+ TUComponentsListFrame::ComponentControllers["N2AsfSimplestAfferentBranchedEngineControl"]=NewManipulatorControlForm;
+
 }
 //---------------------------------------------------------------------------
 
