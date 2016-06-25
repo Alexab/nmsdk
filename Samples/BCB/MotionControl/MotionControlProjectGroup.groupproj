@@ -4,7 +4,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="MotionControl.cbproj">
-            <Dependencies>..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj;..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj;..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj;..\..\..\Libraries\Nmsdk-MotionControlLib\Build\Bcb\Nmsdk-MotionControlLib.cbproj;..\..\..\Libraries\Nmsdk-PulseClassicModelsLib\Build\Bcb\Nmsdk-PulseClassicModelsLib.cbproj;..\..\..\Libraries\Nmsdk-PulseLib\Build\Bcb\Nmsdk-PulseLib.cbproj;..\..\..\Libraries\Nmsdk-PulseNeuronLib\Build\Bcb\Nmsdk-PulseNeuronLib.cbproj;..\..\..\Libraries\Nmsdk-ActLib\Build\Bcb\Nmsdk-ActLib.cbproj;..\..\..\Libraries\Nmsdk-MathLib\Build\Bcb\Nmsdk-MathLib.cbproj;..\..\..\Libraries\Nmsdk-PhysLib\Build\Bcb\Nmsdk-PhysLib.cbproj;..\..\..\Libraries\Nmsdk-ReceiverLib\Build\Bcb\Nmsdk-ReceiverLib.cbproj;..\..\..\Libraries\Nmsdk-SensorLib\Build\Bcb\Nmsdk-SensorLib.cbproj;..\..\..\Libraries\Nmsdk-NeuronLifeLib\Build\Bcb\Nmsdk-NeuronLifeLib.cbproj;..\..\..\Rdk\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj</Dependencies>
+            <Dependencies>..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj;..\..\..\Rdk\Build\Lib\BCB\rdk.bcb.static.cbproj;..\..\..\Libraries\Nmsdk-BasicLib\Build\Bcb\Nmsdk-BasicLib.cbproj;..\..\..\Libraries\Nmsdk-MotionControlLib\Build\Bcb\Nmsdk-MotionControlLib.cbproj;..\..\..\Libraries\Nmsdk-PulseClassicModelsLib\Build\Bcb\Nmsdk-PulseClassicModelsLib.cbproj;..\..\..\Libraries\Nmsdk-PulseLib\Build\Bcb\Nmsdk-PulseLib.cbproj;..\..\..\Libraries\Nmsdk-PulseNeuronLib\Build\Bcb\Nmsdk-PulseNeuronLib.cbproj;..\..\..\Libraries\Nmsdk-ActLib\Build\Bcb\Nmsdk-ActLib.cbproj;..\..\..\Libraries\Nmsdk-MathLib\Build\Bcb\Nmsdk-MathLib.cbproj;..\..\..\Libraries\Nmsdk-PhysLib\Build\Bcb\Nmsdk-PhysLib.cbproj;..\..\..\Libraries\Nmsdk-ReceiverLib\Build\Bcb\Nmsdk-ReceiverLib.cbproj;..\..\..\Libraries\Nmsdk-SensorLib\Build\Bcb\Nmsdk-SensorLib.cbproj;..\..\..\Libraries\Nmsdk-NeuronLifeLib\Build\Bcb\Nmsdk-NeuronLifeLib.cbproj;..\..\..\Rdk\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj;..\..\..\Libraries\Rdk-BasicLib\Build\Bcb\Rdk-BasicLib.cbproj;..\..\..\Libraries\Rdk-BasicStatisticLib\Build\Bcb\Rdk-BasicStatisticLib.cbproj;..\..\..\Libraries\Rdk-IoLib\Build\Bcb\Rdk-IoLib.cbproj;..\..\..\Libraries\Rdk-SourcesLib\Build\Bcb\Rdk-SourcesLib.cbproj</Dependencies>
         </Projects>
         <Projects Include="..\..\..\Libraries\Nmsdk-SourceLib\Build\Bcb\Nmsdk-SourceLib.cbproj">
             <Dependencies/>
@@ -48,6 +48,18 @@
         <Projects Include="..\..\..\Rdk\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\..\Libraries\Rdk-BasicLib\Build\Bcb\Rdk-BasicLib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Rdk-BasicStatisticLib\Build\Bcb\Rdk-BasicStatisticLib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Rdk-IoLib\Build\Bcb\Rdk-IoLib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Libraries\Rdk-SourcesLib\Build\Bcb\Rdk-SourcesLib.cbproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -56,13 +68,13 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="MotionControl" DependsOnTargets="Nmsdk-SourceLib;rdk.bcb.static;Nmsdk-BasicLib;Nmsdk-MotionControlLib;Nmsdk-PulseClassicModelsLib;Nmsdk-PulseLib;Nmsdk-PulseNeuronLib;Nmsdk-ActLib;Nmsdk-MathLib;Nmsdk-PhysLib;Nmsdk-ReceiverLib;Nmsdk-SensorLib;Nmsdk-NeuronLifeLib;libcurl.bcb">
+    <Target Name="MotionControl" DependsOnTargets="Nmsdk-SourceLib;rdk.bcb.static;Nmsdk-BasicLib;Nmsdk-MotionControlLib;Nmsdk-PulseClassicModelsLib;Nmsdk-PulseLib;Nmsdk-PulseNeuronLib;Nmsdk-ActLib;Nmsdk-MathLib;Nmsdk-PhysLib;Nmsdk-ReceiverLib;Nmsdk-SensorLib;Nmsdk-NeuronLifeLib;libcurl.bcb;Rdk-BasicLib;Rdk-BasicStatisticLib;Rdk-IoLib;Rdk-SourcesLib">
         <MSBuild Projects="MotionControl.cbproj"/>
     </Target>
-    <Target Name="MotionControl:Clean" DependsOnTargets="Nmsdk-SourceLib:Clean;rdk.bcb.static:Clean;Nmsdk-BasicLib:Clean;Nmsdk-MotionControlLib:Clean;Nmsdk-PulseClassicModelsLib:Clean;Nmsdk-PulseLib:Clean;Nmsdk-PulseNeuronLib:Clean;Nmsdk-ActLib:Clean;Nmsdk-MathLib:Clean;Nmsdk-PhysLib:Clean;Nmsdk-ReceiverLib:Clean;Nmsdk-SensorLib:Clean;Nmsdk-NeuronLifeLib:Clean;libcurl.bcb:Clean">
+    <Target Name="MotionControl:Clean" DependsOnTargets="Nmsdk-SourceLib:Clean;rdk.bcb.static:Clean;Nmsdk-BasicLib:Clean;Nmsdk-MotionControlLib:Clean;Nmsdk-PulseClassicModelsLib:Clean;Nmsdk-PulseLib:Clean;Nmsdk-PulseNeuronLib:Clean;Nmsdk-ActLib:Clean;Nmsdk-MathLib:Clean;Nmsdk-PhysLib:Clean;Nmsdk-ReceiverLib:Clean;Nmsdk-SensorLib:Clean;Nmsdk-NeuronLifeLib:Clean;libcurl.bcb:Clean;Rdk-BasicLib:Clean;Rdk-BasicStatisticLib:Clean;Rdk-IoLib:Clean;Rdk-SourcesLib:Clean">
         <MSBuild Projects="MotionControl.cbproj" Targets="Clean"/>
     </Target>
-    <Target Name="MotionControl:Make" DependsOnTargets="Nmsdk-SourceLib:Make;rdk.bcb.static:Make;Nmsdk-BasicLib:Make;Nmsdk-MotionControlLib:Make;Nmsdk-PulseClassicModelsLib:Make;Nmsdk-PulseLib:Make;Nmsdk-PulseNeuronLib:Make;Nmsdk-ActLib:Make;Nmsdk-MathLib:Make;Nmsdk-PhysLib:Make;Nmsdk-ReceiverLib:Make;Nmsdk-SensorLib:Make;Nmsdk-NeuronLifeLib:Make;libcurl.bcb:Make">
+    <Target Name="MotionControl:Make" DependsOnTargets="Nmsdk-SourceLib:Make;rdk.bcb.static:Make;Nmsdk-BasicLib:Make;Nmsdk-MotionControlLib:Make;Nmsdk-PulseClassicModelsLib:Make;Nmsdk-PulseLib:Make;Nmsdk-PulseNeuronLib:Make;Nmsdk-ActLib:Make;Nmsdk-MathLib:Make;Nmsdk-PhysLib:Make;Nmsdk-ReceiverLib:Make;Nmsdk-SensorLib:Make;Nmsdk-NeuronLifeLib:Make;libcurl.bcb:Make;Rdk-BasicLib:Make;Rdk-BasicStatisticLib:Make;Rdk-IoLib:Make;Rdk-SourcesLib:Make">
         <MSBuild Projects="MotionControl.cbproj" Targets="Make"/>
     </Target>
     <Target Name="Nmsdk-SourceLib">
@@ -191,14 +203,50 @@
     <Target Name="libcurl_bcb:Make">
         <MSBuild Projects="..\..\..\Rdk\ThirdParty\curl\build\bcb\libcurl.bcb.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="Rdk-BasicLib">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-BasicLib\Build\Bcb\Rdk-BasicLib.cbproj"/>
+    </Target>
+    <Target Name="Rdk-BasicLib:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-BasicLib\Build\Bcb\Rdk-BasicLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Rdk-BasicLib:Make">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-BasicLib\Build\Bcb\Rdk-BasicLib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Rdk-BasicStatisticLib">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-BasicStatisticLib\Build\Bcb\Rdk-BasicStatisticLib.cbproj"/>
+    </Target>
+    <Target Name="Rdk-BasicStatisticLib:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-BasicStatisticLib\Build\Bcb\Rdk-BasicStatisticLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Rdk-BasicStatisticLib:Make">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-BasicStatisticLib\Build\Bcb\Rdk-BasicStatisticLib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Rdk-IoLib">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-IoLib\Build\Bcb\Rdk-IoLib.cbproj"/>
+    </Target>
+    <Target Name="Rdk-IoLib:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-IoLib\Build\Bcb\Rdk-IoLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Rdk-IoLib:Make">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-IoLib\Build\Bcb\Rdk-IoLib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Rdk-SourcesLib">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-SourcesLib\Build\Bcb\Rdk-SourcesLib.cbproj"/>
+    </Target>
+    <Target Name="Rdk-SourcesLib:Clean">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-SourcesLib\Build\Bcb\Rdk-SourcesLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Rdk-SourcesLib:Make">
+        <MSBuild Projects="..\..\..\Libraries\Rdk-SourcesLib\Build\Bcb\Rdk-SourcesLib.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="MotionControl;Nmsdk-SourceLib;rdk_bcb_static;Nmsdk-BasicLib;Nmsdk-MotionControlLib;Nmsdk-PulseClassicModelsLib;Nmsdk-PulseLib;Nmsdk-PulseNeuronLib;Nmsdk-ActLib;Nmsdk-MathLib;Nmsdk-PhysLib;Nmsdk-ReceiverLib;Nmsdk-SensorLib;Nmsdk-NeuronLifeLib;libcurl_bcb"/>
+        <CallTarget Targets="MotionControl;Nmsdk-SourceLib;rdk_bcb_static;Nmsdk-BasicLib;Nmsdk-MotionControlLib;Nmsdk-PulseClassicModelsLib;Nmsdk-PulseLib;Nmsdk-PulseNeuronLib;Nmsdk-ActLib;Nmsdk-MathLib;Nmsdk-PhysLib;Nmsdk-ReceiverLib;Nmsdk-SensorLib;Nmsdk-NeuronLifeLib;libcurl_bcb;Rdk-BasicLib;Rdk-BasicStatisticLib;Rdk-IoLib;Rdk-SourcesLib"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="MotionControl:Clean;Nmsdk-SourceLib:Clean;rdk_bcb_static:Clean;Nmsdk-BasicLib:Clean;Nmsdk-MotionControlLib:Clean;Nmsdk-PulseClassicModelsLib:Clean;Nmsdk-PulseLib:Clean;Nmsdk-PulseNeuronLib:Clean;Nmsdk-ActLib:Clean;Nmsdk-MathLib:Clean;Nmsdk-PhysLib:Clean;Nmsdk-ReceiverLib:Clean;Nmsdk-SensorLib:Clean;Nmsdk-NeuronLifeLib:Clean;libcurl_bcb:Clean"/>
+        <CallTarget Targets="MotionControl:Clean;Nmsdk-SourceLib:Clean;rdk_bcb_static:Clean;Nmsdk-BasicLib:Clean;Nmsdk-MotionControlLib:Clean;Nmsdk-PulseClassicModelsLib:Clean;Nmsdk-PulseLib:Clean;Nmsdk-PulseNeuronLib:Clean;Nmsdk-ActLib:Clean;Nmsdk-MathLib:Clean;Nmsdk-PhysLib:Clean;Nmsdk-ReceiverLib:Clean;Nmsdk-SensorLib:Clean;Nmsdk-NeuronLifeLib:Clean;libcurl_bcb:Clean;Rdk-BasicLib:Clean;Rdk-BasicStatisticLib:Clean;Rdk-IoLib:Clean;Rdk-SourcesLib:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="MotionControl:Make;Nmsdk-SourceLib:Make;rdk_bcb_static:Make;Nmsdk-BasicLib:Make;Nmsdk-MotionControlLib:Make;Nmsdk-PulseClassicModelsLib:Make;Nmsdk-PulseLib:Make;Nmsdk-PulseNeuronLib:Make;Nmsdk-ActLib:Make;Nmsdk-MathLib:Make;Nmsdk-PhysLib:Make;Nmsdk-ReceiverLib:Make;Nmsdk-SensorLib:Make;Nmsdk-NeuronLifeLib:Make;libcurl_bcb:Make"/>
+        <CallTarget Targets="MotionControl:Make;Nmsdk-SourceLib:Make;rdk_bcb_static:Make;Nmsdk-BasicLib:Make;Nmsdk-MotionControlLib:Make;Nmsdk-PulseClassicModelsLib:Make;Nmsdk-PulseLib:Make;Nmsdk-PulseNeuronLib:Make;Nmsdk-ActLib:Make;Nmsdk-MathLib:Make;Nmsdk-PhysLib:Make;Nmsdk-ReceiverLib:Make;Nmsdk-SensorLib:Make;Nmsdk-NeuronLifeLib:Make;libcurl_bcb:Make;Rdk-BasicLib:Make;Rdk-BasicStatisticLib:Make;Rdk-IoLib:Make;Rdk-SourcesLib:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -129,6 +129,8 @@ __published:	// IDE-managed Components
 	TDrawGrid *DrawGrid;
 	TButton *ResetToZeroButton1;
 	TButton *ResetToZeroButton2;
+	TButton *SaveStatsButton;
+	TButton *NewStatsButton;
 	void __fastcall Disconnect1Click(TObject *Sender);
 	void __fastcall MoveLeft1Click(TObject *Sender);
 	void __fastcall MoveRight1Click(TObject *Sender);
@@ -172,6 +174,8 @@ __published:	// IDE-managed Components
           TGridDrawState State);
 	void __fastcall ResetToZeroButton1Click(TObject *Sender);
 	void __fastcall ResetToZeroButton2Click(TObject *Sender);
+	void __fastcall SaveStatsButtonClick(TObject *Sender);
+	void __fastcall NewStatsButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TNManipulatorControlForm(TComponent* Owner);

@@ -821,6 +821,24 @@
             Caption = #1087#1086' N'
             TabOrder = 7
           end
+          object SaveStatsButton: TButton
+            Left = 15
+            Top = 200
+            Width = 75
+            Height = 25
+            Caption = 'Save Stats'
+            TabOrder = 8
+            OnClick = SaveStatsButtonClick
+          end
+          object NewStatsButton: TButton
+            Left = 96
+            Top = 200
+            Width = 75
+            Height = 25
+            Caption = 'New Stats'
+            TabOrder = 9
+            OnClick = NewStatsButtonClick
+          end
         end
       end
     end

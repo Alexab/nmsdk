@@ -187,6 +187,26 @@ void TNManipulatorControlForm::AUpdateInterface(void)
  }
  IINumAfferentTrackBarChange(this);
 
+ if(ControlSystem)
+ {
+  RDK::UEPtr<RDK::UStatistic> stats=ControlSystem->GetComponentL<RDK::UStatistic>("StatisticDoubleMatrix",true);
+  if(!stats)
+  {
+   NewStatsButton->Enabled=false;
+   SaveStatsButton->Enabled=false;
+  }
+  else
+  {
+   NewStatsButton->Enabled=true;
+   SaveStatsButton->Enabled=true;
+  }
+ }
+ else
+ {
+  NewStatsButton->Enabled=false;
+  SaveStatsButton->Enabled=false;
+ }
+
  RDK::UEPtr<NMSDK::NDCEngine> engine=RDK::dynamic_pointer_cast<NMSDK::NDCEngine>(UniversalManipulator);
  double position=0;
  if(engine)
@@ -1332,4 +1352,40 @@ void __fastcall TNManipulatorControlForm::ResetToZeroButton2Click(TObject *Sende
 
 
 
+
+void __fastcall TNManipulatorControlForm::SaveStatsButtonClick(TObject *Sender)
+{
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ RDK::UEPtr<RDK::UStatistic> stats=ControlSystem->GetComponentL<RDK::UStatistic>("StatisticDoubleMatrix",true);
+ if(!stats)
+  return;
+ stats->ManualModeSwitch=true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNManipulatorControlForm::NewStatsButtonClick(TObject *Sender)
+{
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ RDK::UEPtr<RDK::UStatistic> stats=ControlSystem->GetComponentL<RDK::UStatistic>("StatisticDoubleMatrix",true);
+ if(!stats)
+  return;
+ stats->ManualModeSwitch=false;
+ stats->ManualModeEnabled=true;
+ stats->Reset();
+}
+//---------------------------------------------------------------------------
 

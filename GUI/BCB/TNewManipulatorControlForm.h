@@ -129,6 +129,8 @@ __published:	// IDE-managed Components
 	TButton *ResetToZeroButton2;
 	TCheckListBox *CheckListBox1;
 	TButton *ManipDrawButton;
+	TButton *SaveStatsButton;
+	TButton *NewStatsButton;
 	void __fastcall Disconnect1Click(TObject *Sender);
 	void __fastcall MoveLeft1Click(TObject *Sender);
 	void __fastcall MoveRight1Click(TObject *Sender);
@@ -170,6 +172,8 @@ __published:	// IDE-managed Components
 	void __fastcall ResetToZeroButton2Click(TObject *Sender);
 	void __fastcall CheckListBox1Click(TObject *Sender);
 	void __fastcall ManipDrawButtonClick(TObject *Sender);
+	void __fastcall SaveStatsButtonClick(TObject *Sender);
+	void __fastcall NewStatsButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TNewManipulatorControlForm(TComponent* Owner);

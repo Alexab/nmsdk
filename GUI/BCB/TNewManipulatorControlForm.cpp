@@ -77,8 +77,10 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
  if(!model)
   return;
+
  RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+
  if(Manipulator)
  {
   if(Manipulator->DMReset) // процедура подключения пройдена
@@ -115,6 +117,28 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
   IINumAfferentTrackBar->Enabled=false;
   IIAfferentTrackBar->Enabled=false;
  }
+
+ if(ControlSystem)
+ {
+  RDK::UEPtr<RDK::UStatistic> stats=ControlSystem->GetComponentL<RDK::UStatistic>("StatisticDoubleMatrix",true);
+  if(!stats)
+  {
+   NewStatsButton->Enabled=false;
+   SaveStatsButton->Enabled=false;
+  }
+  else
+  {
+   NewStatsButton->Enabled=true;
+   SaveStatsButton->Enabled=true;
+  }
+ }
+ else
+ {
+  NewStatsButton->Enabled=false;
+  SaveStatsButton->Enabled=false;
+ }
+
+
 
  ReadComponentData();
  BmpCanvas.SetRes(CanvasWidth,CanvasHeight,RDK::ubmRGB24);
@@ -1276,6 +1300,44 @@ void __fastcall TNewManipulatorControlForm::ManipDrawButtonClick(TObject *Sender
 
 {
  NDrawManipulatorForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::SaveStatsButtonClick(TObject *Sender)
+
+{
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ RDK::UEPtr<RDK::UStatistic> stats=ControlSystem->GetComponentL<RDK::UStatistic>("StatisticDoubleMatrix",true);
+ if(!stats)
+  return;
+ stats->ManualModeSwitch=true;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::NewStatsButtonClick(TObject *Sender)
+{
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ RDK::UEPtr<RDK::UStatistic> stats=ControlSystem->GetComponentL<RDK::UStatistic>("StatisticDoubleMatrix",true);
+ if(!stats)
+  return;
+ stats->ManualModeSwitch=false;
+ stats->ManualModeEnabled=true;
+ stats->Reset();
 }
 //---------------------------------------------------------------------------
 
