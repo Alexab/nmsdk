@@ -298,7 +298,7 @@ void TNewManipulatorControlForm::LoadInterfaceInfoFromNet(void)
  RDK::UEPtr<NMSDK::NPac> engine_input=RDK::dynamic_pointer_cast<NMSDK::NPac>(ControlSystem->GetComponent("Pac"));
  if(!flag)
   UpdateInterfaceFlag=true;
- PACMultiplicatorTrackBar->Position=fabs(engine_input->Gain[0][0]);
+ PACMultiplicatorTrackBar->Position=ControlSystem->PacGain;//fabs(engine_input->Gain[0][0]);
  PACDeactivatorTimeEdit->Text=FloatToStrF(engine_input->Gain[0][0],ffFixed,3,3);
  PACActivatorTimeTrackBar->Position=engine_input->SecretionTC[0][0]*double(PACActivatorTimeTrackBar->Max);
  PACActivatorTimeEdit->Text=FloatToStrF(engine_input->SecretionTC[0][0],ffFixed,3,3);
@@ -961,20 +961,20 @@ void __fastcall TNewManipulatorControlForm::TimeDurationTrackBarChange(TObject *
 
 void __fastcall TNewManipulatorControlForm::PACDeactivatorTimeTrackBarChange(TObject *Sender)
 {
+ if(UpdateInterfaceFlag)
+  return;
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
  if(!model)
   return;
- RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
- RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
- Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
  ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
- if(!ControlSystem || UpdateInterfaceFlag)
+ if(!ControlSystem)
   return;
  int num_ranges=ControlSystem->NumMotionElements;
  double value=double(PACDeactivatorTimeTrackBar->Position)/double(PACDeactivatorTimeTrackBar->Max);
  PACDeactivatorTimeEdit->Text=FloatToStrF(value,ffFixed,3,3);
-
+ ControlSystem->PacDissociationTC=value;
+/*
  RDK::UEPtr<NMSDK::NPac> engine_input=RDK::dynamic_pointer_cast<NMSDK::NPac>(ControlSystem->GetComponent("Pac"));
  if(engine_input)
  {
@@ -985,27 +985,28 @@ void __fastcall TNewManipulatorControlForm::PACDeactivatorTimeTrackBarChange(TOb
   for(size_t i=0;i<values.size();i++)
    values[i].assign(1,value);
   engine_input->DissociationTC=values;
- }
+ }*/
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TNewManipulatorControlForm::PACActivatorTimeTrackBarChange(TObject *Sender)
 
 {
+ if(UpdateInterfaceFlag)
+  return;
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
  if(!model)
   return;
- RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
-// RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
- Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
  ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
  if(!ControlSystem)
   return;
- int num_ranges=ControlSystem->NumMotionElements;
  double value=double(PACActivatorTimeTrackBar->Position)/double(PACActivatorTimeTrackBar->Max);
  PACActivatorTimeEdit->Text=FloatToStrF(value,ffFixed,3,3);
 
+ ControlSystem->PacSecretionTC=value;
+
+/*
  RDK::UEPtr<NMSDK::NPac> engine_input=RDK::dynamic_pointer_cast<NMSDK::NPac>(ControlSystem->GetComponent("Pac"));
  if(engine_input)
  {
@@ -1016,7 +1017,7 @@ void __fastcall TNewManipulatorControlForm::PACActivatorTimeTrackBarChange(TObje
   for(size_t i=0;i<values.size();i++)
    values[i].assign(1,value);
   engine_input->SecretionTC=values;
- }
+ }*/
 }
 //---------------------------------------------------------------------------
 
@@ -1045,20 +1046,19 @@ void __fastcall TNewManipulatorControlForm::SendVButtonClick(TObject *Sender)
 
 void __fastcall TNewManipulatorControlForm::PACMultiplicatorTrackBarChange(TObject *Sender)
 {
+ if(UpdateInterfaceFlag)
+  return;
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
  if(!model)
   return;
- RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
-// RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
  RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
- Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
  ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
- if(!ControlSystem || UpdateInterfaceFlag)
+ if(!ControlSystem)
   return;
- int num_ranges=ControlSystem->NumMotionElements;
  double value=double(PACMultiplicatorTrackBar->Position);
  PACMultiplicatorEdit->Text=FloatToStrF(value,ffFixed,3,3);
-
+ ControlSystem->PacGain=value;
+/*
  RDK::UEPtr<NMSDK::NPac> engine_input=RDK::dynamic_pointer_cast<NMSDK::NPac>(ControlSystem->GetComponent("Pac"));
  if(engine_input)
  {
@@ -1071,7 +1071,7 @@ void __fastcall TNewManipulatorControlForm::PACMultiplicatorTrackBarChange(TObje
    values[i].assign(1,value);
   engine_input->Gain=values;
  }
-
+  */
 }
 //---------------------------------------------------------------------------
 
