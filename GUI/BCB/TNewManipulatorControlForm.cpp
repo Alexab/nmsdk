@@ -415,34 +415,58 @@ bool TNewManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name
 
  bool res=true;
  std::string source_name=cs_name+".NManipulatorSource1";
- net->BreakConnectorLink(source_name,0);
- net->BreakConnectorLink(source_name,1);
- net->BreakConnectorLink(source_name,2);
- net->BreakConnectorLink(source_name,3);
-// RDK::dynamic_pointer_cast<RDK::UConnector>(net->GetComponentL(source_name))->DisconnectAllItems();
+// net->BreakConnectorLink(source_name,0);
+// net->BreakConnectorLink(source_name,1);
+// net->BreakConnectorLink(source_name,2);
+// net->BreakConnectorLink(source_name,3);
+// net->BreakConnectorLink(source_name,4);
+ net->BreakAllOutgoingLinks(man_name);
+ // RDK::dynamic_pointer_cast<RDK::UConnector>(net->GetComponentL(source_name))->DisconnectAllItems();
  RDK::dynamic_pointer_cast<RDK::UADItem>(net->GetComponentL(cs_name+".NManipulatorInput1",true))->DisconnectAll();
- if(man_name == "PendulumAndCart")
- {
-  res&=net->CreateLink(man_name,3,source_name,0);
-  res&=net->CreateLink(man_name,4,source_name,3);
- }
- else
-  res&=net->CreateLink(man_name,0,source_name,0);
 
+ res&=net->CreateLink(man_name,0,source_name,0);
  res&=net->CreateLink(man_name,1,source_name,1);
  res&=net->CreateLink(man_name,2,source_name,2);
- res&=net->CreateLink(cs_name+".NManipulatorInput1",0,man_name,0);
- /*
- // —в€зываем все управл€ющие элементы
- int motion_elements=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(net->GetComponentL(cs_name))->NumMotionElements;
- int conn_index=1;
- for(int i=0;i<motion_elements;i++)
+ if(man_name == "PendulumAndCart")
  {
-  res&=net->CreateLink(cs_name+std::string(".MotionElement")+RDK::sntoa(i)
-	+".Motoneuron1.LTZone",0,man_name,conn_index++);
-  res&=net->CreateLink(cs_name+std::string(".MotionElement")+RDK::sntoa(i)
-	+".Motoneuron2.LTZone",0,man_name,conn_index++);
- } */
+  res&=net->CreateLink(man_name,3,source_name,3);
+  res&=net->CreateLink(man_name,4,source_name,4);
+ }
+
+ res&=net->CreateLink(cs_name+".NManipulatorInput1",0,man_name,0);
+
+ RDK::UEPtr<NMSDK::NControlObjectSource> source=net->GetComponentL<NMSDK::NControlObjectSource>(source_name,true);
+ if(source)
+ {
+  std::vector<int> indexes;
+  std::vector<double> data_mul;
+  std::vector<double> data_shift;
+  if(man_name == "PendulumAndCart")
+  {
+   indexes.resize(5);
+   indexes[0]=1;
+   indexes[1]=2;
+   indexes[2]=0;
+   indexes[3]=3;
+   indexes[4]=0;
+   data_mul.assign(5,1.0);
+   data_shift.assign(5,0.0);
+  }
+  else
+  if(man_name == "DCEngine")
+  {
+   indexes.resize(3);
+   indexes[0]=1;
+   indexes[1]=2;
+   indexes[2]=0;
+   data_mul.assign(3,1.0);
+   data_shift.assign(3,0.0);
+  }
+
+  source->DataIndexes=indexes;
+  source->DataMul=data_mul;
+  source->DataShift=data_shift;
+ }
 
  ZeroAngle=+3.14/2;
  return res;
@@ -1340,4 +1364,5 @@ void __fastcall TNewManipulatorControlForm::NewStatsButtonClick(TObject *Sender)
  stats->Reset();
 }
 //---------------------------------------------------------------------------
+
 
