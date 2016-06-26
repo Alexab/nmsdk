@@ -77,8 +77,15 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    Image->Repaint();
    std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
+   try
+   {
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
+   }
+   catch(Exception &ex)
+   {
+
+   }
   }
   //link2-
   for(int j=0;j<NumElem;j++)
@@ -116,8 +123,15 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    Image->Repaint();
    std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
+   try
+   {
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
+   }
+   catch(Exception &ex)
+   {
+
+   }
   }
  }
  //link1-
@@ -161,8 +175,15 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    Image->Repaint();
    std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
+   try
+   {
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
+   }
+   catch(Exception &ex)
+   {
+
+   }
   }
   //link2-
   for(int j=0;j<NumElem;j++)
@@ -200,8 +221,15 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    Image->Repaint();
    std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
+   try
+   {
    Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
+   }
+   catch(Exception &ex)
+   {
+
+   }
   }
  }
 }

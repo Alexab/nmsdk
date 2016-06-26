@@ -8,7 +8,8 @@
 #include "TUBitmap.h"
 //#include "UDrawEngineFormUnit.h"
 
-
+/// Экзепляр класса приложения
+extern RDK::UApplication RdkApplication;
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -193,6 +194,54 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
 	IIAfferentTrackBar->Position=-IINegAfferent->Frequency;
 	IIAfferentEdit->Text=FloatToStrF(-IINegAfferent->Frequency,ffFixed,3,3);
    }
+  }
+
+  NumMotionElementsTrackBar->Position=ControlSystem->NumMotionElements;
+  NumMotionElementsEdit->Text=IntToStr(NumMotionElementsTrackBar->Position);
+
+  BranchModeCheckBox->Checked=ControlSystem->MotoneuronBranchMode;
+  RenshowCellsCheckBox->Checked=ControlSystem->RenshowMode;
+  if(*ControlSystem->MCAfferentObjectName == "NSimpleAfferentNeuron")
+   UseSimpleAfferentsCheckBox->Checked=true;
+  else
+   UseSimpleAfferentsCheckBox->Checked=false;
+
+  if(*ControlSystem->MCNeuroObjectName == "NNewSynSPNeuron")
+   UseNewNeuronsCheckBox->Checked=true;
+  else
+   UseNewNeuronsCheckBox->Checked=false;
+
+
+  std::string buffer;
+  CurrentContourAmplitudeLabeledEdit->Text=ControlSystem->GetPropertyValue("CurrentContourAmplitude",buffer).c_str();
+  CurrentContourAverageLabeledEdit->Text=ControlSystem->GetPropertyValue("CurrentContourAverage",buffer).c_str();
+  TransientTimeLabeledEdit->Text=FloatToStrF(ControlSystem->CurrentTransientTime,ffFixed,3,3);
+  CurrentTransientStateCheckBox->Checked==ControlSystem->CurrentTransientState;
+
+  if((*ControlSystem->UseContourData)[0] == true)
+   EnableStructuralAdaptationCheckBox->Checked=true;
+  else
+   EnableStructuralAdaptationCheckBox->Checked=false;
+
+  if(!TUVisualControllerFrame::CalculationModeFlag)
+  {
+   MaxAmpLabeledEdit->Text=FloatToStrF((*ControlSystem->DestContourMaxAmplitude)[0],ffFixed,3,3);
+   MinAmpLabeledEdit->Text=FloatToStrF((*ControlSystem->DestContourMinAmplitude)[0],ffFixed,3,3);
+  }
+
+  if(EnableStructuralAdaptationCheckBox->Checked)
+  {
+   MaxAmpLabeledEdit->ReadOnly=true;
+   MinAmpLabeledEdit->ReadOnly=true;
+   MaxAmpLabeledEdit->Color=clBtnFace;
+   MinAmpLabeledEdit->Color=clBtnFace;
+  }
+  else
+  {
+   MaxAmpLabeledEdit->ReadOnly=false;
+   MinAmpLabeledEdit->ReadOnly=false;
+   MaxAmpLabeledEdit->Color=clWindow;
+   MinAmpLabeledEdit->Color=clWindow;
   }
  }
  IINumAfferentTrackBarChange(this);
@@ -792,57 +841,6 @@ void __fastcall TNewManipulatorControlForm::IIAfferentTrackBarChange(TObject *Se
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TNewManipulatorControlForm::IINumAfferentTrackBarChange(TObject *Sender)
-
-{
- if(UpdateInterfaceFlag)
-  return;
-
- bool res=true;
-
- RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
- if(!model)
-  return;
- RDK::UEPtr<NMSDK::NWPhysicalManipulator> Manipulator;
- RDK::UEPtr<NMSDK::UNet> UniversalManipulator;
- RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
- Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(model->GetComponentL(ManipulatorName,true));
- ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
- if(!ControlSystem)
-  return;
-
- if(IIAfferentTrackBar->Position<0)
-  ControlSystem->ConnectInternalGenerators(0,IINumAfferentTrackBar->Position,0);
- else
-  ControlSystem->ConnectInternalGenerators(1,IINumAfferentTrackBar->Position,0);
-
-/// Задает частоту работы внутреннего генератора
-//void SetInternalGeneratorFrequency(int control_loop_index, double value);
-/*
- for(int i=0;i<IINumAfferentTrackBar->Position;i++)
- {
-  // Вариант для отдельного участка мембраны для внешнего управления
-  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel");
-  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel");
-  res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel");
-  res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel");
- }
-
- for(int i=IINumAfferentTrackBar->Position;i<IINumAfferentTrackBar->Max;i++)
- {
-  // Вариант для отдельного участка мембраны для внешнего управления
-  res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel",0);
-  res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel",0);
- }
-  */
- IINumAfferentEdit->Text=IntToStr(IINumAfferentTrackBar->Position);
- if(!res)
-  return;
-// UDrawEngineForm->ReloadNet();
-}
-//---------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
 
@@ -1365,4 +1363,177 @@ void __fastcall TNewManipulatorControlForm::NewStatsButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TNewManipulatorControlForm::NumMotionElementsTrackBarChange(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ ControlSystem->NumMotionElements=NumMotionElementsTrackBar->Position;
+ NumMotionElementsEdit->Text=IntToStr(NumMotionElementsTrackBar->Position);
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::IINumAfferentTrackBarChange(TObject *Sender)
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ if(IIAfferentTrackBar->Position<0)
+  ControlSystem->ConnectInternalGenerators(0,IINumAfferentTrackBar->Position,0);
+ else
+  ControlSystem->ConnectInternalGenerators(1,IINumAfferentTrackBar->Position,0);
+ IINumAfferentEdit->Text=IntToStr(IINumAfferentTrackBar->Position);
+ IIAfferentTrackBarChange(Sender);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::BranchModeCheckBoxClick(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ if(BranchModeCheckBox->Checked)
+  ControlSystem->MotoneuronBranchMode=1;
+ else
+  ControlSystem->MotoneuronBranchMode=0;
+
+ ControlSystem->Reset();
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::RenshowCellsCheckBoxClick(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ if(RenshowCellsCheckBox->Checked)
+  ControlSystem->RenshowMode=1;
+ else
+  ControlSystem->RenshowMode=0;
+
+ ControlSystem->Reset();
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::UseSimpleAfferentsCheckBoxClick(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ if(UseSimpleAfferentsCheckBox->Checked)
+  ControlSystem->MCAfferentObjectName= "NSimpleAfferentNeuron";
+ else
+  ControlSystem->MCAfferentObjectName= "NSAfferentNeuron";
+
+ ControlSystem->Reset();
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::UseNewNeuronsCheckBoxClick(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ if(UseNewNeuronsCheckBox->Checked)
+  ControlSystem->MCNeuroObjectName= "NNewSynSPNeuron";
+ else
+  ControlSystem->MCNeuroObjectName= "NSynSPNeuron";
+
+ ControlSystem->Reset();
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::EnableStructuralAdaptationCheckBoxClick(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem;
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+
+ if(EnableStructuralAdaptationCheckBox->Checked)
+ {
+  try
+  {
+   (*ControlSystem->DestContourMaxAmplitude)[0]=StrToFloat(MaxAmpLabeledEdit->Text);
+   (*ControlSystem->DestContourMinAmplitude)[0]=StrToFloat(MinAmpLabeledEdit->Text);
+  }
+  catch(EConvertError &ex)
+  {
+
+  }
+  (*ControlSystem->UseContourData)[0]=true;
+ }
+ else
+  (*ControlSystem->UseContourData)[0]=false;
+
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
 
