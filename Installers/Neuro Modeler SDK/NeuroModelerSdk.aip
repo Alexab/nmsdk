@@ -1,0 +1,139 @@
+﻿[Setup]
+Version=6.4
+Edition=1
+GUID={4E882EBA-970C-E877-051C-CA30D9346389}
+AppName=Neuro Modeler SDK
+AppVersion=1.0.0.0
+CompanyName=
+WebSite=http://www.ailab.ru
+SupportLink=
+InstallMode=0
+InstallLevel=2
+PromptUninstall=1
+PromptSilentUninstall=0
+CheckVersions=0
+CheckMinVer=1.0
+CheckMaxVer=
+CheckNoUpdate=0
+Windows XP=1
+Windows Vista=1
+Windows 7=1
+Windows 8=1
+Windows 8.1=1
+Windows 10=1
+Windows Server 2003=0
+Windows Server 2008=0
+Windows Server 2008 R2=0
+Windows Server 2012=0
+Windows Server 2012 R2=0
+Windows Server 2016=0
+x64=0
+Admin=1
+Internet=0
+CloseApp=0
+CloseAppFile=iexplore.exe
+CloseAppText=Internet Explorer
+dotNET=0
+dotNETVersion=0
+LinkDN=http://www.microsoft.com/en-us/download/details.aspx?id=17113
+IE=0
+IEVersion=0
+LinkIE=http://www.microsoft.com/en-us/download/internet-explorer-10-details.aspx
+AR=0
+ARVersion=0
+LinkAR=http://get.adobe.com/reader/
+Java=0
+JavaVersion=0
+LinkJR=http://www.java.com/en/download/manual.jsp
+SQL=0
+SQLVersion=0
+LinkSQL=http://www.microsoft.com/en-us/download/details.aspx?id=5783
+SQLE=0
+SQLEVersion=0
+SQLExpressVersion=2005
+LinkSQLE=http://www.microsoft.com/en-us/download/details.aspx?id=30438
+PackageType=0
+DataFileName=
+SetupFolder=.
+SetupFileName=NeuroModelerSdk
+SetupFile=.\NeuroModelerSdk.exe
+IconFile=Default
+SourceDir=.\InstallSources
+InstallationPath=<ProgramFiles>\<AppName>
+MainExecutable=<InstallDir>\Bin\Platform\Win\MotionControl.exe
+ProgramGroup=<AppName>
+Uninstall=1
+ShowAddRemove=1
+SilentUninstall=0
+UninstallForce=0
+UninstallRestart=0
+UninstallSettings=0
+UninstallSettingsCommand=
+VisitUninstallPage=0
+UninstallURL=http://www.company.com/uninstall.html
+Updater=0
+UpdateURL=http://www.company.com/update.txt
+CheckUpdateBefore=0
+AutoCheckUpdate=0
+UpdateDay=1
+AutoSilentUpdate=0
+WizardBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Wizard\01.bmp
+HeaderBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Header\01.bmp
+SilentInstall=0
+ShowPublisher=0
+DialogWelcome=1
+DialogLicense=0
+DialogReadme=0
+DialogUserInfo=0
+DialogDestinationFolder=1
+DialogAdditionalTasks=1
+DialogReady=1
+DialogFinish=1
+DefaultLanguage=English
+AutoDetectLanguage=0
+AcceptAgreement=0
+InfoUserName=0
+InfoUserNameReq=0
+InfoCompany=0
+InfoCompanyReq=0
+InfoCustom=0
+InfoCustomReq=0
+InfoCustomName=
+InfoCustomType=0
+InfoSerial=0
+InfoSerialReq=0
+SerialsCount=0
+RestartComputer=0
+LaunchFile=1
+LaunchFileName=<InstallDir>\Bin\Platform\Win\MotionControl.exe
+LaunchFileChecked=1
+ViewReadme=0
+ViewReadmeFile=
+ViewReadmeChecked=0
+CustomAction=0
+CustomActionName=Visit Web Site
+CustomActionCommand=<WebSite>
+CustomActionChecked=0
+TotalFiles=1
+
+[Languages]
+English=
+Russian=
+
+[Files]
+0=C:\Program Files (x86)\Actual Installer\Uninstall.exe?<InstallDir>\Uninstall.exe?1?-1
+
+[License]
+(Default)=
+English=
+Russian=
+
+[Readme]
+(Default)=
+English=
+Russian=
+
+[Shortcuts]
+0=<ProgramGroup>*?Uninstall <AppName>*?<InstallDir>\Uninstall.exe*?*?*?<InstallDir>*?*?0*?Normal
+1=<ProgramGroup>*?MotionControl*?<InstallDir>\Bin\Platform\Win\MotionControl.exe*?Neuro Modeler Application*?*?<InstallDir>\Bin\Platform\Win*?*?0*?Normal
+

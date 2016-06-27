@@ -117,9 +117,9 @@
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Defines>_DEBUG;$(Defines)</Defines>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
         <BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib;inetwinsockets.lib;xmlrtl.lib;vclactnband.lib</LinkPackageStatics>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
