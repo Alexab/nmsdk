@@ -1,4 +1,4 @@
-﻿object NewManipulatorControlForm: TNewManipulatorControlForm
+object NewManipulatorControlForm: TNewManipulatorControlForm
   Left = 0
   Top = 0
   Caption = 'NewManipulatorControlForm'
@@ -25,8 +25,6 @@
     Width = 833
     Height = 19
     Panels = <>
-    ExplicitTop = 495
-    ExplicitWidth = 725
   end
   object PageControl1: TPageControl
     Left = 0
@@ -36,12 +34,8 @@
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 725
-    ExplicitHeight = 495
     object TabSheet1: TTabSheet
       Caption = 'Communication'
-      ExplicitWidth = 717
-      ExplicitHeight = 467
       object GroupBox1: TGroupBox
         Left = 0
         Top = 102
@@ -51,7 +45,6 @@
         Caption = ' Communication options '
         Enabled = False
         TabOrder = 0
-        ExplicitHeight = 365
         object Label1: TLabel
           Left = 7
           Top = 52
@@ -152,7 +145,6 @@
         Align = alTop
         Caption = ' Manipulator component name  '
         TabOrder = 1
-        ExplicitWidth = 717
         object ComponentSelectionPanel: TPanel
           Left = 2
           Top = 15
@@ -164,7 +156,6 @@
           ParentBackground = False
           TabOrder = 0
           OnDblClick = ComponentSelectionPanelDblClick
-          ExplicitWidth = 713
         end
       end
       object GroupBox3: TGroupBox
@@ -176,8 +167,6 @@
         Caption = ' Communication control '
         Enabled = False
         TabOrder = 2
-        ExplicitWidth = 473
-        ExplicitHeight = 365
         DesignSize = (
           581
           580)
@@ -190,7 +179,6 @@
           Caption = ' Connect '
           TabOrder = 0
           OnClick = ConnectButtonClick
-          ExplicitWidth = 464
         end
         object DisconnectButton: TButton
           Left = 6
@@ -202,7 +190,6 @@
           Enabled = False
           TabOrder = 1
           OnClick = DisconnectButtonClick
-          ExplicitWidth = 464
         end
         object ResetButton: TButton
           Left = 6
@@ -214,7 +201,6 @@
           Enabled = False
           TabOrder = 2
           OnClick = ResetButtonClick
-          ExplicitWidth = 464
         end
         object StartButton: TButton
           Left = 6
@@ -226,7 +212,6 @@
           Enabled = False
           TabOrder = 3
           OnClick = StartButtonClick
-          ExplicitWidth = 464
         end
         object StopButton: TButton
           Left = 6
@@ -238,7 +223,6 @@
           Enabled = False
           TabOrder = 4
           OnClick = StopButtonClick
-          ExplicitWidth = 464
         end
       end
       object GroupBox6: TGroupBox
@@ -249,7 +233,6 @@
         Align = alTop
         Caption = ' Control system component name  '
         TabOrder = 3
-        ExplicitWidth = 717
         object ControlSystemSelectionPanel: TPanel
           Left = 2
           Top = 15
@@ -261,15 +244,12 @@
           ParentBackground = False
           TabOrder = 0
           OnDblClick = ControlSystemSelectionPanelDblClick
-          ExplicitWidth = 713
         end
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Manual Control'
       ImageIndex = 1
-      ExplicitWidth = 717
-      ExplicitHeight = 467
       object GroupBox4: TGroupBox
         Left = 0
         Top = 0
@@ -278,15 +258,14 @@
         Align = alLeft
         Caption = ' Servo Control '
         TabOrder = 0
-        ExplicitHeight = 467
-        object Время: TLabel
+        object TimeLabel: TLabel
           Left = 8
           Top = 126
           Width = 22
           Height = 13
           Caption = 'Time'
         end
-        object Скорость: TLabel
+        object SpeedLabel: TLabel
           Left = 8
           Top = 68
           Width = 30
@@ -367,8 +346,6 @@
     object TabSheet3: TTabSheet
       Caption = 'Neuro Control'
       ImageIndex = 2
-      ExplicitWidth = 717
-      ExplicitHeight = 467
       object GroupBox5: TGroupBox
         Left = 0
         Top = 0
@@ -377,8 +354,6 @@
         Align = alLeft
         Caption = ' External control '
         TabOrder = 0
-        ExplicitLeft = -1
-        ExplicitTop = -2
         object Label5: TLabel
           Left = 13
           Top = 19
@@ -458,7 +433,6 @@
           Align = alBottom
           Caption = ' Target position '
           TabOrder = 5
-          ExplicitTop = 379
           DesignSize = (
             206
             86)
@@ -511,7 +485,6 @@
           Align = alBottom
           Caption = ' External power  '
           TabOrder = 6
-          ExplicitTop = 294
           DesignSize = (
             206
             85)
@@ -647,6 +620,7 @@
           EditLabel.Width = 48
           EditLabel.Height = 13
           EditLabel.Caption = 'Max Amp:'
+          EditLabel.Color = clBtnFace
           EditLabel.ParentColor = False
           TabOrder = 16
         end
@@ -658,6 +632,7 @@
           EditLabel.Width = 44
           EditLabel.Height = 13
           EditLabel.Caption = 'Min Amp:'
+          EditLabel.Color = clBtnFace
           EditLabel.ParentColor = False
           TabOrder = 17
         end
@@ -669,8 +644,6 @@
         Height = 682
         Align = alClient
         TabOrder = 1
-        ExplicitWidth = 507
-        ExplicitHeight = 467
         object Splitter1: TSplitter
           Left = 1
           Top = 475
@@ -691,8 +664,6 @@
           DoubleBuffered = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitWidth = 505
-          ExplicitHeight = 215
           object Splitter2: TSplitter
             Left = 228
             Top = 15
@@ -707,9 +678,6 @@
             Height = 457
             Align = alLeft
             TabOrder = 0
-            ExplicitLeft = 5
-            ExplicitTop = 14
-            ExplicitHeight = 386
             object Label13: TLabel
               Left = 13
               Top = 10
@@ -826,8 +794,6 @@
             Height = 457
             Align = alClient
             TabOrder = 1
-            ExplicitWidth = 266
-            ExplicitHeight = 198
             object DrawGrid: TDrawGrid
               Left = 1
               Top = 1
@@ -842,8 +808,6 @@
               ParentDoubleBuffered = False
               TabOrder = 0
               OnDrawCell = DrawGridDrawCell
-              ExplicitWidth = 264
-              ExplicitHeight = 196
             end
           end
         end
@@ -855,7 +819,6 @@
           ActivePage = TabSheet4
           Align = alBottom
           TabOrder = 1
-          ExplicitTop = 417
           object TabSheet4: TTabSheet
             Caption = 'Models'
             object CurrentContourAmplitudeLabeledEdit: TLabeledEdit
@@ -912,9 +875,6 @@
               Align = alClient
               Caption = ' Neuro manipulator parameters '
               TabOrder = 0
-              ExplicitTop = 174
-              ExplicitWidth = 613
-              ExplicitHeight = 237
               object Label12: TLabel
                 Left = 14
                 Top = 111

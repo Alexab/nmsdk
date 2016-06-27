@@ -32,6 +32,7 @@ __fastcall TNManipulatorControlForm::TNManipulatorControlForm(TComponent* Owner)
 
  Movement=0;
  TempBmp=0;
+ Angle=0;
 }
 
 void TNManipulatorControlForm::AUpdateInterface(void)

@@ -19,6 +19,10 @@ __fastcall TNDrawManipulatorFrame::TNDrawManipulatorFrame(TComponent* Owner)
  Length=100;
  X1=CanvasWidth/2;
  Y1=50;//CanvasHeight/2;
+ X2=0;
+ Y2=0;
+ Angle1=0;
+ Angle2=0;
  BmpGraphics.SetPenWidth(2);
  //UpdateInterval = 100;
  // Константное смещение на постоянный угол при отображении

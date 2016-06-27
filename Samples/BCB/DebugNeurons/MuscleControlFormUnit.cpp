@@ -15,6 +15,11 @@ __fastcall TMuscleControlForm::TMuscleControlForm(TComponent* Owner)
  AfferentSource1=AfferentSource2=0;
  Muscle1=Muscle2=0;
  Net=0;
+
+ Generator=0;
+ Length1=Length2=0;
+
+ Renshow1Activator=Renshow2Activator=Renshow1Deactivator=Renshow2Deactivator=0;
 }
 //---------------------------------------------------------------------------
 void __fastcall TMuscleControlForm::Afferent1TrackBarChange(TObject *Sender)

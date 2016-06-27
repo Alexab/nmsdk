@@ -33,6 +33,7 @@ __fastcall TNewManipulatorControlForm::TNewManipulatorControlForm(TComponent* Ow
 
  Movement=0;
  TempBmp=0;
+ Angle=0;
 }
 
 void TNewManipulatorControlForm::AUpdateInterface(void)

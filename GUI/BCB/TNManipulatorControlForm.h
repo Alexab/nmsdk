@@ -65,8 +65,8 @@ __published:	// IDE-managed Components
 	TMenuItem *Start1;
 	TMenuItem *Stop1;
 	TGroupBox *GroupBox4;
-	TLabel *Время;
-	TLabel *Скорость;
+	TLabel *Time;
+	TLabel *Speed;
 	TLabel *Label3;
 	TLabel *Label4;
 	TButton *Button2;

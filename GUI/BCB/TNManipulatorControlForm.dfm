@@ -1,4 +1,4 @@
-﻿object NManipulatorControlForm: TNManipulatorControlForm
+object NManipulatorControlForm: TNManipulatorControlForm
   Left = 0
   Top = 0
   Caption = 'NManipulatorControlForm'
@@ -258,14 +258,14 @@
         Align = alLeft
         Caption = ' Servo Control '
         TabOrder = 0
-        object Время: TLabel
+        object Time: TLabel
           Left = 8
           Top = 126
           Width = 22
           Height = 13
           Caption = 'Time'
         end
-        object Скорость: TLabel
+        object Speed: TLabel
           Left = 8
           Top = 68
           Width = 30

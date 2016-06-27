@@ -215,8 +215,6 @@ object MuscleControlForm: TMuscleControlForm
         Align = alTop
         Caption = ' '#1044#1083#1080#1085#1072' '#1084#1099#1096#1094#1099' 1 '
         TabOrder = 2
-        ExplicitLeft = 0
-        ExplicitTop = 168
         object LengthEdit1: TEdit
           Left = 176
           Top = 16
