@@ -3,7 +3,7 @@ Version=6.4
 Edition=1
 GUID={4E882EBA-970C-E877-051C-CA30D9346389}
 AppName=Neuro Modeler SDK
-AppVersion=1.0.0.0
+AppVersion=1.0.0.4
 CompanyName=
 WebSite=http://www.ailab.ru
 SupportLink=
@@ -135,5 +135,5 @@ Russian=
 
 [Shortcuts]
 0=<ProgramGroup>*?Uninstall <AppName>*?<InstallDir>\Uninstall.exe*?*?*?<InstallDir>*?*?0*?Normal
-1=<ProgramGroup>*?MotionControl*?<InstallDir>\Bin\Platform\Win\MotionControl.exe*?Neuro Modeler Application*?*?<InstallDir>\Bin\Platform\Win*?*?0*?Normal
+1=<ProgramGroup>*?MotionControl*?<InstallDir>\Bin\Platform\Win\MotionControl.exe*?Motion Control*?*?<InstallDir>\Bin\Platform\Win*?*?0*?Normal
 
