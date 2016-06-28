@@ -34,6 +34,7 @@ __fastcall TNewManipulatorControlForm::TNewManipulatorControlForm(TComponent* Ow
  Movement=0;
  TempBmp=0;
  Angle=0;
+ UpdateControlLoopsFlag=false;
 }
 
 void TNewManipulatorControlForm::AUpdateInterface(void)
@@ -200,6 +201,11 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
   NumMotionElementsTrackBar->Position=ControlSystem->NumMotionElements;
   NumMotionElementsEdit->Text=IntToStr(NumMotionElementsTrackBar->Position);
 
+  NumControlLoopsTrackBar->Position=ControlSystem->NumControlLoops;
+  NumControlLoopsEdit->Text=IntToStr(NumControlLoopsTrackBar->Position);
+
+  SensorDivisionComboBox->ItemIndex=ControlSystem->AfferentRangeMode;
+
   BranchModeCheckBox->Checked=ControlSystem->MotoneuronBranchMode;
   RenshowCellsCheckBox->Checked=ControlSystem->RenshowMode;
   if(*ControlSystem->MCAfferentObjectName == "NSimpleAfferentNeuron")
@@ -263,25 +269,29 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
  if (ControlSystem)
  {
   int num_controls=ControlSystem->GetNumControlLoops();
-  if(ControlSystem->ActiveContours->size() == num_controls)
+  if(!CalculationModeFlag || UpdateControlLoopsFlag)
   {
-   if(CheckListBox1->Items->Count != num_controls)
+   UpdateControlLoopsFlag=false;
+   if(ControlSystem->ActiveContours->size() == num_controls)
    {
-	CheckListBox1->Items->Clear();
-	 for (int i=0; i < num_controls; i++)
-	 {
+	if(CheckListBox1->Items->Count != num_controls)
+	{
+	 CheckListBox1->Items->Clear();
+	  for (int i=0; i < num_controls; i++)
+	  {
 	   CheckListBox1->Items->Add("Afferent"+IntToStr(i+1));
 	   CheckListBox1->Checked[i]=(*ControlSystem->ActiveContours)[i];
-	 }
-   }
-   else
-   {
+	  }
+	}
+	else
+	{
 	 for (int i=0; i < num_controls; i++)
 	 {
 	   CheckListBox1->Items->Strings[i]="Afferent"+IntToStr(i+1);
 	   if(CheckListBox1->Checked[i] != (*ControlSystem->ActiveContours)[i])
 		CheckListBox1->Checked[i]=(*ControlSystem->ActiveContours)[i];
 	 }
+	}
    }
   }
  }
@@ -1242,7 +1252,8 @@ void __fastcall TNewManipulatorControlForm::ResetToZeroButton2Click(TObject *Sen
 void __fastcall TNewManipulatorControlForm::CheckListBox1Click(TObject *Sender)
 {
  if(UpdateInterfaceFlag)
-	return;
+  return;
+
  bool res=true;
 
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
@@ -1256,62 +1267,12 @@ void __fastcall TNewManipulatorControlForm::CheckListBox1Click(TObject *Sender)
  if(!ControlSystem)
   return;
 
-/*
- int num_motions=ControlSystem->NumMotionElements;
- int num_controls=ControlSystem->GetNumControlLoops();
-
-   for(int i=0;i<num_motions;i++)
-   {
-	for (int j = 0; j <num_controls; j++) 
-	{
-
-	  std::string motion=std::string("MotionElement")+RDK::sntoa(i);
-	  std::string pos_separator=std::string("PosIntervalSeparator")+RDK::sntoa(i+1)+RDK::sntoa(j+1);
-	  std::string neg_separator=std::string("NegIntervalSeparator")+RDK::sntoa(i+1)+RDK::sntoa(j+1);
-	  if (!Model_CheckComponent((ControlSystemName+std::string(".")+pos_separator).c_str())||
-	  	 !Model_CheckComponent((ControlSystemName+std::string(".")+neg_separator).c_str()))
-	  {
-		 ControlSystem->NewIntervalSeparatorsSetup(5, 1, -1);
-		 ControlSystem->NewIntervalSeparatorLinksSetup();
-	  }
-
-	  if(!Model_CheckComponent((ControlSystemName+std::string(".")+motion+".AfferentL"+RDK::sntoa(j+1)+".Receptor").c_str()) ||
-		!Model_CheckComponent((ControlSystemName+std::string(".")+motion+".AfferentR"+RDK::sntoa(j+1)+".Receptor").c_str()))
-	   break;
-
-	  if(CheckListBox1->Checked[j])
-	  {
-		res&=ControlSystem->BreakLink("AfferentSource1",0,motion+".AfferentL"+RDK::sntoa(j+1)+".Receptor",0);
-		res&=ControlSystem->BreakLink("AfferentSource1",0,motion+".AfferentR"+RDK::sntoa(j+1)+".Receptor",0);
-	
-		res&=ControlSystem->CreateLink(pos_separator,0,motion+".AfferentL"+RDK::sntoa(j+1)+".Receptor",0);
-		res&=ControlSystem->CreateLink(neg_separator,0,motion+".AfferentR"+RDK::sntoa(j+1)+".Receptor",0);
-		ControlSystem->SetIsAfferentLinked(j,true);
-	  }
-	  else
-	  {
-		res&=ControlSystem->BreakLink(pos_separator,0,motion+".AfferentL"+RDK::sntoa(j+1)+".Receptor",0);
-		res&=ControlSystem->BreakLink(neg_separator,0,motion+".AfferentR"+RDK::sntoa(j+1)+".Receptor",0);
-		res&=ControlSystem->CreateLink("AfferentSource1",0,motion+".AfferentL"+RDK::sntoa(j+1)+".Receptor",0);
-		res&=ControlSystem->CreateLink("AfferentSource1",0,motion+".AfferentR"+RDK::sntoa(j+1)+".Receptor",0);
-		ControlSystem->SetIsAfferentLinked(j,false);
-	  }
-	}
-   }
-  
-
-
- if(!res)
-  return;
-
- */
  std::vector<bool> act_cont;
  act_cont.resize(CheckListBox1->Count);
  for(int i=0;i<CheckListBox1->Count;i++)
   act_cont[i]=CheckListBox1->Checked[i];
 
  ControlSystem->ActiveContours=act_cont;
-
 }
 //---------------------------------------------------------------------------
 
@@ -1534,6 +1495,47 @@ void __fastcall TNewManipulatorControlForm::EnableStructuralAdaptationCheckBoxCl
  else
   (*ControlSystem->UseContourData)[0]=false;
 
+ UpdateInterface();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TNewManipulatorControlForm::NumControlLoopsTrackBarChange(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+
+ ControlSystem->NumControlLoops=NumControlLoopsTrackBar->Position;
+ NumControlLoopsEdit->Text=IntToStr(NumControlLoopsTrackBar->Position);
+ UpdateControlLoopsFlag=true;
+ UpdateInterface();
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TNewManipulatorControlForm::SensorDivisionComboBoxChange(TObject *Sender)
+
+{
+ if(UpdateInterfaceFlag)
+  return;
+
+ RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
+ if(!model)
+  return;
+
+ RDK::UEPtr<NMSDK::NEngineMotionControl> ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(model->GetComponentL(ControlSystemName,true));
+ if(!ControlSystem)
+  return;
+ ControlSystem->AfferentRangeMode=SensorDivisionComboBox->ItemIndex;
  UpdateInterface();
 }
 //---------------------------------------------------------------------------

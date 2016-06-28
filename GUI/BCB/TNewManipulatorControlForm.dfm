@@ -363,20 +363,27 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
         end
         object Label6: TLabel
           Left = 13
-          Top = 81
+          Top = 69
           Width = 174
           Height = 13
           Caption = 'Number of II Afferents ext. controls'
         end
         object Label14: TLabel
           Left = 13
-          Top = 289
+          Top = 269
           Width = 131
           Height = 13
           Caption = 'Number of Motion Elements'
         end
+        object Label15: TLabel
+          Left = 9
+          Top = 445
+          Width = 126
+          Height = 13
+          Caption = 'Sensor and afferent mode'
+        end
         object IIAfferentTrackBar: TTrackBar
-          Left = 4
+          Left = 2
           Top = 38
           Width = 153
           Height = 29
@@ -397,7 +404,7 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
         end
         object IINumAfferentTrackBar: TTrackBar
           Left = 2
-          Top = 98
+          Top = 86
           Width = 153
           Height = 28
           Max = 5
@@ -406,7 +413,7 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
         end
         object IINumAfferentEdit: TEdit
           Left = 155
-          Top = 98
+          Top = 86
           Width = 46
           Height = 21
           Color = clBtnFace
@@ -415,8 +422,8 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           Text = '0'
         end
         object ControlVoltageCheckBox: TCheckBox
-          Left = 13
-          Top = 239
+          Left = 9
+          Top = 113
           Width = 191
           Height = 19
           Caption = 'Control power (U) '
@@ -427,12 +434,13 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
         end
         object GroupBox10: TGroupBox
           Left = 2
-          Top = 594
+          Top = 576
           Width = 206
           Height = 86
           Align = alBottom
           Caption = ' Target position '
           TabOrder = 5
+          ExplicitTop = 594
           DesignSize = (
             206
             86)
@@ -479,12 +487,13 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
         end
         object GroupBox11: TGroupBox
           Left = 2
-          Top = 509
+          Top = 491
           Width = 206
           Height = 85
           Align = alBottom
           Caption = ' External power  '
           TabOrder = 6
+          ExplicitTop = 509
           DesignSize = (
             206
             85)
@@ -530,91 +539,85 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           end
         end
         object HideSecondaryGuiCheckBox: TCheckBox
-          Left = 13
-          Top = 264
-          Width = 197
+          Left = 2
+          Top = 662
+          Width = 206
           Height = 18
+          Align = alBottom
           Caption = 'Hide secondary GUI'
           TabOrder = 7
           OnClick = HideSecondaryGuiCheckBoxClick
-        end
-        object CheckListBox1: TCheckListBox
-          Left = 13
-          Top = 132
-          Width = 191
-          Height = 102
-          ItemHeight = 13
-          TabOrder = 8
-          OnClick = CheckListBox1Click
+          ExplicitLeft = 3
+          ExplicitTop = 674
         end
         object NumMotionElementsTrackBar: TTrackBar
           Left = 3
-          Top = 306
+          Top = 286
           Width = 153
           Height = 28
           Min = 1
           Position = 1
-          TabOrder = 9
+          TabOrder = 8
           OnChange = NumMotionElementsTrackBarChange
         end
         object NumMotionElementsEdit: TEdit
           Left = 155
-          Top = 306
+          Top = 286
           Width = 46
           Height = 21
           Color = clBtnFace
           ReadOnly = True
-          TabOrder = 10
+          TabOrder = 9
           Text = '0'
         end
         object BranchModeCheckBox: TCheckBox
           Left = 13
-          Top = 340
+          Top = 315
           Width = 97
           Height = 17
           Caption = 'Use Branch Mode'
-          TabOrder = 11
+          TabOrder = 10
           OnClick = BranchModeCheckBoxClick
         end
         object RenshowCellsCheckBox: TCheckBox
           Left = 13
-          Top = 363
+          Top = 333
           Width = 116
           Height = 17
           Caption = 'Use Renshow Cells'
-          TabOrder = 12
+          TabOrder = 11
           OnClick = RenshowCellsCheckBoxClick
         end
         object UseSimpleAfferentsCheckBox: TCheckBox
           Left = 13
-          Top = 386
+          Top = 351
           Width = 116
           Height = 17
           Caption = 'Use Simple Afferents'
-          TabOrder = 13
+          TabOrder = 12
           OnClick = UseSimpleAfferentsCheckBoxClick
         end
         object UseNewNeuronsCheckBox: TCheckBox
           Left = 13
-          Top = 409
+          Top = 367
           Width = 116
           Height = 17
           Caption = 'Use New Neurons'
-          TabOrder = 14
+          TabOrder = 13
           OnClick = UseNewNeuronsCheckBoxClick
         end
         object EnableStructuralAdaptationCheckBox: TCheckBox
           Left = 13
-          Top = 443
+          Top = 384
           Width = 163
           Height = 17
           Caption = 'Enable Structural Adaptation'
-          TabOrder = 15
+          TabOrder = 14
           OnClick = EnableStructuralAdaptationCheckBoxClick
         end
         object MaxAmpLabeledEdit: TLabeledEdit
           Left = 13
-          Top = 482
+          Top = 421
           Width = 68
           Height = 21
           EditLabel.Width = 48
@@ -622,11 +625,11 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           EditLabel.Caption = 'Max Amp:'
           EditLabel.Color = clBtnFace
           EditLabel.ParentColor = False
-          TabOrder = 16
+          TabOrder = 15
         end
         object MinAmpLabeledEdit: TLabeledEdit
           Left = 108
-          Top = 482
+          Top = 421
           Width = 68
           Height = 21
           EditLabel.Width = 44
@@ -634,7 +637,62 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           EditLabel.Caption = 'Min Amp:'
           EditLabel.Color = clBtnFace
           EditLabel.ParentColor = False
+          TabOrder = 16
+        end
+        object GroupBox9: TGroupBox
+          Left = 3
+          Top = 135
+          Width = 201
+          Height = 132
+          Caption = ' Control loops '
           TabOrder = 17
+          object CheckListBox1: TCheckListBox
+            Left = 2
+            Top = 15
+            Width = 197
+            Height = 78
+            Align = alTop
+            ItemHeight = 13
+            TabOrder = 0
+            OnClick = CheckListBox1Click
+          end
+          object NumControlLoopsTrackBar: TTrackBar
+            Left = 5
+            Top = 98
+            Width = 141
+            Height = 28
+            Max = 5
+            Min = 1
+            Position = 1
+            TabOrder = 1
+            OnChange = NumControlLoopsTrackBarChange
+          end
+          object NumControlLoopsEdit: TEdit
+            Left = 148
+            Top = 99
+            Width = 46
+            Height = 21
+            Color = clBtnFace
+            ReadOnly = True
+            TabOrder = 2
+            Text = '0'
+          end
+        end
+        object SensorDivisionComboBox: TComboBox
+          Left = 9
+          Top = 464
+          Width = 195
+          Height = 21
+          Style = csDropDownList
+          ItemIndex = 0
+          TabOrder = 18
+          Text = 'Evenly (0)'
+          OnChange = SensorDivisionComboBoxChange
+          Items.Strings = (
+            'Evenly (0)'
+            'Quadratic Rising (1)'
+            'Rise as a power of 2 (2)'
+            'Linear Rising (3)')
         end
       end
       object Panel1: TPanel

@@ -114,7 +114,6 @@ __published:	// IDE-managed Components
 	TDrawGrid *DrawGrid;
 	TButton *ResetToZeroButton1;
 	TButton *ResetToZeroButton2;
-	TCheckListBox *CheckListBox1;
 	TButton *SaveStatsButton;
 	TButton *NewStatsButton;
 	TButton *ManipDrawButton;
@@ -148,6 +147,12 @@ __published:	// IDE-managed Components
 	TCheckBox *EnableStructuralAdaptationCheckBox;
 	TLabeledEdit *MaxAmpLabeledEdit;
 	TLabeledEdit *MinAmpLabeledEdit;
+	TGroupBox *GroupBox9;
+	TCheckListBox *CheckListBox1;
+	TTrackBar *NumControlLoopsTrackBar;
+	TEdit *NumControlLoopsEdit;
+	TLabel *Label15;
+	TComboBox *SensorDivisionComboBox;
 	void __fastcall Disconnect1Click(TObject *Sender);
 	void __fastcall MoveLeft1Click(TObject *Sender);
 	void __fastcall MoveRight1Click(TObject *Sender);
@@ -197,6 +202,8 @@ __published:	// IDE-managed Components
 	void __fastcall UseSimpleAfferentsCheckBoxClick(TObject *Sender);
 	void __fastcall UseNewNeuronsCheckBoxClick(TObject *Sender);
 	void __fastcall EnableStructuralAdaptationCheckBoxClick(TObject *Sender);
+	void __fastcall NumControlLoopsTrackBarChange(TObject *Sender);
+	void __fastcall SensorDivisionComboBoxChange(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TNewManipulatorControlForm(TComponent* Owner);
@@ -244,6 +251,8 @@ double ZeroMovement;
 std::string ReadComponentName;
 
 TBitmap *TempBmp;
+
+bool UpdateControlLoopsFlag;
 
 
 // Сохраняет параметры интерфейса в xml
