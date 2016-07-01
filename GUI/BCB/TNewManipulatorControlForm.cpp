@@ -223,7 +223,7 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
   CurrentContourAmplitudeLabeledEdit->Text=ControlSystem->GetPropertyValue("CurrentContourAmplitude",buffer).c_str();
   CurrentContourAverageLabeledEdit->Text=ControlSystem->GetPropertyValue("CurrentContourAverage",buffer).c_str();
   TransientTimeLabeledEdit->Text=FloatToStrF(ControlSystem->CurrentTransientTime,ffFixed,3,3);
-  CurrentTransientStateCheckBox->Checked==ControlSystem->CurrentTransientState;
+  CurrentTransientStateCheckBox->Checked=ControlSystem->CurrentTransientState;
 
   if((*ControlSystem->UseContourData)[0] == true)
    EnableStructuralAdaptationCheckBox->Checked=true;

@@ -440,7 +440,6 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           Align = alBottom
           Caption = ' Target position '
           TabOrder = 5
-          ExplicitTop = 594
           DesignSize = (
             206
             86)
@@ -493,7 +492,6 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           Align = alBottom
           Caption = ' External power  '
           TabOrder = 6
-          ExplicitTop = 509
           DesignSize = (
             206
             85)
@@ -547,8 +545,6 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           Caption = 'Hide secondary GUI'
           TabOrder = 7
           OnClick = HideSecondaryGuiCheckBoxClick
-          ExplicitLeft = 3
-          ExplicitTop = 674
         end
         object NumMotionElementsTrackBar: TTrackBar
           Left = 3
