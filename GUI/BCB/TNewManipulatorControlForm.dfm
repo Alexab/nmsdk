@@ -917,6 +917,17 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
               Enabled = False
               TabOrder = 3
             end
+            object InstantAvgSpeedLabeledEdit: TLabeledEdit
+              Left = 295
+              Top = 64
+              Width = 122
+              Height = 21
+              EditLabel.Width = 90
+              EditLabel.Height = 13
+              EditLabel.Caption = 'Avg Instant Speed'
+              ReadOnly = True
+              TabOrder = 4
+            end
           end
           object TabSheet5: TTabSheet
             Caption = 'Phys Manipulator'

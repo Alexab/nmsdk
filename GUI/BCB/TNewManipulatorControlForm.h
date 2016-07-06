@@ -153,6 +153,7 @@ __published:	// IDE-managed Components
 	TEdit *NumControlLoopsEdit;
 	TLabel *Label15;
 	TComboBox *SensorDivisionComboBox;
+	TLabeledEdit *InstantAvgSpeedLabeledEdit;
 	void __fastcall Disconnect1Click(TObject *Sender);
 	void __fastcall MoveLeft1Click(TObject *Sender);
 	void __fastcall MoveRight1Click(TObject *Sender);
@@ -246,6 +247,8 @@ double ZeroAngle;
 
 // Константное смещение по перемещению при отображении
 double ZeroMovement;
+
+std::vector<double> PosAngles,NegAngles;
 
 // Имя компонента с которого считываем данные
 std::string ReadComponentName;

@@ -144,6 +144,7 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
 
 
  ReadComponentData();
+ BmpGraphics.SetPenWidth(4);
  BmpCanvas.SetRes(CanvasWidth,CanvasHeight,RDK::ubmRGB24);
  BmpCanvas.Fill(RDK::UColorT(255,255,255));
  BmpGraphics.SetPenColor(0x00FF0000);
@@ -154,9 +155,23 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
   BmpGraphics.Line(X+i*10,Y-10,X+i*10,Y);
   BmpGraphics.Line(X-i*10,Y-10,X-i*10,Y);
  }
+
+ BmpGraphics.SetPenWidth(2);
+ BmpGraphics.SetPenColor(0x00555555);
+
+ for(size_t i=0;i<PosAngles.size();i++)
+ {
+  BmpGraphics.Line(Movement+ZeroMovement+X,Y,Movement+ZeroMovement+X+Length*cos(ZeroAngle+PosAngles[i]),Y+Length*sin(ZeroAngle+PosAngles[i]));
+  BmpGraphics.Line(Movement+ZeroMovement+X,Y,Movement+ZeroMovement+X+Length*cos(ZeroAngle+NegAngles[i]),Y+Length*sin(ZeroAngle+NegAngles[i]));
+ }
+
+ BmpGraphics.SetPenWidth(4);
  BmpGraphics.SetPenColor(0x000000FF);
  BmpGraphics.Line(Movement+ZeroMovement+X,Y,Movement+ZeroMovement+X+Length*cos(ZeroAngle+Angle),Y+Length*sin(ZeroAngle+Angle));
  BmpGraphics.Circle(Movement+ZeroMovement+X,Y,10,true);
+
+
+
  BmpCanvas>>TempBmp;
  if(ControlSystem)
  {
@@ -224,6 +239,7 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
   CurrentContourAverageLabeledEdit->Text=ControlSystem->GetPropertyValue("CurrentContourAverage",buffer).c_str();
   TransientTimeLabeledEdit->Text=FloatToStrF(ControlSystem->CurrentTransientTime,ffFixed,3,3);
   CurrentTransientStateCheckBox->Checked=ControlSystem->CurrentTransientState;
+  InstantAvgSpeedLabeledEdit->Text=FloatToStrF(ControlSystem->InstantAvgSpeed,ffFixed,3,3);
 
   if((*ControlSystem->UseContourData)[0] == true)
    EnableStructuralAdaptationCheckBox->Checked=true;
@@ -551,6 +567,25 @@ void TNewManipulatorControlForm::ReadComponentData(void)
  {
   Movement=RDK::dynamic_pointer_cast<RDK::UADItem>(model->GetComponentL(ReadComponentName))->GetOutputData(3).Double[0];
   Movement*=100; // в 1 метре 10 пикселей
+ }
+
+
+ PosAngles.assign(ControlSystem->NumMotionElements,0.0);
+ NegAngles.assign(ControlSystem->NumMotionElements,0.0);
+ for(int i=0;i<ControlSystem->NumMotionElements;i++)
+ {
+  RDK::UEPtr<NMSDK::NIntervalSeparator> pos_sep=ControlSystem->GetComponentL<NMSDK::NIntervalSeparator>(std::string("PosIntervalSeparator")+RDK::sntoa(i+1)+"1",true);
+  RDK::UEPtr<NMSDK::NIntervalSeparator> neg_sep=ControlSystem->GetComponentL<NMSDK::NIntervalSeparator>(std::string("NegIntervalSeparator")+RDK::sntoa(i+1)+"1",true);
+
+  if(pos_sep)
+  {
+   PosAngles[i]=(*pos_sep->MaxRange)[0];
+  }
+
+  if(neg_sep)
+  {
+   NegAngles[i]=(*neg_sep->MinRange)[0];
+  }
  }
 }
 
