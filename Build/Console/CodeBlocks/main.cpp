@@ -108,19 +108,33 @@ int main(int argc, char* argv[])
   return 9000003;
  }
 
- res=RdkApplication.OpenProject(configuration_name);
- if(res != RDK_SUCCESS)
+ bool open_res=RdkApplication.OpenProject(configuration_name);
+ if(open_res != true)
  {
   cout<<"Open configuration: Fail!"<<endl;
   return res;
  }
  cout<<"Open configuration: Success."<<endl;
+ cout<<"Ready to calc."<<endl;
+
+ double CalcTimeInterval=RDK::atof(ParsedArgs["-t"]);
+ if(CalcTimeInterval<0 || CalcTimeInterval>10e8)
+ {
+  cout<<"CalcTimeInterval: Incorrect value "<<CalcTimeInterval<<"!"<<endl;
+  return 9000004;
+ }
+ cout<<"CalcTimeInterval: "<<CalcTimeInterval<<" sec"<<endl;
 
 
- cout<<"Init: Passed."<<" Components in storage: "<<GetStorageLock()->GetNumClasses()<<endl;
-
-
-
+ RdkApplication.StartChannel(0);
+ double calc_time(0.0);
+ while(calc_time<CalcTimeInterval)//for(int i=0;i<1000;i++)
+ {
+  calc_time=GetModelLock()->GetTime().GetDoubleTime();
+  cout<<"Model time: "<<calc_time<<endl;
+  if(calc_time>=CalcTimeInterval)
+   break;
+ }
 
     int a(0);
     cin>>a;
