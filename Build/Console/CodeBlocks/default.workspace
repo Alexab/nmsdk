@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="nmsdk-con">
+		<Project filename="../../../Libraries/Nmsdk-ActLib/Build/CodeBlocks/Nmsdk-ActLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-BasicLib/Build/CodeBlocks/Nmsdk-BasicLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-MathLib/Build/CodeBlocks/Nmsdk-MathLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-MotionControlLib/Build/CodeBlocks/Nmsdk-MotionControlLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-NeuronLifeLib/Build/CodeBlocks/Nmsdk-NeuronLifeLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-PhysLib/Build/CodeBlocks/Nmsdk-PhysLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-PulseClassicModelsLib/Build/CodeBlocks/NMSDK-PulseClassicModelsLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-PulseLib/Build/CodeBlocks/Nmsdk-PulseLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-PulseNeuronLib/Build/CodeBlocks/Nmsdk-PulseNeuronLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-ReceiverLib/Build/CodeBlocks/Nmsdk-ReceiverLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-SensorLib/Build/CodeBlocks/Nmsdk-SensorLib.cbp" />
+		<Project filename="../../../Libraries/Nmsdk-SourceLib/Build/CodeBlocks/Nmsdk-SourceLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-BasicLib/Build/CodeBlocks/Rdk-BasicLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-BasicStatisticLib/Build/CodeBlocks/Rdk-BasicLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-IoLib/Build/CodeBlocks/Rdk-IoLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-SourcesLib/Build/CodeBlocks/Rdk-SourcesLib.cbp" />
+		<Project filename="../../../Rdk/Build/Lib/CodeBlocks/LibRdk.cbp" />
+		<Project filename="nmsdk-con.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
