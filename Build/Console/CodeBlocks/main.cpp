@@ -128,6 +128,7 @@ int main(int argc, char* argv[])
 
  RdkApplication.StartChannel(0);
  double calc_time(0.0);
+ GetEnvironmentLock(0)->SetMaxCalcTime(CalcTimeInterval);
  while(calc_time<CalcTimeInterval)//for(int i=0;i<1000;i++)
  {
   calc_time=GetModelLock()->GetTime().GetDoubleTime();
