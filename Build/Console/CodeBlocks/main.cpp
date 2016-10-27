@@ -1,11 +1,20 @@
 #include <iostream>
 #include "../../../Rdk/Deploy/Include/rdk_cpp_initlib.h"
 #include "../../../Rdk/Core/Application/UApplication.h"
+#include <boost/program_options/cmdline.hpp>
+#include <boost/program_options/variables_map.hpp>
+#include <boost/program_options/options_description.hpp>
+#include <boost/program_options/parsers.hpp>
 
 using namespace std;
 
+namespace po = boost::program_options;
+
+po::options_description CmdLineDescription("Allowed options");
+po::variables_map CmdVariablesMap;
+
 std::string Version("0.1");
-std::map<std::string,std::string> ParsedArgs;
+//std::map<std::string,std::string> ParsedArgs;
 
 /// Экзепляр прототипа декодера команд
 RDK::URpcDecoderInternal RdkRpcDecoder;
@@ -79,20 +88,57 @@ int RdkApplicationInit(const std::string &application_name)
  return RDK_SUCCESS;
 }
 
+void InitCmdParser(void)
+{
+ CmdLineDescription.add_options()
+    ("help", "produce help message")
+    ("conf", po::value<string>(), "Configuration file name")
+    ("ctime", po::value<double>(), "Calculation time interval, in seconds")
+;
+}
+
 int main(int argc, char* argv[])
 {
+ InitCmdParser();
+
+ po::store(po::parse_command_line(argc, argv, CmdLineDescription), CmdVariablesMap);
+ po::notify(CmdVariablesMap);
+
+ if (CmdVariablesMap.count("help"))
+ {
+  cout << CmdLineDescription << "\n";
+  return 1;
+ }
+
  int res(RDK_SUCCESS);
 
  cout << "NMSDK console version "<<Version<<endl;
- int parse_res=ParseArgs(argc, argv,ParsedArgs);
- if(parse_res != 0)
- {
-  cout<<"Argument list incorrect!"<<endl;
-  return parse_res;
- }
- cout<<"Argument list have parsed successfully!"<<endl;
 
- res=RdkApplicationInit(ParsedArgs["Application"]);
+ std::string configuration_name;
+ double calc_time_interval(0.0);
+ if (CmdVariablesMap.count("conf"))
+ {
+  configuration_name = CmdVariablesMap["conf"].as<std::string>();
+ }
+ else
+ {
+  cout<<"Configuration name is empty or doesn't set!"<<endl;
+  return 9000003;
+ }
+
+ if(CmdVariablesMap.count("ctime"))
+ {
+  calc_time_interval = CmdVariablesMap["ctime"].as<double>();
+ }
+
+ if(calc_time_interval<=0 || calc_time_interval>10e8)
+ {
+  cout<<"CalcTimeInterval: Incorrect value "<<calc_time_interval<<"!"<<endl;
+  return 9000004;
+ }
+ cout<<"CalcTimeInterval: "<<calc_time_interval<<" sec"<<endl;
+
+ res=RdkApplicationInit(argv[0]);
  if(res != RDK_SUCCESS)
  {
   cout<<"Init: Fail!"<<endl;
@@ -101,13 +147,6 @@ int main(int argc, char* argv[])
  cout<<"Init: Success."<<endl;
 
  // Loading configuration
- std::string configuration_name=ParsedArgs["-p"];
- if(configuration_name.empty())
- {
-  cout<<"Configuration name is empty or doesn't set!"<<endl;
-  return 9000003;
- }
-
  bool open_res=RdkApplication.OpenProject(configuration_name);
  if(open_res != true)
  {
@@ -117,23 +156,15 @@ int main(int argc, char* argv[])
  cout<<"Open configuration: Success."<<endl;
  cout<<"Ready to calc."<<endl;
 
- double CalcTimeInterval=RDK::atof(ParsedArgs["-t"]);
- if(CalcTimeInterval<0 || CalcTimeInterval>10e8)
- {
-  cout<<"CalcTimeInterval: Incorrect value "<<CalcTimeInterval<<"!"<<endl;
-  return 9000004;
- }
- cout<<"CalcTimeInterval: "<<CalcTimeInterval<<" sec"<<endl;
-
 
  RdkApplication.StartChannel(0);
  double calc_time(0.0);
- GetEnvironmentLock(0)->SetMaxCalcTime(CalcTimeInterval);
- while(calc_time<CalcTimeInterval)//for(int i=0;i<1000;i++)
+ GetEnvironmentLock(0)->SetMaxCalcTime(calc_time_interval);
+ while(calc_time<calc_time_interval)
  {
   calc_time=GetModelLock()->GetTime().GetDoubleTime();
   cout<<"Model time: "<<calc_time<<endl;
-  if(calc_time>=CalcTimeInterval)
+  if(calc_time>=calc_time_interval)
    break;
  }
 
