@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-p /home/bakhshiev/nmsdk/Bin/Configs/OldExperiments/Muscle/Project.ini -t 0.5" />
+				<Option parameters="--conf /home/bakhshiev/nmsdk/Bin/Configs/Con-Samples/Con-00-EyeMuscle/Project.ini --ctime 0.5" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -54,6 +54,7 @@
 			<Add library="boost_thread" />
 			<Add library="boost_system" />
 			<Add library="pthread" />
+			<Add library="boost_program_options" />
 		</Linker>
 		<Unit filename="../../../Libraries/Libraries.cpp" />
 		<Unit filename="../../../Libraries/Libraries.h" />
