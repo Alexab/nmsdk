@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="--conf ./../../Configs/Con-Samples/Con-00-EyeMuscle/Project.ini --ctime 0.5" />
+				<Option parameters="--conf ./../../../Bin/Configs/Con-Samples/Con-00-EyeMuscle/Project.ini --ctime 0.5" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
