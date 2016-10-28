@@ -167,8 +167,7 @@ int main(int argc, char* argv[])
   if(calc_time>=calc_time_interval)
    break;
  }
-
-    int a(0);
-    cin>>a;
-    return 0;
+ RdkApplication.PauseChannel(0);
+ MCore_ChannelUnInit(0);
+ return 0;
 }
