@@ -18,6 +18,24 @@
 		<Project filename="../../../Libraries/Rdk-IoLib/Build/CodeBlocks/Rdk-IoLib.cbp" />
 		<Project filename="../../../Libraries/Rdk-SourcesLib/Build/CodeBlocks/Rdk-SourcesLib.cbp" />
 		<Project filename="../../../Rdk/Build/Lib/CodeBlocks/LibRdk.cbp" />
-		<Project filename="nmsdk-con.cbp" />
+		<Project filename="nmsdk-con.cbp">
+			<Depends filename="../../../Libraries/Nmsdk-ActLib/Build/CodeBlocks/Nmsdk-ActLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-BasicLib/Build/CodeBlocks/Nmsdk-BasicLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-MathLib/Build/CodeBlocks/Nmsdk-MathLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-MotionControlLib/Build/CodeBlocks/Nmsdk-MotionControlLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-NeuronLifeLib/Build/CodeBlocks/Nmsdk-NeuronLifeLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-PhysLib/Build/CodeBlocks/Nmsdk-PhysLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-PulseClassicModelsLib/Build/CodeBlocks/NMSDK-PulseClassicModelsLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-PulseLib/Build/CodeBlocks/Nmsdk-PulseLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-PulseNeuronLib/Build/CodeBlocks/Nmsdk-PulseNeuronLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-ReceiverLib/Build/CodeBlocks/Nmsdk-ReceiverLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-SensorLib/Build/CodeBlocks/Nmsdk-SensorLib.cbp" />
+			<Depends filename="../../../Libraries/Nmsdk-SourceLib/Build/CodeBlocks/Nmsdk-SourceLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-BasicLib/Build/CodeBlocks/Rdk-BasicLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-BasicStatisticLib/Build/CodeBlocks/Rdk-BasicLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-IoLib/Build/CodeBlocks/Rdk-IoLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-SourcesLib/Build/CodeBlocks/Rdk-SourcesLib.cbp" />
+			<Depends filename="../../../Rdk/Build/Lib/CodeBlocks/LibRdk.cbp" />
+		</Project>
 	</Workspace>
 </CodeBlocks_workspace_file>
