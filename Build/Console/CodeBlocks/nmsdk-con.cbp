@@ -21,12 +21,10 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="--conf ./../../../Bin/Configs/Con-Samples/Con-00-EyeMuscle/Project.ini --ctime 0.5" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
@@ -34,6 +32,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
+			<Add option="-static" />
 			<Add library="../../../Bin/Platform/Linux/Lib/libNmsdk-ActLib.a" />
 			<Add library="../../../Bin/Platform/Linux/Lib/libNmsdk-BasicLib.a" />
 			<Add library="../../../Bin/Platform/Linux/Lib/libNmsdk-MathLib.a" />
