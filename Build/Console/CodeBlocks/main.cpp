@@ -13,7 +13,7 @@ namespace po = boost::program_options;
 po::options_description CmdLineDescription("Allowed options");
 po::variables_map CmdVariablesMap;
 
-std::string Version("0.1");
+std::string Version("0.2");
 //std::map<std::string,std::string> ParsedArgs;
 
 /// Экзепляр прототипа декодера команд
@@ -148,6 +148,7 @@ int main(int argc, char* argv[])
 
  // Loading configuration
  bool open_res=RdkApplication.OpenProject(configuration_name);
+ GetEnvironmentLock(0)->SetMaxCalcTime(calc_time_interval);
  if(open_res != true)
  {
   cout<<"Open configuration: Fail!"<<endl;
@@ -159,15 +160,18 @@ int main(int argc, char* argv[])
 
  RdkApplication.StartChannel(0);
  double calc_time(0.0);
- GetEnvironmentLock(0)->SetMaxCalcTime(calc_time_interval);
- while(calc_time<calc_time_interval)
+ while(!GetEnvironmentLock(0)->IsCalcFinished())
  {
-  calc_time=GetModelLock()->GetTime().GetDoubleTime();
+  calc_time=GetModelLock(0)->GetTime().GetDoubleTime();
   cout<<"Model time: "<<calc_time<<endl;
-  if(calc_time>=calc_time_interval)
-   break;
+  RDK::Sleep(1);
+//  if(calc_time>=calc_time_interval)
+//   break;
  }
+ calc_time=GetModelLock(0)->GetTime().GetDoubleTime();
+ cout<<"Model time: "<<calc_time<<endl;
  RdkApplication.PauseChannel(0);
+ RDK::Sleep(100);
  MCore_ChannelUnInit(0);
  return 0;
 }
