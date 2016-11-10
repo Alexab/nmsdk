@@ -79,11 +79,11 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
+//   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    try
    {
-   Image->Picture->SaveToFile(fname.c_str());
+//   Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
    }
    catch(Exception &ex)
@@ -125,11 +125,11 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
+//   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    try
    {
-   Image->Picture->SaveToFile(fname.c_str());
+//   Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
    }
    catch(Exception &ex)
@@ -177,11 +177,11 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
+//   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    try
    {
-   Image->Picture->SaveToFile(fname.c_str());
+//   Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
    }
    catch(Exception &ex)
@@ -223,11 +223,11 @@ void TNDrawManipulatorFrame::AUpdateInterface()
    BmpCanvas>>TempBmp;
    Image->Picture->Bitmap = TempBmp;
    Image->Repaint();
-   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
+//   std::string fname = "D:/Bmp/"+RDK::sntoa(NumElem)+"/"+RDK::sntoa(z+1)+".bmp";
    z++;
    try
    {
-   Image->Picture->SaveToFile(fname.c_str());
+//   Image->Picture->SaveToFile(fname.c_str());
    Image->CleanupInstance();
    }
    catch(Exception &ex)
