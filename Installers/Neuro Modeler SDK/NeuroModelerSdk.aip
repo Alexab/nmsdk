@@ -1,9 +1,10 @@
 ﻿[Setup]
-Version=6.4
+Version=6.5
 Edition=1
 GUID={4E882EBA-970C-E877-051C-CA30D9346389}
 AppName=Neuro Modeler SDK
-AppVersion=1.0.0.5
+AppVersion=1.0.0.6
+AppDescription=
 CompanyName=
 WebSite=http://www.ailab.ru
 SupportLink=
@@ -81,6 +82,7 @@ WizardBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Wizard\01.bmp
 HeaderBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Header\01.bmp
 SilentInstall=0
 ShowPublisher=0
+HideFileNames=0
 DialogWelcome=1
 DialogLicense=0
 DialogReadme=0
@@ -136,4 +138,8 @@ Russian=
 [Shortcuts]
 0=<ProgramGroup>*?Uninstall <AppName>*?<InstallDir>\Uninstall.exe*?*?*?<InstallDir>*?*?0*?Normal
 1=<ProgramGroup>*?MotionControl*?<InstallDir>\Bin\Platform\Win\MotionControl.exe*?Motion Control*?*?<InstallDir>\Bin\Platform\Win*?*?0*?Normal
+2=<ProgramGroup>*?Application GUI Description*?<InstallDir>\Docs\RDK.GuiDescription.Bcb.Ru.doc*?*?*?<InstallDir>\Docs*?*?0*?Normal
+3=<ProgramGroup>*?Application Runtime Configuration Description*?<InstallDir>\Docs\RDK.RuntimeConfigurationDescription.Ru.doc*?*?*?<InstallDir>\Docs*?*?0*?Normal
+4=<ProgramGroup>*?Neuron Model Description*?<InstallDir>\Docs\NMSDK.NeuronModel.Ru.doc*?*?*?<InstallDir>\Docs*?*?0*?Normal
+5=<ProgramGroup>*?Configuration Samples Description*?<InstallDir>\Docs\NMSDK.NeuronModel.ConfigurationSamples.Ru.doc*?*?*?<InstallDir>\Docs*?*?0*?Normal
 
