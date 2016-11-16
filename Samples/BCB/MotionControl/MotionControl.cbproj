@@ -58,15 +58,15 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Release>6</VerInfo_Release>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
-        <Defines>LIBRDK_LIBRARY_EXPORT;RDK_UNICODE_RUN;$(Defines)</Defines>
-        <OutputExt>exe</OutputExt>
+        <Defines>LIBRDK_LIBRARY_EXPORT;RDK_UNICODE_RUN;NMSDK_LIB;$(Defines)</Defines>
         <SanitizedProjectName>MotionControl</SanitizedProjectName>
         <DynamicRTL>true</DynamicRTL>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <Icon_MainIcon>MotionControl_Icon1.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=AI Lab;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=Alexandr Bakhshiev;LegalTrademarks=;OriginalFilename=;ProductName=Motion Control Test Application;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=AI Lab;FileDescription=;FileVersion=1.0.6.0;InternalName=;LegalCopyright=Alexandr Bakhshiev;LegalTrademarks=;OriginalFilename=;ProductName=Motion Control Test Application;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1049</VerInfo_Locale>
         <BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
@@ -88,12 +88,15 @@
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>Program.ico</Icon_MainIcon>
+        <VerInfo_Release>0</VerInfo_Release>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <VerInfo_Release>0</VerInfo_Release>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -118,12 +121,12 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
-        <VerInfo_Build>9</VerInfo_Build>
+        <VerInfo_Build>10</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Defines>_DEBUG;$(Defines)</Defines>
         <VerInfo_Debug>true</VerInfo_Debug>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib;inetwinsockets.lib;xmlrtl.lib;vclactnband.lib</LinkPackageStatics>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.9;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.10;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;E:\Science\AI\AISD\Nmsdk-new\Libraries\Nmsdk-PulseNeuronLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Nmsdk-PulseLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Rdk-BasicStatisticLib\Core\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
@@ -601,7 +604,6 @@
                     <Parameters Name="RemoteDebug">False</Parameters>
                 </Parameters>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DUnitXRuntime220.bpl">Embarcadero Unit Testing IDE Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k220.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp220.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k220.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
@@ -631,6 +633,16 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -640,16 +652,6 @@
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1162,13 +1164,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
