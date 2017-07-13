@@ -68,26 +68,26 @@ void TNManipulatorControlForm::AUpdateInterface(void)
   ControlSystemSelectionPanel->Caption=ControlSystemName.c_str();
   Caption=String("Control system [")+ControlSystemName.c_str()+String("]");
 
-  if(Model_CheckLink((ControlSystemName+".Ia_PosIntervalSeparator1").c_str(),0,(ControlSystemName+".MotionElement0.Afferent_Ia2.Receptor").c_str(),0))
+  if(Model_CheckLinkByName((ControlSystemName+".Ia_PosIntervalSeparator1").c_str(),"DataOutput0",(ControlSystemName+".MotionElement0.Afferent_Ia2.Receptor").c_str(),"DataInput0"))
    IaCheckBox->Checked=true;
   else
    IaCheckBox->Checked=false;
 
-  if(Model_CheckLink((ControlSystemName+".Ib_PosIntervalSeparator1").c_str(),0,(ControlSystemName+".MotionElement0.Afferent_Ib1.Receptor").c_str(),0))
+  if(Model_CheckLinkByName((ControlSystemName+".Ib_PosIntervalSeparator1").c_str(),"DataOutput0",(ControlSystemName+".MotionElement0.Afferent_Ib1.Receptor").c_str(),"DataInput0"))
    IbCheckBox->Checked=true;
   else
    IbCheckBox->Checked=false;
 
-  if(Model_CheckLink((ControlSystemName+".II_PosIntervalSeparator1").c_str(),0,(ControlSystemName+".MotionElement0.Afferent_II1.Receptor").c_str(),0))
+  if(Model_CheckLinkByName((ControlSystemName+".II_PosIntervalSeparator1").c_str(),"DataOutput0",(ControlSystemName+".MotionElement0.Afferent_II1.Receptor").c_str(),"DataInput0"))
    IICheckBox->Checked=true;
   else
    IICheckBox->Checked=false;
 
-  if(Model_CheckLink((ControlSystemName+".Ic_PosIntervalSeparator1").c_str(),0,(ControlSystemName+".MotionElement0.Afferent_Ic1.Receptor").c_str(),0))
+  if(Model_CheckLinkByName((ControlSystemName+".Ic_PosIntervalSeparator1").c_str(),"DataOutput0",(ControlSystemName+".MotionElement0.Afferent_Ic1.Receptor").c_str(),"DataInput0"))
    CheckBox1->Checked=true;
   else
    CheckBox1->Checked=false;
-  if(Model_CheckLink((ControlSystemName+".Pac").c_str(),0,(ControlSystemName+".NManipulatorInput1").c_str(),0))
+  if(Model_CheckLinkByName((ControlSystemName+".Pac").c_str(),"DataOutput0",(ControlSystemName+".NManipulatorInput1").c_str(),"DataInput0"))
    ControlVoltageCheckBox->Checked=true;
   else
    ControlVoltageCheckBox->Checked=false;
@@ -394,23 +394,23 @@ bool TNManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name, 
  std::string source_name=cs_name+".NManipulatorSource1";
  if(!cs_name.empty())
  {
- net->BreakConnectorLink(source_name,0);
- net->BreakConnectorLink(source_name,1);
- net->BreakConnectorLink(source_name,2);
- net->BreakConnectorLink(source_name,3);
+ net->BreakConnectorLink(source_name,"DataInput0");
+ net->BreakConnectorLink(source_name,"DataInput1");
+ net->BreakConnectorLink(source_name,"DataInput2");
+ net->BreakConnectorLink(source_name,"DataInput3");
 // RDK::dynamic_pointer_cast<RDK::UConnector>(net->GetComponentL(source_name))->DisconnectAllItems();
  RDK::dynamic_pointer_cast<RDK::UADItem>(net->GetComponentL(cs_name+".NManipulatorInput1"))->DisconnectAll();
  if(man_name == "PendulumAndCart")
  {
-  res&=net->CreateLink(man_name,3,source_name,0);
-  res&=net->CreateLink(man_name,4,source_name,3);
+  res&=net->CreateLink(man_name,"DataOutput3",source_name,"DataInput0");
+  res&=net->CreateLink(man_name,"DataOutput4",source_name,"DataInput3");
  }
  else
-  res&=net->CreateLink(man_name,0,source_name,0);
+  res&=net->CreateLink(man_name,"DataOutput0",source_name,"DataInput0");
 
- res&=net->CreateLink(man_name,1,source_name,1);
- res&=net->CreateLink(man_name,2,source_name,2);
- res&=net->CreateLink(cs_name+".NManipulatorInput1",0,man_name,0);
+ res&=net->CreateLink(man_name,"DataOutput1",source_name,"DataInput1");
+ res&=net->CreateLink(man_name,"DataOutput2",source_name,"DataInput2");
+ res&=net->CreateLink(cs_name+".NManipulatorInput1","DataOutput0",man_name,"DataInput0");
  }
  /*
  // Связываем все управляющие элементы
@@ -749,19 +749,19 @@ void __fastcall TNManipulatorControlForm::IINumAfferentTrackBarChange(TObject *S
  for(int i=0;i<IINumAfferentTrackBar->Position;i++)
  {
   // Вариант для отдельного участка мембраны для внешнего управления
-  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel",0);
-  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel",0);
+  res&=ControlSystem->CreateLink("IIPosAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel","DataInput0");
+  res&=ControlSystem->CreateLink("IIPosAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel","DataInput0");
+  res&=ControlSystem->CreateLink("IINegAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel","DataInput0");
+  res&=ControlSystem->CreateLink("IINegAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel","DataInput0");
  }
 
  for(int i=IINumAfferentTrackBar->Position;i<IINumAfferentTrackBar->Max;i++)
  {
   // Вариант для отдельного участка мембраны для внешнего управления
-  res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel",0);
-  res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel",0);
+  res&=ControlSystem->BreakLink("IIPosAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel","DataInput0");
+  res&=ControlSystem->BreakLink("IIPosAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel","DataInput0");
+  res&=ControlSystem->BreakLink("IINegAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel","DataInput0");
+  res&=ControlSystem->BreakLink("IINegAfferentGenerator","DataOutput0",std::string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel","DataInput0");
  }
 
  }
@@ -914,13 +914,13 @@ void __fastcall TNManipulatorControlForm::ControlVoltageCheckBoxClick(TObject *S
 
   if(ControlVoltageCheckBox->Checked == false)
   {
-   res&=ControlSystem->BreakLink("Pac",0,"NManipulatorInput1",0);
+   res&=ControlSystem->BreakLink("Pac","DataOutput0","NManipulatorInput1","DataInput0");
 
 //   res&=ControlSystem->BreakLink("Pac",0,"NManipulatorInputEmulator1",0);
   }
   else
   {
-   res&=ControlSystem->CreateLink("Pac",0,"NManipulatorInput1",0);
+   res&=ControlSystem->CreateLink("Pac","DataOutput0","NManipulatorInput1","DataInput0");
 
 //   res&=ControlSystem->CreateLink("Pac",0,"NManipulatorInputEmulator1",0);
   }

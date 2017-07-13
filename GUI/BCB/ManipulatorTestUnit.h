@@ -17,6 +17,7 @@
 #include "Series.hpp"
 #include "TeEngine.hpp"
 #include "TeeProcs.hpp"
+#include <VclTee.TeeGDIPlus.hpp>
 
 using namespace NMSDK;
 //---------------------------------------------------------------------------

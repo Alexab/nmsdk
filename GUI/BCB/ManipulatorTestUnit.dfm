@@ -61,14 +61,10 @@ object ManipulatorTestForm: TManipulatorTestForm
         View3D = False
         Align = alClient
         TabOrder = 0
+        DefaultCanvas = 'TGDIPlusCanvas'
         ColorPaletteIndex = 13
         object Series3: TBarSeries
-          Marks.Arrow.Visible = True
-          Marks.Callout.Brush.Color = clBlack
-          Marks.Callout.Arrow.Visible = True
-          Marks.Visible = True
           Title = 'RAngle'
-          Gradient.Direction = gdTopBottom
           Shadow.Color = 8618883
           XValues.Name = 'X'
           XValues.Order = loAscending
@@ -79,12 +75,7 @@ object ManipulatorTestForm: TManipulatorTestForm
             00001C81400000000000C07C400000000000588140}
         end
         object Series1: TBarSeries
-          Marks.Arrow.Visible = True
-          Marks.Callout.Brush.Color = clBlack
-          Marks.Callout.Arrow.Visible = True
-          Marks.Visible = True
           Title = 'RSpeed'
-          Gradient.Direction = gdTopBottom
           Shadow.Color = 8750469
           XValues.Name = 'X'
           XValues.Order = loAscending
@@ -92,13 +83,8 @@ object ManipulatorTestForm: TManipulatorTestForm
           YValues.Order = loNone
         end
         object Series2: TBarSeries
-          Marks.Arrow.Visible = True
-          Marks.Callout.Brush.Color = clBlack
-          Marks.Callout.Arrow.Visible = True
-          Marks.Visible = True
           SeriesColor = clBlue
           Title = 'RMoment'
-          Gradient.Direction = gdTopBottom
           Shadow.Color = 8618883
           XValues.Name = 'X'
           XValues.Order = loAscending
@@ -106,13 +92,8 @@ object ManipulatorTestForm: TManipulatorTestForm
           YValues.Order = loNone
         end
         object Series4: TBarSeries
-          Marks.Arrow.Visible = True
-          Marks.Callout.Brush.Color = clBlack
-          Marks.Callout.Arrow.Visible = True
-          Marks.Visible = True
           SeriesColor = 8421631
           Title = 'SAngle'
-          Gradient.Direction = gdTopBottom
           Shadow.Color = 8618883
           XValues.Name = 'X'
           XValues.Order = loAscending
@@ -120,13 +101,8 @@ object ManipulatorTestForm: TManipulatorTestForm
           YValues.Order = loNone
         end
         object Series5: TBarSeries
-          Marks.Arrow.Visible = True
-          Marks.Callout.Brush.Color = clBlack
-          Marks.Callout.Arrow.Visible = True
-          Marks.Visible = True
           SeriesColor = clLime
           Title = 'SSpeed'
-          Gradient.Direction = gdTopBottom
           Shadow.Color = 8618883
           XValues.Name = 'X'
           XValues.Order = loAscending
@@ -134,13 +110,8 @@ object ManipulatorTestForm: TManipulatorTestForm
           YValues.Order = loNone
         end
         object Series6: TBarSeries
-          Marks.Arrow.Visible = True
-          Marks.Callout.Brush.Color = clBlack
-          Marks.Callout.Arrow.Visible = True
-          Marks.Visible = True
           SeriesColor = 16744448
           Title = 'SMoment'
-          Gradient.Direction = gdTopBottom
           Shadow.Color = 8684676
           XValues.Name = 'X'
           XValues.Order = loAscending

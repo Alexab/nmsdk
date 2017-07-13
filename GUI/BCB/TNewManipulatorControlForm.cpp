@@ -70,7 +70,7 @@ void TNewManipulatorControlForm::AUpdateInterface(void)
   ControlSystemSelectionPanel->Caption=ControlSystemName.c_str();
   Caption=String("Control system [")+ControlSystemName.c_str()+String("]");
 
-  if(Model_CheckLink((ControlSystemName+".Pac").c_str(),0,(ControlSystemName+".NManipulatorInput1").c_str(),0))
+  if(Model_CheckLinkByName((ControlSystemName+".Pac").c_str(),"DataOutput0",(ControlSystemName+".NManipulatorInput1").c_str(),"DataInput0"))
    ControlVoltageCheckBox->Checked=true;
   else
    ControlVoltageCheckBox->Checked=false;
@@ -500,16 +500,16 @@ bool TNewManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name
  // RDK::dynamic_pointer_cast<RDK::UConnector>(net->GetComponentL(source_name))->DisconnectAllItems();
  RDK::dynamic_pointer_cast<RDK::UADItem>(net->GetComponentL(cs_name+".NManipulatorInput1",true))->DisconnectAll();
 
- res&=net->CreateLink(man_name,0,source_name,0);
- res&=net->CreateLink(man_name,1,source_name,1);
- res&=net->CreateLink(man_name,2,source_name,2);
+ res&=net->CreateLink(man_name,"DataOutput0",source_name,"DataInput0");
+ res&=net->CreateLink(man_name,"DataOutput1",source_name,"DataInput1");
+ res&=net->CreateLink(man_name,"DataOutput2",source_name,"DataInput2");
  if(man_name == "PendulumAndCart")
  {
-  res&=net->CreateLink(man_name,3,source_name,3);
-  res&=net->CreateLink(man_name,4,source_name,4);
+  res&=net->CreateLink(man_name,"DataOutput3",source_name,"DataInput3");
+  res&=net->CreateLink(man_name,"DataOutput4",source_name,"DataInput4");
  }
 
- res&=net->CreateLink(cs_name+".NManipulatorInput1",0,man_name,0);
+ res&=net->CreateLink(cs_name+".NManipulatorInput1","DataOutput0",man_name,"DataInput0");
 
  RDK::UEPtr<NMSDK::NControlObjectSource> source=net->GetComponentL<NMSDK::NControlObjectSource>(source_name,true);
  if(source)
@@ -913,13 +913,13 @@ void __fastcall TNewManipulatorControlForm::ControlVoltageCheckBoxClick(TObject 
 
   if(ControlVoltageCheckBox->Checked == false)
   {
-   res&=ControlSystem->BreakLink("Pac",0,"NManipulatorInput1",0);
+   res&=ControlSystem->BreakLink("Pac","DataOutput0","NManipulatorInput1","DataInput0");
 
 //   res&=ControlSystem->BreakLink("Pac",0,"NManipulatorInputEmulator1",0);
   }
   else
   {
-   res&=ControlSystem->CreateLink("Pac",0,"NManipulatorInput1",0);
+   res&=ControlSystem->CreateLink("Pac","DataOutput0","NManipulatorInput1","DataInput0");
 
 //   res&=ControlSystem->CreateLink("Pac",0,"NManipulatorInputEmulator1",0);
   }
@@ -1574,4 +1574,5 @@ void __fastcall TNewManipulatorControlForm::SensorDivisionComboBoxChange(TObject
  UpdateInterface();
 }
 //---------------------------------------------------------------------------
+
 

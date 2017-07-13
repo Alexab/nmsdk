@@ -85,11 +85,11 @@ void __fastcall TNDCEngineControlForm::IaCheckBoxClick(TObject *Sender)
 	std::string pos_separator=MotionControlNameTemp+std::string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1);
 	std::string neg_separator=MotionControlNameTemp+std::string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ia2.Receptor").c_str(),0);
-	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ia1.Receptor").c_str(),0);
+	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ia2.Receptor").c_str(),"DataInput0");
+	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ia1.Receptor").c_str(),"DataInput0");
 
-	res&=Model_CreateLink(pos_separator.c_str(),0,(motion+".Afferent_Ia2.Receptor").c_str(),0);
-	res&=Model_CreateLink(neg_separator.c_str(),0,(motion+".Afferent_Ia1.Receptor").c_str(),0);
+	res&=Model_CreateLink(pos_separator.c_str(),"DataOutput0",(motion+".Afferent_Ia2.Receptor").c_str(),"DataInput0");
+	res&=Model_CreateLink(neg_separator.c_str(),"DataOutput0",(motion+".Afferent_Ia1.Receptor").c_str(),"DataInput0");
    }
   }
   else
@@ -100,11 +100,11 @@ void __fastcall TNDCEngineControlForm::IaCheckBoxClick(TObject *Sender)
 	std::string pos_separator=MotionControlNameTemp+std::string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1);
 	std::string neg_separator=MotionControlNameTemp+std::string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res&=Model_BreakLink(pos_separator.c_str(),0,(motion+".Afferent_Ia2.Receptor").c_str(),0);
-	res&=Model_BreakLink(neg_separator.c_str(),0,(motion+".Afferent_Ia1.Receptor").c_str(),0);
+	res&=Model_BreakLink(pos_separator.c_str(),"DataOutput0",(motion+".Afferent_Ia2.Receptor").c_str(),"DataInput0");
+	res&=Model_BreakLink(neg_separator.c_str(),"DataOutput0",(motion+".Afferent_Ia1.Receptor").c_str(),"DataInput0");
 
-	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ia2.Receptor").c_str(),0);
-	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ia1.Receptor").c_str(),0);
+	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ia2.Receptor").c_str(),"DataInput0");
+	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ia1.Receptor").c_str(),"DataInput0");
    }
   }
 
@@ -127,11 +127,11 @@ void __fastcall TNDCEngineControlForm::IbCheckBoxClick(TObject *Sender)
 	std::string pos_separator=MotionControlNameTemp+std::string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1);
 	std::string neg_separator=MotionControlNameTemp+std::string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ib2.Receptor").c_str(),0);
-	res=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ib1.Receptor").c_str(),0);
+	res=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ib2.Receptor").c_str(),"DataInput0");
+	res=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ib1.Receptor").c_str(),"DataInput0");
 
-	res=Model_CreateLink(pos_separator.c_str(),0,(motion+".Afferent_Ib1.Receptor").c_str(),0);
-	res=Model_CreateLink(neg_separator.c_str(),0,(motion+".Afferent_Ib2.Receptor").c_str(),0);
+	res=Model_CreateLink(pos_separator.c_str(),"DataOutput0",(motion+".Afferent_Ib1.Receptor").c_str(),"DataInput0");
+	res=Model_CreateLink(neg_separator.c_str(),"DataOutput0",(motion+".Afferent_Ib2.Receptor").c_str(),"DataInput0");
    }
   }
   else
@@ -142,11 +142,11 @@ void __fastcall TNDCEngineControlForm::IbCheckBoxClick(TObject *Sender)
 	std::string pos_separator=MotionControlNameTemp+std::string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1);
 	std::string neg_separator=MotionControlNameTemp+std::string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res=Model_BreakLink(pos_separator.c_str(),0,(motion+".Afferent_Ib1.Receptor").c_str(),0);
-	res=Model_BreakLink(neg_separator.c_str(),0,(motion+".Afferent_Ib2.Receptor").c_str(),0);
+	res=Model_BreakLink(pos_separator.c_str(),"DataOutput0",(motion+".Afferent_Ib1.Receptor").c_str(),"DataInput0");
+	res=Model_BreakLink(neg_separator.c_str(),"DataOutput0",(motion+".Afferent_Ib2.Receptor").c_str(),"DataInput0");
 
-	res=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ib1.Receptor").c_str(),0);
-	res=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_Ib2.Receptor").c_str(),0);
+	res=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ib1.Receptor").c_str(),"DataInput0");
+	res=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_Ib2.Receptor").c_str(),"DataInput0");
    }
   }
 
@@ -169,11 +169,11 @@ void __fastcall TNDCEngineControlForm::IICheckBoxClick(TObject *Sender)
 	std::string pos_separator=MotionControlNameTemp+std::string("II_PosIntervalSeparator")+RDK::sntoa(i+1);
 	std::string neg_separator=MotionControlNameTemp+std::string("II_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_II2.Receptor").c_str(),0);
-	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_II1.Receptor").c_str(),0);
+	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_II2.Receptor").c_str(),"DataInput0");
+	res&=Model_BreakLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_II1.Receptor").c_str(),"DataInput0");
 
-	res&=Model_CreateLink(pos_separator.c_str(),0,(motion+".Afferent_II1.Receptor").c_str(),0);
-	res&=Model_CreateLink(neg_separator.c_str(),0,(motion+".Afferent_II2.Receptor").c_str(),0);
+	res&=Model_CreateLink(pos_separator.c_str(),"DataOutput0",(motion+".Afferent_II1.Receptor").c_str(),"DataInput0");
+	res&=Model_CreateLink(neg_separator.c_str(),"DataOutput0",(motion+".Afferent_II2.Receptor").c_str(),"DataInput0");
    }
   }
   else
@@ -184,11 +184,11 @@ void __fastcall TNDCEngineControlForm::IICheckBoxClick(TObject *Sender)
 	std::string pos_separator=MotionControlNameTemp+std::string("II_PosIntervalSeparator")+RDK::sntoa(i+1);
 	std::string neg_separator=MotionControlNameTemp+std::string("II_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res&=Model_BreakLink(pos_separator.c_str(),0,(motion+".Afferent_II1.Receptor").c_str(),0);
-	res&=Model_BreakLink(neg_separator.c_str(),0,(motion+".Afferent_II2.Receptor").c_str(),0);
+	res&=Model_BreakLink(pos_separator.c_str(),"DataOutput0",(motion+".Afferent_II1.Receptor").c_str(),"DataInput0");
+	res&=Model_BreakLink(neg_separator.c_str(),"DataOutput0",(motion+".Afferent_II2.Receptor").c_str(),"DataInput0");
 
-	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_II2.Receptor").c_str(),0);
-	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),0,(motion+".Afferent_II1.Receptor").c_str(),0);
+	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_II2.Receptor").c_str(),"DataInput0");
+	res&=Model_CreateLink((MotionControlNameTemp+"AfferentSource1").c_str(),"DataOutput0",(motion+".Afferent_II1.Receptor").c_str(),"DataInput0");
    }
   }
 
@@ -209,15 +209,15 @@ void __fastcall TNDCEngineControlForm::ControlVoltageCheckBoxClick(TObject *Send
 
   if(ControlVoltageCheckBox->Checked == false)
   {
-   res=Model_BreakLink((MotionControlNameTemp+"Pac").c_str(),0,(MotionControlNameTemp+"NManipulatorInput1").c_str(),0);
+   res=Model_BreakLink((MotionControlNameTemp+"Pac").c_str(),"DataOutput0",(MotionControlNameTemp+"NManipulatorInput1").c_str(),"DataInput0");
 
-   res=Model_BreakLink((MotionControlNameTemp+"Pac").c_str(),0,(MotionControlNameTemp+"NManipulatorInputEmulator1").c_str(),0);
+   res=Model_BreakLink((MotionControlNameTemp+"Pac").c_str(),"DataOutput0",(MotionControlNameTemp+"NManipulatorInputEmulator1").c_str(),"DataInput0");
   }
   else
   {
-   res=Model_CreateLink((MotionControlNameTemp+"Pac").c_str(),0,(MotionControlNameTemp+"NManipulatorInput1").c_str(),0);
+   res=Model_CreateLink((MotionControlNameTemp+"Pac").c_str(),"DataOutput0",(MotionControlNameTemp+"NManipulatorInput1").c_str(),"DataInput0");
 
-   res=Model_CreateLink((MotionControlNameTemp+"Pac").c_str(),0,(MotionControlNameTemp+"NManipulatorInputEmulator1").c_str(),0);
+   res=Model_CreateLink((MotionControlNameTemp+"Pac").c_str(),"DataOutput0",(MotionControlNameTemp+"NManipulatorInputEmulator1").c_str(),"DataInput0");
   }
 
  if(!res)

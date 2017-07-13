@@ -189,19 +189,19 @@ void __fastcall TManipulatorTestForm::IaCheckBoxClick(TObject *Sender)
  {
   if(IaCheckBox->Checked)
   {
-   res=ControlSystem->BreakLink("AfferentSource1",0,"MotionElement0.Afferent_Ia2.Receptor",0);
-   res=ControlSystem->BreakLink("AfferentSource1",0,"MotionElement0.Afferent_Ia1.Receptor",0);
+   res=ControlSystem->BreakLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ia2.Receptor","DataInput0");
+   res=ControlSystem->BreakLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ia1.Receptor","DataInput0");
 
-   res=ControlSystem->CreateLink("Ia_PosSignumSeparator",0,"MotionElement0.Afferent_Ia2.Receptor",0);
-   res=ControlSystem->CreateLink("Ia_NegSignumSeparator",0,"MotionElement0.Afferent_Ia1.Receptor",0);
+   res=ControlSystem->CreateLink("Ia_PosSignumSeparator","DataOutput0","MotionElement0.Afferent_Ia2.Receptor","DataInput0");
+   res=ControlSystem->CreateLink("Ia_NegSignumSeparator","DataOutput0","MotionElement0.Afferent_Ia1.Receptor","DataInput0");
   }
   else
   {
-   res=ControlSystem->BreakLink("Ia_PosSignumSeparator",0,"MotionElement0.Afferent_Ia2.Receptor",0);
-   res=ControlSystem->BreakLink("Ia_NegSignumSeparator",0,"MotionElement0.Afferent_Ia1.Receptor",0);
+   res=ControlSystem->BreakLink("Ia_PosSignumSeparator","DataOutput0","MotionElement0.Afferent_Ia2.Receptor","DataInput0");
+   res=ControlSystem->BreakLink("Ia_NegSignumSeparator","DataOutput0","MotionElement0.Afferent_Ia1.Receptor","DataInput0");
 
-   res=ControlSystem->CreateLink("AfferentSource1",0,"MotionElement0.Afferent_Ia2.Receptor",0);
-   res=ControlSystem->CreateLink("AfferentSource1",0,"MotionElement0.Afferent_Ia1.Receptor",0);
+   res=ControlSystem->CreateLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ia2.Receptor","DataInput0");
+   res=ControlSystem->CreateLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ia1.Receptor","DataInput0");
   }
  }
 
@@ -216,11 +216,11 @@ void __fastcall TManipulatorTestForm::IaCheckBoxClick(TObject *Sender)
 	string pos_separator=string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1);
 	string neg_separator=string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res=ControlSystem->BreakLink("AfferentSource1",0,motion+".Afferent_Ia2.Receptor",0);
-	res=ControlSystem->BreakLink("AfferentSource1",0,motion+".Afferent_Ia1.Receptor",0);
+	res=ControlSystem->BreakLink("AfferentSource1","DataOutput0",motion+".Afferent_Ia2.Receptor","DataInput0");
+	res=ControlSystem->BreakLink("AfferentSource1","DataOutput0",motion+".Afferent_Ia1.Receptor","DataInput0");
 
-	res=ControlSystem->CreateLink(pos_separator,0,motion+".Afferent_Ia2.Receptor",0);
-	res=ControlSystem->CreateLink(neg_separator,0,motion+".Afferent_Ia1.Receptor",0);
+	res=ControlSystem->CreateLink(pos_separator,"DataOutput0",motion+".Afferent_Ia2.Receptor","DataInput0");
+	res=ControlSystem->CreateLink(neg_separator,"DataOutput0",motion+".Afferent_Ia1.Receptor","DataInput0");
    }
   }
   else
@@ -231,11 +231,11 @@ void __fastcall TManipulatorTestForm::IaCheckBoxClick(TObject *Sender)
 	string pos_separator=string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1);
 	string neg_separator=string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res=ControlSystem->BreakLink(pos_separator,0,motion+".Afferent_Ia2.Receptor",0);
-	res=ControlSystem->BreakLink(neg_separator,0,motion+".Afferent_Ia1.Receptor",0);
+	res=ControlSystem->BreakLink(pos_separator,"DataOutput0",motion+".Afferent_Ia2.Receptor","DataInput0");
+	res=ControlSystem->BreakLink(neg_separator,"DataOutput0",motion+".Afferent_Ia1.Receptor","DataInput0");
 
-	res=ControlSystem->CreateLink("AfferentSource1",0,motion+".Afferent_Ia2.Receptor",0);
-	res=ControlSystem->CreateLink("AfferentSource1",0,motion+".Afferent_Ia1.Receptor",0);
+	res=ControlSystem->CreateLink("AfferentSource1","DataOutput0",motion+".Afferent_Ia2.Receptor","DataInput0");
+	res=ControlSystem->CreateLink("AfferentSource1","DataOutput0",motion+".Afferent_Ia1.Receptor","DataInput0");
    }
   }
  }
@@ -253,19 +253,19 @@ void __fastcall TManipulatorTestForm::IbCheckBoxClick(TObject *Sender)
  {
   if(IbCheckBox->Checked)
   {
-   res=ControlSystem->BreakLink("AfferentSource1",0,"MotionElement0.Afferent_Ib2.Receptor",0);
-   res=ControlSystem->BreakLink("AfferentSource1",0,"MotionElement0.Afferent_Ib1.Receptor",0);
+   res=ControlSystem->BreakLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ib2.Receptor","DataInput0");
+   res=ControlSystem->BreakLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ib1.Receptor","DataInput0");
 
-   res=ControlSystem->CreateLink("Ib_PosSignumSeparator",0,"MotionElement0.Afferent_Ib1.Receptor",0);
-   res=ControlSystem->CreateLink("Ib_NegSignumSeparator",0,"MotionElement0.Afferent_Ib2.Receptor",0);
+   res=ControlSystem->CreateLink("Ib_PosSignumSeparator","DataOutput0","MotionElement0.Afferent_Ib1.Receptor","DataInput0");
+   res=ControlSystem->CreateLink("Ib_NegSignumSeparator","DataOutput0","MotionElement0.Afferent_Ib2.Receptor","DataInput0");
   }
   else
   {
-   res=ControlSystem->BreakLink("Ib_PosSignumSeparator",0,"MotionElement0.Afferent_Ib1.Receptor",0);
-   res=ControlSystem->BreakLink("Ib_NegSignumSeparator",0,"MotionElement0.Afferent_Ib2.Receptor",0);
+   res=ControlSystem->BreakLink("Ib_PosSignumSeparator","DataOutput0","MotionElement0.Afferent_Ib1.Receptor","DataInput0");
+   res=ControlSystem->BreakLink("Ib_NegSignumSeparator","DataOutput0","MotionElement0.Afferent_Ib2.Receptor","DataInput0");
 
-   res=ControlSystem->CreateLink("AfferentSource1",0,"MotionElement0.Afferent_Ib2.Receptor",0);
-   res=ControlSystem->CreateLink("AfferentSource1",0,"MotionElement0.Afferent_Ib1.Receptor",0);
+   res=ControlSystem->CreateLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ib2.Receptor","DataInput0");
+   res=ControlSystem->CreateLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_Ib1.Receptor","DataInput0");
   }
  }
 
@@ -280,11 +280,11 @@ void __fastcall TManipulatorTestForm::IbCheckBoxClick(TObject *Sender)
 	string pos_separator=string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1);
 	string neg_separator=string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res=ControlSystem->BreakLink("AfferentSource1",0,motion+".Afferent_Ib2.Receptor",0);
-	res=ControlSystem->BreakLink("AfferentSource1",0,motion+".Afferent_Ib1.Receptor",0);
+	res=ControlSystem->BreakLink("AfferentSource1","DataOutput0",motion+".Afferent_Ib2.Receptor","DataInput0");
+	res=ControlSystem->BreakLink("AfferentSource1","DataOutput0",motion+".Afferent_Ib1.Receptor","DataInput0");
 
-	res=ControlSystem->CreateLink(pos_separator,0,motion+".Afferent_Ib1.Receptor",0);
-	res=ControlSystem->CreateLink(neg_separator,0,motion+".Afferent_Ib2.Receptor",0);
+	res=ControlSystem->CreateLink(pos_separator,"DataOutput0",motion+".Afferent_Ib1.Receptor","DataInput0");
+	res=ControlSystem->CreateLink(neg_separator,"DataOutput0",motion+".Afferent_Ib2.Receptor","DataInput0");
    }
   }
   else
@@ -295,11 +295,11 @@ void __fastcall TManipulatorTestForm::IbCheckBoxClick(TObject *Sender)
 	string pos_separator=string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1);
 	string neg_separator=string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res=ControlSystem->BreakLink(pos_separator,0,motion+".Afferent_Ib1.Receptor",0);
-	res=ControlSystem->BreakLink(neg_separator,0,motion+".Afferent_Ib2.Receptor",0);
+	res=ControlSystem->BreakLink(pos_separator,"DataOutput0",motion+".Afferent_Ib1.Receptor","DataInput0");
+	res=ControlSystem->BreakLink(neg_separator,"DataOutput0",motion+".Afferent_Ib2.Receptor","DataInput0");
 
-	res=ControlSystem->CreateLink("AfferentSource1",0,motion+".Afferent_Ib1.Receptor",0);
-	res=ControlSystem->CreateLink("AfferentSource1",0,motion+".Afferent_Ib2.Receptor",0);
+	res=ControlSystem->CreateLink("AfferentSource1","DataOutput0",motion+".Afferent_Ib1.Receptor","DataInput0");
+	res=ControlSystem->CreateLink("AfferentSource1","DataOutput0",motion+".Afferent_Ib2.Receptor","DataInput0");
    }
   }
  }
@@ -317,19 +317,19 @@ void __fastcall TManipulatorTestForm::IICheckBoxClick(TObject *Sender)
  {
   if(IICheckBox->Checked)
   {
-   res&=ControlSystem->BreakLink("AfferentSource1",0,"MotionElement0.Afferent_II2.Receptor",0);
-   res&=ControlSystem->BreakLink("AfferentSource1",0,"MotionElement0.Afferent_II1.Receptor",0);
+   res&=ControlSystem->BreakLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_II2.Receptor","DataInput0");
+   res&=ControlSystem->BreakLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_II1.Receptor","DataInput0");
 
-   res&=ControlSystem->CreateLink("II_PosSignumSeparator",0,"MotionElement0.Afferent_II1.Receptor",0);
-   res&=ControlSystem->CreateLink("II_NegSignumSeparator",0,"MotionElement0.Afferent_II2.Receptor",0);
+   res&=ControlSystem->CreateLink("II_PosSignumSeparator","DataOutput0","MotionElement0.Afferent_II1.Receptor","DataInput0");
+   res&=ControlSystem->CreateLink("II_NegSignumSeparator","DataOutput0","MotionElement0.Afferent_II2.Receptor","DataInput0");
   }
   else
   {
-   res&=ControlSystem->BreakLink("II_PosSignumSeparator",0,"MotionElement0.Afferent_II1.Receptor",0);
-   res&=ControlSystem->BreakLink("II_NegSignumSeparator",0,"MotionElement0.Afferent_II2.Receptor",0);
+   res&=ControlSystem->BreakLink("II_PosSignumSeparator","DataOutput0","MotionElement0.Afferent_II1.Receptor","DataInput0");
+   res&=ControlSystem->BreakLink("II_NegSignumSeparator","DataOutput0","MotionElement0.Afferent_II2.Receptor","DataInput0");
 
-   res&=ControlSystem->CreateLink("AfferentSource1",0,"MotionElement0.Afferent_II2.Receptor",0);
-   res&=ControlSystem->CreateLink("AfferentSource1",0,"MotionElement0.Afferent_II1.Receptor",0);
+   res&=ControlSystem->CreateLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_II2.Receptor","DataInput0");
+   res&=ControlSystem->CreateLink("AfferentSource1","DataOutput0","MotionElement0.Afferent_II1.Receptor","DataInput0");
   }
  }
 
@@ -344,11 +344,11 @@ void __fastcall TManipulatorTestForm::IICheckBoxClick(TObject *Sender)
 	string pos_separator=string("II_PosIntervalSeparator")+RDK::sntoa(i+1);
 	string neg_separator=string("II_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res&=ControlSystem->BreakLink("AfferentSource1",0,motion+".Afferent_II2.Receptor",0);
-	res&=ControlSystem->BreakLink("AfferentSource1",0,motion+".Afferent_II1.Receptor",0);
+	res&=ControlSystem->BreakLink("AfferentSource1","DataOutput0",motion+".Afferent_II2.Receptor","DataInput0");
+	res&=ControlSystem->BreakLink("AfferentSource1","DataOutput0",motion+".Afferent_II1.Receptor","DataInput0");
 
-	res&=ControlSystem->CreateLink(pos_separator,0,motion+".Afferent_II1.Receptor",0);
-	res&=ControlSystem->CreateLink(neg_separator,0,motion+".Afferent_II2.Receptor",0);
+	res&=ControlSystem->CreateLink(pos_separator,"DataOutput0",motion+".Afferent_II1.Receptor","DataInput0");
+	res&=ControlSystem->CreateLink(neg_separator,"DataOutput0",motion+".Afferent_II2.Receptor","DataInput0");
    }
   }
   else
@@ -359,11 +359,11 @@ void __fastcall TManipulatorTestForm::IICheckBoxClick(TObject *Sender)
 	string pos_separator=string("II_PosIntervalSeparator")+RDK::sntoa(i+1);
 	string neg_separator=string("II_NegIntervalSeparator")+RDK::sntoa(i+1);
 
-	res&=ControlSystem->BreakLink(pos_separator,0,motion+".Afferent_II1.Receptor",0);
-	res&=ControlSystem->BreakLink(neg_separator,0,motion+".Afferent_II2.Receptor",0);
+	res&=ControlSystem->BreakLink(pos_separator,"DataOutput0",motion+".Afferent_II1.Receptor","DataInput0");
+	res&=ControlSystem->BreakLink(neg_separator,"DataOutput0",motion+".Afferent_II2.Receptor","DataInput0");
 
-	res&=ControlSystem->CreateLink("AfferentSource1",0,motion+".Afferent_II2.Receptor",0);
-	res&=ControlSystem->CreateLink("AfferentSource1",0,motion+".Afferent_II1.Receptor",0);
+	res&=ControlSystem->CreateLink("AfferentSource1","DataOutput0",motion+".Afferent_II2.Receptor","DataInput0");
+	res&=ControlSystem->CreateLink("AfferentSource1","DataOutput0",motion+".Afferent_II1.Receptor","DataInput0");
    }
   }
  }
@@ -412,10 +412,10 @@ void __fastcall TManipulatorTestForm::IINumAfferentTrackBarChange(TObject *Sende
   res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane3.PosChannel.Synapse2");
 */
 
-  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel");
-  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel");
-  res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel");
-  res&=ControlSystem->CreateLink("IINegAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel");
+  res&=ControlSystem->CreateLink("IIPosAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel","");
+  res&=ControlSystem->CreateLink("IIPosAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel","");
+  res&=ControlSystem->CreateLink("IINegAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel","");
+  res&=ControlSystem->CreateLink("IINegAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel","");
 
 //  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".Motoneuron1.PNeuronMembrane2.PosChannel");
 //  res&=ControlSystem->CreateLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".Renshow1.PNeuronMembrane2.PosChannel");
@@ -437,10 +437,10 @@ void __fastcall TManipulatorTestForm::IINumAfferentTrackBarChange(TObject *Sende
   res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane3.PosChannel.Synapse2",0);
 */
 
-  res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel",0);
-  res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel",0);
-  res&=ControlSystem->BreakLink("IINegAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel",0);
+  res&=ControlSystem->BreakLink("IIPosAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.PosChannel","DataInput0");
+  res&=ControlSystem->BreakLink("IIPosAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.NegChannel","DataInput0");
+  res&=ControlSystem->BreakLink("IINegAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent14.PNeuronMembrane.NegChannel","DataInput0");
+  res&=ControlSystem->BreakLink("IINegAfferentGenerator","DataOutput0",string("MotionElement")+RDK::sntoa(i)+".PostAfferent24.PNeuronMembrane.PosChannel","DataInput0");
 
 /*
   res&=ControlSystem->BreakLink("IIPosAfferentGenerator",0,string("MotionElement")+RDK::sntoa(i)+".PostAfferent15.PNeuronMembrane.NegChannel.Synapse2",0);
@@ -472,15 +472,15 @@ void __fastcall TManipulatorTestForm::ControlVoltageCheckBoxClick(TObject *Sende
 
   if(ControlVoltageCheckBox->Checked == false)
   {
-   res=ControlSystem->BreakLink("Pac",0,"NManipulatorInput1",0);
+   res=ControlSystem->BreakLink("Pac","DataOutput0","NManipulatorInput1","DataInput0");
 
-   res=ControlSystem->BreakLink("Pac",0,"NManipulatorInputEmulator1",0);
+   res=ControlSystem->BreakLink("Pac","DataOutput0","NManipulatorInputEmulator1","DataInput0");
   }
   else
   {
-   res=ControlSystem->CreateLink("Pac",0,"NManipulatorInput1",0);
+   res=ControlSystem->CreateLink("Pac","DataOutput0","NManipulatorInput1","DataInput0");
 
-   res=ControlSystem->CreateLink("Pac",0,"NManipulatorInputEmulator1",0);
+   res=ControlSystem->CreateLink("Pac","DataOutput0","NManipulatorInputEmulator1","DataInput0");
   }
 
  if(!res)
@@ -504,51 +504,51 @@ if(!RadioGroup1->ItemIndex)
 {
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->BreakLink("NManipulatorSource1",2,
-				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->BreakLink("NManipulatorSource1",2,
-				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->BreakLink("NManipulatorSource1","DataOutput2",
+				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->BreakLink("NManipulatorSource1","DataOutput2",
+				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->BreakLink("NManipulatorSource1",1,
-				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->BreakLink("NManipulatorSource1",1,
-				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->BreakLink("NManipulatorSource1","DataOutput1",
+				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->BreakLink("NManipulatorSource1","DataOutput1",
+				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->BreakLink("NManipulatorSource1",0,
-				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->BreakLink("NManipulatorSource1",0,
-				 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->BreakLink("NManipulatorSource1","DataOutput0",
+				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->BreakLink("NManipulatorSource1","DataOutput0",
+				 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1",2,
-				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1",2,
-				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1","DataOutput2",
+				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1","DataOutput2",
+				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1",1,
-				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1",1,
-				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1","DataOutput1",
+				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1","DataOutput1",
+				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1",0,
-				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1",0,
-				 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1","DataOutput0",
+				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->CreateLink("NManipulatorSourceEmulator1","DataOutput0",
+				 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  cont=ControlSystem->GetComponent("NManipulatorSourceEmulator1");
@@ -558,51 +558,51 @@ else
 {
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1",2,
-				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1",2,
-				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1","DataOutput2",
+				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1","DataOutput2",
+				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1",1,
-				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1",1,
-				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1","DataOutput1",
+				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1","DataOutput1",
+				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1",0,
-				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1",0,
-                 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1","DataOutput0",
+				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->BreakLink("NManipulatorSourceEmulator1","DataOutput0",
+                 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->CreateLink("NManipulatorSource1",2,
-				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->CreateLink("NManipulatorSource1",2,
-				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->CreateLink("NManipulatorSource1","DataOutput2",
+				 string("Ia_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->CreateLink("NManipulatorSource1","DataOutput2",
+				 string("Ia_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->CreateLink("NManipulatorSource1",1,
-				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->CreateLink("NManipulatorSource1",1,
-				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->CreateLink("NManipulatorSource1","DataOutput1",
+				 string("II_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->CreateLink("NManipulatorSource1","DataOutput1",
+				 string("II_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
 
  for(int i=0;i<num_ranges;i++)
  {
-  res&=ControlSystem->CreateLink("NManipulatorSource1",0,
-				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),0);
-  res&=ControlSystem->CreateLink("NManipulatorSource1",0,
-                 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),0);
+  res&=ControlSystem->CreateLink("NManipulatorSource1","DataOutput0",
+				 string("Ib_PosIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
+  res&=ControlSystem->CreateLink("NManipulatorSource1","DataOutput0",
+				 string("Ib_NegIntervalSeparator")+RDK::sntoa(i+1),"DataInput0");
  }
  cont=ControlSystem->GetComponent("NManipulatorSource1");
  Engine=(NManipulatorSource*)cont;

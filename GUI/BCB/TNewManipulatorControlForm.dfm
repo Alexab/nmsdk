@@ -31,7 +31,7 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
     Top = 0
     Width = 833
     Height = 710
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 1
     object TabSheet1: TTabSheet
