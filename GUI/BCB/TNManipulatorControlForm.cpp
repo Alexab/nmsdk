@@ -356,15 +356,15 @@ void TNManipulatorControlForm::ALoadParameters(RDK::USerStorageXML &xml)
  ManipulatorName=xml.ReadString("ManipulatorName","");
  if(!ManipulatorName.empty())
  {
-  UniversalManipulator=RDK::dynamic_pointer_cast<NMSDK::UNet>(GetModel()->GetComponentL(ManipulatorName));
-  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(GetModel()->GetComponentL(ManipulatorName));
+  UniversalManipulator=RDK::dynamic_pointer_cast<NMSDK::UNet>(RDK::GetModel()->GetComponentL(ManipulatorName));
+  Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(RDK::GetModel()->GetComponentL(ManipulatorName));
  }
  if(!UniversalManipulator)
   ManipulatorName="";
 
  ControlSystemName=xml.ReadString("ControlSystemName","");
  if(!ControlSystemName.empty())
-  ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(GetModel()->GetComponentL(ControlSystemName));
+  ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(RDK::GetModel()->GetComponentL(ControlSystemName));
  if(!ControlSystem)
   ControlSystemName="";
  else
@@ -388,7 +388,7 @@ void TNManipulatorControlForm::ALoadParameters(RDK::USerStorageXML &xml)
 
 bool TNManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name, const std::string &man_name)
 {
- RDK::UEPtr<RDK::UNet> net=RDK::dynamic_pointer_cast<RDK::UNet>(GetModel());
+ RDK::UEPtr<RDK::UNet> net=RDK::dynamic_pointer_cast<RDK::UNet>(RDK::GetModel());
 
  bool res=true;
  std::string source_name=cs_name+".NManipulatorSource1";
@@ -436,11 +436,11 @@ void TNManipulatorControlForm::ReadComponentData(void)
   return;
  ReadComponentName=ManipulatorName;
 
- Angle=RDK::dynamic_pointer_cast<RDK::UADItem>(GetModel()->GetComponentL(ReadComponentName))->GetOutputData(1).Double[0];
+ Angle=RDK::dynamic_pointer_cast<RDK::UADItem>(RDK::GetModel()->GetComponentL(ReadComponentName))->GetOutputData(1).Double[0];
 
- if(RDK::dynamic_pointer_cast<RDK::UADItem>(GetModel()->GetComponentL(ReadComponentName))->GetNumOutputs()>3)
+ if(RDK::dynamic_pointer_cast<RDK::UADItem>(RDK::GetModel()->GetComponentL(ReadComponentName))->GetNumOutputs()>3)
  {
-  Movement=RDK::dynamic_pointer_cast<RDK::UADItem>(GetModel()->GetComponentL(ReadComponentName))->GetOutputData(3).Double[0];
+  Movement=RDK::dynamic_pointer_cast<RDK::UADItem>(RDK::GetModel()->GetComponentL(ReadComponentName))->GetOutputData(3).Double[0];
   Movement*=100; // в 1 метре 10 пикселей
  }
 }
@@ -454,8 +454,8 @@ void TNManipulatorControlForm::ReconnectCurrentManipulator(void)
  }
 
 // ManipulatorName=UComponentsListForm->ComponentsListFrame1->GetSelectedComponentLongName();
- UniversalManipulator=RDK::dynamic_pointer_cast<RDK::UNet>(GetModel()->GetComponentL(ManipulatorName));
- Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(GetModel()->GetComponentL(ManipulatorName));
+ UniversalManipulator=RDK::dynamic_pointer_cast<RDK::UNet>(RDK::GetModel()->GetComponentL(ManipulatorName));
+ Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(RDK::GetModel()->GetComponentL(ManipulatorName));
  if(!UniversalManipulator)
   ManipulatorName="";
  ManipulatorCSConnect(ControlSystemName, ManipulatorName);
@@ -470,8 +470,8 @@ void TNManipulatorControlForm::ReconnectManipulator(void)
  }
 
  ManipulatorName=UComponentsListForm->ComponentsListFrame1->GetSelectedComponentLongName();
- UniversalManipulator=RDK::dynamic_pointer_cast<RDK::UNet>(GetModel()->GetComponentL(ManipulatorName));
- Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(GetModel()->GetComponentL(ManipulatorName));
+ UniversalManipulator=RDK::dynamic_pointer_cast<RDK::UNet>(RDK::GetModel()->GetComponentL(ManipulatorName));
+ Manipulator=RDK::dynamic_pointer_cast<NMSDK::NWPhysicalManipulator>(RDK::GetModel()->GetComponentL(ManipulatorName));
  if(!UniversalManipulator)
   ManipulatorName="";
  ManipulatorCSConnect(ControlSystemName, ManipulatorName);
@@ -936,7 +936,7 @@ void __fastcall TNManipulatorControlForm::SelectControlSystem1Click(TObject *Sen
   return;
 
  ControlSystemName=UComponentsListForm->ComponentsListFrame1->GetSelectedComponentLongName();
- ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(GetModel()->GetComponentL(ControlSystemName));
+ ControlSystem=RDK::dynamic_pointer_cast<NMSDK::NEngineMotionControl>(RDK::GetModel()->GetComponentL(ControlSystemName));
  if(!ControlSystem)
   ControlSystemName="";
 

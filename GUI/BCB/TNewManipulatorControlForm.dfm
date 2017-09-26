@@ -36,6 +36,10 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Communication'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 0
         Top = 102
@@ -250,6 +254,10 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
     object TabSheet2: TTabSheet
       Caption = 'Manual Control'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox4: TGroupBox
         Left = 0
         Top = 0
@@ -346,6 +354,10 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
     object TabSheet3: TTabSheet
       Caption = 'Neuro Control'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox5: TGroupBox
         Left = 0
         Top = 0
@@ -875,6 +887,10 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           TabOrder = 1
           object TabSheet4: TTabSheet
             Caption = 'Models'
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object CurrentContourAmplitudeLabeledEdit: TLabeledEdit
               Left = 3
               Top = 24
@@ -932,6 +948,10 @@ object NewManipulatorControlForm: TNewManipulatorControlForm
           object TabSheet5: TTabSheet
             Caption = 'Phys Manipulator'
             ImageIndex = 1
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object GroupBox8: TGroupBox
               Left = 0
               Top = 0
