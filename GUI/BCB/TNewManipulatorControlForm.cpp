@@ -484,7 +484,7 @@ bool TNewManipulatorControlForm::ManipulatorCSConnect(const std::string &cs_name
  RDK::UELockPtr<NMSDK::NModel> model=RDK::GetModelLock<NMSDK::NModel>();
  if(!model)
   return false;
- RDK::UEPtr<RDK::UNet> net=RDK::dynamic_pointer_cast<RDK::UNet>(model);
+ RDK::UEPtr<RDK::UNet> net=RDK::dynamic_pointer_cast<RDK::UNet>(RDK::UEPtr<NMSDK::NModel>(model.Get()));
 
  if(cs_name.empty())
   return true;

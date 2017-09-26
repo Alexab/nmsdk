@@ -86,17 +86,17 @@ windows:!windows-g++ {
 windows {
  INCLUDEPATH += $$(BOOST_PATH)/include/boost-1_54
 
- LIBS += $$(BOOST_PATH)/lib/libboost_chrono-vc100-mt-gd-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_date_time-vc100-mt-gd-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_regex-vc100-mt-gd-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_system-vc100-mt-gd-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_thread-vc100-mt-gd-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_chrono-vc100-mt-gd-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_date_time-vc100-mt-gd-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_regex-vc100-mt-gd-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_system-vc100-mt-gd-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_thread-vc100-mt-gd-1_54.lib
 
- LIBS += $$(BOOST_PATH)/lib/libboost_chrono-vc100-mt-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_date_time-vc100-mt-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_regex-vc100-mt-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_system-vc100-mt-1_54.lib
- LIBS += $$(BOOST_PATH)/lib/libboost_thread-vc100-mt-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_chrono-vc100-mt-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_date_time-vc100-mt-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_regex-vc100-mt-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_system-vc100-mt-1_54.lib
+ LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_thread-vc100-mt-1_54.lib
 
  #LIBS += $$(BOOST_PATH)/lib/libboost_atomic-vc100-mt-gd-1_54.lib
  #LIBS += $$(BOOST_PATH)/lib/libboost_signals-vc100-mt-gd-1_54.lib
