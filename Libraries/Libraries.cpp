@@ -18,7 +18,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
 // libs_list.push_back(&CRLibrary);
  libs_list.push_back(&RDK::StatisticLibrary);
  libs_list.push_back(&RDK::SourceLibrary);
-/*
+
  libs_list.push_back(&NMSDK::BCLLibrary);
  libs_list.push_back(&NMSDK::ActLibrary);
  libs_list.push_back(&NMSDK::MathLibrary);
@@ -34,7 +34,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&NMSDK::WinAPIActLibrary);
  #endif
  libs_list.push_back(&NMSDK::PulseClassicModelsLib);
- */
+
  return true;
 }
 
