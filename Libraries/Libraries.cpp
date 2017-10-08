@@ -22,19 +22,19 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&NMSDK::BCLLibrary);
  libs_list.push_back(&NMSDK::ActLibrary);
  libs_list.push_back(&NMSDK::MathLibrary);
- libs_list.push_back(&NMSDK::PhysLibrary);
+ //libs_list.push_back(&NMSDK::PhysLibrary);
  libs_list.push_back(&NMSDK::SensorLibrary);
  libs_list.push_back(&NMSDK::NeuronSourceLibrary);
  libs_list.push_back(&NMSDK::ReceiverLibrary);
  libs_list.push_back(&NMSDK::PulseLibrary);
- libs_list.push_back(&NMSDK::NeuronLifeLibrary);
- libs_list.push_back(&NMSDK::PulseNeuronLibrary);
+ //libs_list.push_back(&NMSDK::NeuronLifeLibrary);
+/* libs_list.push_back(&NMSDK::PulseNeuronLibrary);
  libs_list.push_back(&NMSDK::MotionControlLibrary);
  #ifndef __GNUC__
  libs_list.push_back(&NMSDK::WinAPIActLibrary);
  #endif
  libs_list.push_back(&NMSDK::PulseClassicModelsLib);
-
+  */
  return true;
 }
 
