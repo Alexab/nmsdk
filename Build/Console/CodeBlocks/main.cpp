@@ -57,23 +57,9 @@ int RdkApplicationInit(const std::string &application_name)
  // Грузим настройки приложения
  std::string opt_name=RDK::extract_file_name(application_name);
  if(opt_name.size()>4)
- opt_name=opt_name.substr(0,opt_name.size()-4);
-// TMemIniFile *app_ini=new TMemIniFile(opt_name+".ini");
-// MainFormName=app_ini->ReadString("General", "MainFormName", Name);
-// HideAdminFormFlag=app_ini->ReadBool("General", "HideAdminForm", false);
-// AutoexecProjectFileName=app_ini->ReadString("General", "AutoexecProjectFileName", "");
-// AutoStartProjectFlag=app_ini->ReadBool("General", "AutoStartProjectFlag", false);
-// VideoGrabberLicenseString=app_ini->ReadString("General","VideoGrabberLicenseString","");
-// MinimizeToTray=app_ini->ReadBool("General","MinimizeToTray",false);
-// StartMinimized=app_ini->ReadBool("General","StartMinimized",false);
-// ProgramName=app_ini->ReadString("General","ProgramName","Server");
-// LogDir=app_ini->ReadString("Log","Dir","");
-// if(LogDir.Length() == 0)
-//  LogDir = "EventsLog/";
-
-// LogDebugMode=app_ini->ReadBool("Log","DebugMode",false);
-
-// DisableAdminForm=app_ini->ReadBool("General","DisableAdminForm",false);
+  opt_name=opt_name.substr(0,opt_name.size()-4);
+ std::string app_path=RDK::extract_file_path(application_name);
+ RdkApplication.SetWorkDirectory(app_path);
 
  RdkRpcDispatcher.SetDecoderPrototype(&RdkRpcDecoder);
  RdkRpcDispatcher.SetCommonDecoder(&RdkRpcDecoderCommon);
@@ -81,7 +67,7 @@ int RdkApplicationInit(const std::string &application_name)
  RdkApplication.SetServerControl(&RdkServerControl);
  RdkApplication.SetEngineControl(&RdkEngineControl);
  RdkApplication.SetProject(&RdkProject);
- RdkApplication.SetLogDir("EventsLog/");
+// RdkApplication.SetLogDir("EventsLog/");
  RdkApplication.SetDebugMode(true);
  if(!RdkApplication.Init())
   return 9000010;
@@ -148,7 +134,7 @@ int main(int argc, char* argv[])
 
  // Loading configuration
  bool open_res=RdkApplication.OpenProject(configuration_name);
- GetEnvironmentLock(0)->SetMaxCalcTime(calc_time_interval);
+ RDK::GetEnvironmentLock(0)->SetMaxCalcTime(calc_time_interval);
  if(open_res != true)
  {
   cout<<"Open configuration: Fail!"<<endl;
@@ -160,15 +146,15 @@ int main(int argc, char* argv[])
 
  RdkApplication.StartChannel(0);
  double calc_time(0.0);
- while(!GetEnvironmentLock(0)->IsCalcFinished())
+ while(!RDK::GetEnvironmentLock(0)->IsCalcFinished())
  {
-  calc_time=GetModelLock(0)->GetTime().GetDoubleTime();
+  calc_time=RDK::GetModelLock(0)->GetTime().GetDoubleTime();
   cout<<"Model time: "<<calc_time<<endl;
   RDK::Sleep(1);
 //  if(calc_time>=calc_time_interval)
 //   break;
  }
- calc_time=GetModelLock(0)->GetTime().GetDoubleTime();
+ calc_time=RDK::GetModelLock(0)->GetTime().GetDoubleTime();
  cout<<"Model time: "<<calc_time<<endl;
  RdkApplication.PauseChannel(0);
  RDK::Sleep(100);
