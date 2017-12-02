@@ -54,6 +54,7 @@
 			<Add library="boost_system" />
 			<Add library="pthread" />
 			<Add library="boost_program_options" />
+			<Add library="dl" />
 		</Linker>
 		<Unit filename="../../../Libraries/Libraries.cpp" />
 		<Unit filename="../../../Libraries/Libraries.h" />
