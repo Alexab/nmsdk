@@ -13,7 +13,7 @@ namespace po = boost::program_options;
 po::options_description CmdLineDescription("Allowed options");
 po::variables_map CmdVariablesMap;
 
-std::string Version("0.2");
+std::string Version("0.4.0");
 //std::map<std::string,std::string> ParsedArgs;
 
 /// Экзепляр прототипа декодера команд
@@ -69,6 +69,7 @@ int RdkApplicationInit(const std::string &application_name)
  RdkApplication.SetProject(&RdkProject);
 // RdkApplication.SetLogDir("EventsLog/");
  RdkApplication.SetDebugMode(true);
+ RdkApplication.SetDebugMode(false);
  if(!RdkApplication.Init())
   return 9000010;
  return RDK_SUCCESS;
@@ -80,6 +81,10 @@ void InitCmdParser(void)
     ("help", "produce help message")
     ("conf", po::value<string>(), "Configuration file name")
     ("ctime", po::value<double>(), "Calculation time interval, in seconds")
+    ("info", po::value<string>(), "Information about core, possible: CollectionsList, ClassesList, CollectionClassesList, ClassProperties")
+    ("class", po::value<string>(), "class name")
+    ("collection", po::value<string>(), "collection name")
+    ("mask", po::value<unsigned>(), "property mask")
 ;
 }
 
@@ -101,6 +106,73 @@ int main(int argc, char* argv[])
  cout << "NMSDK console version "<<Version<<endl;
 
  std::string configuration_name;
+ res=RdkApplicationInit(argv[0]);
+ if(res != RDK_SUCCESS)
+ {
+  cout<<"Init: Fail!"<<endl;
+  return res;
+ }
+ cout<<"Init: Success."<<endl;
+
+ if(CmdVariablesMap.count("info"))
+ {
+  std::string info_target= CmdVariablesMap["info"].as<std::string>();
+  std::string result;
+  if(info_target == "CollectionsList")
+  {
+   const char * buf=Storage_GetClassLibrariesList();
+   if(buf)
+    result=RDK::replace_substring(buf, ",", "\n");
+   Engine_FreeBufString(buf);
+  }
+  else
+  if(info_target == "ClassesList")
+  {
+   const char * buf=Storage_GetClassesNameList();
+   if(buf)
+    result=RDK::replace_substring(buf, ",", "\n");
+   Engine_FreeBufString(buf);
+  }
+  else
+  if(info_target == "CollectionClassesList")
+  {
+   std::string collection_name;
+   if(CmdVariablesMap.count("collection"))
+    collection_name=CmdVariablesMap["collection"].as<std::string>();
+
+   const char * buf(0);
+
+   if(collection_name.empty())
+    buf=Storage_GetClassesNameList();
+   else
+    buf=Storage_GetLibraryClassNames(collection_name.c_str());
+
+   if(buf)
+    result=RDK::replace_substring(buf, ",", "\n");
+   Engine_FreeBufString(buf);
+  }
+  else
+  if(info_target == "ClassProperties")
+  {
+   std::string class_name=CmdVariablesMap["class"].as<std::string>();
+   unsigned mask(0xFFFFFFFF);
+
+   if(CmdVariablesMap.count("mask"))
+    mask=CmdVariablesMap["mask"].as<unsigned>();
+
+   const char * buf=Storage_GetClassProperties(class_name.c_str(), mask);
+   if(buf)
+    result=buf;
+   Engine_FreeBufString(buf);
+   cout<<"<"<<class_name<<">"<<endl<<result<<"</"<<class_name<<">"<<endl;
+   result.clear();
+  }
+  if(!result.empty())
+   cout<<result<<endl;
+  MCore_ChannelUnInit(0);
+  return 0;
+ }
+
  double calc_time_interval(0.0);
  if (CmdVariablesMap.count("conf"))
  {
@@ -109,6 +181,7 @@ int main(int argc, char* argv[])
  else
  {
   cout<<"Configuration name is empty or doesn't set!"<<endl;
+  MCore_ChannelUnInit(0);
   return 9000003;
  }
 
@@ -120,17 +193,10 @@ int main(int argc, char* argv[])
  if(calc_time_interval<=0 || calc_time_interval>10e8)
  {
   cout<<"CalcTimeInterval: Incorrect value "<<calc_time_interval<<"!"<<endl;
+  MCore_ChannelUnInit(0);
   return 9000004;
  }
  cout<<"CalcTimeInterval: "<<calc_time_interval<<" sec"<<endl;
-
- res=RdkApplicationInit(argv[0]);
- if(res != RDK_SUCCESS)
- {
-  cout<<"Init: Fail!"<<endl;
-  return res;
- }
- cout<<"Init: Success."<<endl;
 
  // Loading configuration
  bool open_res=RdkApplication.OpenProject(configuration_name);
@@ -138,6 +204,7 @@ int main(int argc, char* argv[])
  if(open_res != true)
  {
   cout<<"Open configuration: Fail!"<<endl;
+  MCore_ChannelUnInit(0);
   return res;
  }
  cout<<"Open configuration: Success."<<endl;
