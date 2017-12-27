@@ -13,7 +13,7 @@ namespace po = boost::program_options;
 po::options_description CmdLineDescription("Allowed options");
 po::variables_map CmdVariablesMap;
 
-std::string Version("0.3");
+std::string Version("0.4.0");
 //std::map<std::string,std::string> ParsedArgs;
 
 /// Экзепляр прототипа декодера команд
@@ -164,8 +164,12 @@ int main(int argc, char* argv[])
    if(buf)
     result=buf;
    Engine_FreeBufString(buf);
+   cout<<"<"<<class_name<<">"<<endl<<result<<"</"<<class_name<<">"<<endl;
+   result.clear();
   }
-  cout<<result<<endl;
+  if(!result.empty())
+   cout<<result<<endl;
+  MCore_ChannelUnInit(0);
   return 0;
  }
 
@@ -177,6 +181,7 @@ int main(int argc, char* argv[])
  else
  {
   cout<<"Configuration name is empty or doesn't set!"<<endl;
+  MCore_ChannelUnInit(0);
   return 9000003;
  }
 
@@ -188,6 +193,7 @@ int main(int argc, char* argv[])
  if(calc_time_interval<=0 || calc_time_interval>10e8)
  {
   cout<<"CalcTimeInterval: Incorrect value "<<calc_time_interval<<"!"<<endl;
+  MCore_ChannelUnInit(0);
   return 9000004;
  }
  cout<<"CalcTimeInterval: "<<calc_time_interval<<" sec"<<endl;
@@ -198,6 +204,7 @@ int main(int argc, char* argv[])
  if(open_res != true)
  {
   cout<<"Open configuration: Fail!"<<endl;
+  MCore_ChannelUnInit(0);
   return res;
  }
  cout<<"Open configuration: Success."<<endl;
