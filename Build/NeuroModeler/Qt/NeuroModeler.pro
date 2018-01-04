@@ -13,10 +13,13 @@ TEMPLATE = app
 
 windows {
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
- QMAKE_CXXFLAGS += /bigobj
 }
 else {
 DESTDIR = $$PWD/../../../Bin/Platform/Linux/
+}
+
+windows:msvc {
+ QMAKE_CXXFLAGS += /bigobj
 }
 
 CONFIG -= debug_and_release debug_and_release_target
