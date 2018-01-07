@@ -46,7 +46,7 @@ UI_DIR = GeneratedFiles
 RCC_DIR = GeneratedFiles
 
 #including our libs
-windows:!windows-g++ {
+windows {
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lrdk.static.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-BasicLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-BasicStatisticLib.qt
@@ -86,7 +86,7 @@ windows:!windows-g++ {
 }
 
 #including boost
-windows {
+windows:!windows-g++ {
  INCLUDEPATH += $$(BOOST_PATH)/include/boost-1_54
 
  LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_chrono-vc100-mt-gd-1_54.lib
@@ -131,7 +131,10 @@ SOURCES += \
     ../../../Rdk/GUI/Qt/UCalculationChannelsWidget.cpp \
     ../../../Rdk/GUI/Qt/UEngineControlQt.cpp \
     ../../../Rdk/GUI/Qt/ULoggerWidget.cpp \
-    ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.cpp
+    ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.cpp \
+    ../../../Rdk/GUI/Qt/UImageLoader.cpp \
+    ../../../Rdk/GUI/Qt/UComponentPropertyChanger.cpp \
+    ../../../Rdk/GUI/Qt/UCreateTestWidget.cpp
 
 HEADERS += \
         ../../../Libraries/Libraries.h \
@@ -149,7 +152,10 @@ HEADERS += \
     ../../../Rdk/GUI/Qt/UCalculationChannelsWidget.h \
     ../../../Rdk/GUI/Qt/UEngineControlQt.h \
     ../../../Rdk/GUI/Qt/ULoggerWidget.h \
-    ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.h
+    ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.h \
+    ../../../Rdk/GUI/Qt/UImageLoader.h \
+    ../../../Rdk/GUI/Qt/UComponentPropertyChanger.h \
+    ../../../Rdk/GUI/Qt/UCreateTestWidget.h
 
 FORMS   += \
     ../../../Rdk/GUI/Qt/UComponentsListWidget.ui \
@@ -162,4 +168,6 @@ FORMS   += \
     ../../../Rdk/GUI/Qt/UComponentPropertySelectionWidget.ui \
     ../../../Rdk/GUI/Qt/UPropertyXMLWidget.ui \
     ../../../Rdk/GUI/Qt/UCalculationChannelsWidget.ui \
-    ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.ui
+    ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.ui \
+    ../../../Rdk/GUI/Qt/UComponentPropertyChanger.ui \
+    ../../../Rdk/GUI/Qt/UCreateTestWidget.ui
