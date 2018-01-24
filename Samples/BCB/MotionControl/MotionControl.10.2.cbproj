@@ -136,6 +136,7 @@
         <BT_BuildType>Debug</BT_BuildType>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <Defines>_DEBUG;$(Defines)</Defines>
@@ -156,75 +157,75 @@
         <Defines>NDEBUG;$(Defines)</Defines>
     </PropertyGroup>
     <ItemGroup>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>51</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>52</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>53</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>54</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MotionControlLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MotionControlLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>55</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>56</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>57</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseClassicModelsLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseClassicModelsLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>68</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>70</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseNeuronLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseNeuronLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>70</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ReceiverLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ReceiverLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>70</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SensorLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SensorLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>70</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SourceLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SourceLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>70</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>58</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>51</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
@@ -501,9 +502,6 @@
         <CppCompile Include="MotionControl.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <ResFiles Include="MotionControl.res">
-            <BuildOrder>1</BuildOrder>
-        </ResFiles>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
@@ -631,26 +629,145 @@
             <ModelSupport>False</ModelSupport>
             <Deployment Version="3">
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MotionControlLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SensorLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ReceiverLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64220.dll" Class="DependencyModule"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SensorLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\libcurl.bcb.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64220mt.dll" Class="DependencyModule"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SourceLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ReceiverLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseClassicModelsLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SourceLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32250mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SensorLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64220.dll" Class="DependencyModule"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.10.2.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>MotionControl_10_2.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule"/>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MathLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseNeuronLib.lib" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseLib.lib" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64220mt.dll" Class="DependencyModule"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseNeuronLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c250mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
@@ -671,35 +788,36 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PulseClassicModelsLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-SourceLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.tds" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="MotionControl.res" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-MotionControlLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-NeuronLifeLib.lib" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="MotionControl.res" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-ActLib.10.2.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\MotionControl.10.2.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>MotionControl_10_2.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
