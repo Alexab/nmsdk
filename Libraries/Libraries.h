@@ -1,5 +1,5 @@
-﻿#ifndef RTV_DEBUG_LIBRARIES_H
-#define RTV_DEBUG_LIBRARIES_H
+﻿#ifndef NMSDK_LIBRARIES_H
+#define NMSDK_LIBRARIES_H
 
 #include "../Rdk/Deploy/Include/rdk.h"
 
