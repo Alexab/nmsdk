@@ -88,6 +88,7 @@
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <ILINK_LibraryPath>E:\Science\AI\AISD\Nmsdk\Bin\Platform\Win\Lib.Bcb\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <Icon_MainIcon>Program.ico</Icon_MainIcon>
         <VerInfo_Release>0</VerInfo_Release>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
@@ -208,12 +209,55 @@
             <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CRLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvAriphmeticLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>71</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CRLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>76</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvAriphmeticLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>70</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvBasicLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>71</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvDetectionLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>72</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvGuiLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>73</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvSimulatorLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>77</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvStatisticLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>74</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-NoiseGenLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>75</BuildOrder>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvVideoCaptureLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>159</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Condition="'$(Platform)'=='Win32'">
@@ -622,6 +666,11 @@
             </Platforms>
             <ModelSupport>False</ModelSupport>
             <Deployment Version="2">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -634,6 +683,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
@@ -641,17 +696,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -731,6 +775,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CRLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -738,6 +788,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvAriphmeticLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -1164,13 +1220,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

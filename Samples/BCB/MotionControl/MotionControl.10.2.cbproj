@@ -257,7 +257,7 @@
             <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-VideoCaptureLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvVideoCaptureLib.10.2.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>159</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>

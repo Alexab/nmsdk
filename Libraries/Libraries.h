@@ -7,7 +7,7 @@
 #include "Rdk-BasicStatisticLib/Deploy/Include/Lib.h"
 #include "Rdk-IoLib/Deploy/Include/Lib.h"
 #include "Rdk-SourcesLib/Deploy/Include/Lib.h"
-#include "Rdk-VideoCaptureLib/Core/VideoCap.h"
+#include "Rdk-CvVideoCaptureLib/Core/VideoCap.h"
 #include "Rdk-CvAriphmeticLib/Deploy/Include/Lib.h"
 #include "Rdk-CvBasicLib/Deploy/Include/Lib.h"
 #include "Rdk-CvDetectionLib/Deploy/Include/Lib.h"
