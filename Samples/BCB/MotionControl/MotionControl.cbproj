@@ -129,7 +129,7 @@
         <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib;inetwinsockets.lib;xmlrtl.lib;vclactnband.lib</LinkPackageStatics>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.7.13;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;E:\Science\AI\AISD\Nmsdk-new\Libraries\Nmsdk-PulseNeuronLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Nmsdk-PulseLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Rdk-BasicStatisticLib\Core\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;E:\Science\AI\AISD\Nmsdk-new\Libraries\Nmsdk-PulseNeuronLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Nmsdk-PulseLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Rdk-BasicStatisticLib\Core\;E:\OneDrive\Science\AI\AISD\Nmsdk\Rdk\ThirdParty\jpeg\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <Defines>_DEBUG;$(Defines)</Defines>
@@ -217,22 +217,6 @@
             <BuildOrder>71</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>59</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>59</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CRLib.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>76</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvAriphmeticLib.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>70</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvBasicLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>71</BuildOrder>
             <IgnorePath>true</IgnorePath>
@@ -253,11 +237,19 @@
             <BuildOrder>74</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvVideoCaptureLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>159</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-IoLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>59</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-NoiseGenLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>75</BuildOrder>
         </LibFiles>
-        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-CvVideoCaptureLib.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>159</BuildOrder>
+        <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>59</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\rdk.bcb.static.lib" Condition="'$(Platform)'=='Win32'">
@@ -540,52 +532,52 @@
         <ResFiles Include="MotionControl.res">
             <BuildOrder>1</BuildOrder>
         </ResFiles>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
-        <FormResources Include="..\..\..\Rdk\GUI\BCB\UComponentsLinksHintFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentIOFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesListFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesDescriptionsFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentLinksFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\Rdk\GUI\BCB\UComponentsLinksHintFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsControlFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesDescriptionsFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TServerOptionsFrameUnit.dfm"/>
         <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUHttpServerUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UClassesDescriptionsFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TUVisualControllerFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsListFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\USeriesControlUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UServerControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UListInputFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UShowProgressBarUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UWatchFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UImagesFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UCreateProjectWizardFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UDrawEngineFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UComponentsPerformanceFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UGEngineControlFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UEngineMonitorFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\UFavoriteComponentInfoFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdTcpResultBroadcasterFormUnit.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
         <FormResources Include="..\..\..\GUI\BCB\TNewManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFormUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TIdHttpResultBroadcasterFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFrameUnit.dfm"/>
+        <FormResources Include="..\..\..\RDK\GUI\BCB\TEnchancedStringGrid.dfm"/>
+        <FormResources Include="..\..\..\GUI\BCB\TNAstaticGyroUnit.dfm"/>
         <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFormUnit.dfm"/>
         <FormResources Include="..\..\..\GUI\BCB\NDrawManipulatorFrameUnit.dfm"/>
-        <FormResources Include="..\..\..\RDK\GUI\BCB\TApplicationOptionsFormUnit.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNManipulatorControlForm.dfm"/>
-        <FormResources Include="..\..\..\GUI\BCB\TNNewPositionControlElementFormUnit.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -677,6 +669,16 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicStatisticLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -686,16 +688,6 @@
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1220,13 +1212,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
