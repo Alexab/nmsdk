@@ -55,9 +55,18 @@
 			<Add library="pthread" />
 			<Add library="boost_program_options" />
 			<Add library="dl" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CRLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvAriphmeticLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvBasicLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvDetectionLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvGuiLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvSimulatorLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvStatisticLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-VideoCaptureLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-NoiseGenLib.a" />
 		</Linker>
-		<Unit filename="../../../Libraries/Libraries.cpp" />
-		<Unit filename="../../../Libraries/Libraries.h" />
+		<Unit filename="../../../Libraries/Libraries_con.cpp" />
+		<Unit filename="../../../Libraries/Libraries_con.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

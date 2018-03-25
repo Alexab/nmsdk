@@ -13,7 +13,7 @@ namespace po = boost::program_options;
 po::options_description CmdLineDescription("Allowed options");
 po::variables_map CmdVariablesMap;
 
-std::string Version("0.4.0");
+std::string Version("0.5.0");
 //std::map<std::string,std::string> ParsedArgs;
 
 /// Экзепляр прототипа декодера команд

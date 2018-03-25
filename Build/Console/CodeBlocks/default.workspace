@@ -36,6 +36,24 @@
 			<Depends filename="../../../Libraries/Rdk-IoLib/Build/CodeBlocks/Rdk-IoLib.cbp" />
 			<Depends filename="../../../Libraries/Rdk-SourcesLib/Build/CodeBlocks/Rdk-SourcesLib.cbp" />
 			<Depends filename="../../../Rdk/Build/Lib/CodeBlocks/LibRdk.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvAriphmeticLib/Build/CodeBlocks/Rdk-CvAriphmeticLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvBasicLib/Build/CodeBlocks/Rdk-CvBasicLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvDetectionLib/Build/CodeBlocks/Rdk-CvDetectionLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvGuiLib/Build/CodeBlocks/Rdk-CvGuiLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvSimulatorLib/Build/CodeBlocks/Rdk-CvSimulatorLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvStatisticLib/Build/CodeBlocks/Rdk-CvStatisticLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CvVideoCaptureLib/Build/CodeBlocks/Rdk-VideoCaptureLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-CRLib/Build/CodeBlocks/Rdk-CRLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-NoiseGenLib/Build/CodeBlocks/Rdk-NoiseGenLib.cbp" />
 		</Project>
+		<Project filename="../../../Libraries/Rdk-CvAriphmeticLib/Build/CodeBlocks/Rdk-CvAriphmeticLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CvBasicLib/Build/CodeBlocks/Rdk-CvBasicLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CvDetectionLib/Build/CodeBlocks/Rdk-CvDetectionLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CvGuiLib/Build/CodeBlocks/Rdk-CvGuiLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CvSimulatorLib/Build/CodeBlocks/Rdk-CvSimulatorLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CvStatisticLib/Build/CodeBlocks/Rdk-CvStatisticLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CvVideoCaptureLib/Build/CodeBlocks/Rdk-VideoCaptureLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-CRLib/Build/CodeBlocks/Rdk-CRLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-NoiseGenLib/Build/CodeBlocks/Rdk-NoiseGenLib.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
