@@ -29,6 +29,7 @@
 #include "Nmsdk-SensorLib/Deploy/Include/Lib.h"
 #include "Nmsdk-SourceLib/Deploy/Include/Lib.h"
 #include "Nmsdk-PulseClassicModelsLib/Core/Lib.h"
+#include "Rdk-PyMachineLearningLib/Core/Lib.h"
 
 namespace RDK {
 

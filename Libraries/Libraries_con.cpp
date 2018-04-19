@@ -40,6 +40,8 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  #endif
  libs_list.push_back(&NMSDK::PulseClassicModelsLib);
 
+ libs_list.push_back(&RDK::PyMachineLearningLib);
+
  return true;
 }
 
