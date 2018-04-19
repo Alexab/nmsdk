@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="--conf ./../../../Bin/Configs/MC-Muscles/MC-M-01-EyeMuscle/Project.ini --ctime 1.5" />
+				<Option parameters="--conf ./../../../Bin/Configs/Cv/ImageProcess/project.ini --ctime 1.5" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -64,6 +64,7 @@
 			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-CvStatisticLib.a" />
 			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-VideoCaptureLib.a" />
 			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-NoiseGenLib.a" />
+			<Add library="../../../Bin/Platform/Linux/Lib/libRdk-PyMachineLearningLib.a" />
 		</Linker>
 		<Unit filename="../../../Libraries/Libraries_con.cpp" />
 		<Unit filename="../../../Libraries/Libraries_con.h" />

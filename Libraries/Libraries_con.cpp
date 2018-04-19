@@ -1,11 +1,10 @@
-﻿#include "Libraries.h"
+﻿#include "Libraries_con.h"
 
 namespace RDK {
 
 /// Функция должна быть реализована в конечном проекте и загружать требуемые библиотеки
 bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
 {
- using namespace NMSDK;
 // RDK::UItemData::DefaultDataSize=sizeof(double);
  libs_list.push_back(&RDK::BCLLibrary);
  libs_list.push_back(&RDK::IOLibrary);
@@ -20,7 +19,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&RDK::SimulatorLibrary);
  libs_list.push_back(&RDK::BStatisticLibrary);
  libs_list.push_back(&RDK::NoiseLibrary);
-
+ //libs_list.push_back(&RDK::TensorflowLibrary);
 
  libs_list.push_back(&NMSDK::BCLLibrary);
  libs_list.push_back(&NMSDK::ActLibrary);

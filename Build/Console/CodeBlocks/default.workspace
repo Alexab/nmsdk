@@ -45,6 +45,7 @@
 			<Depends filename="../../../Libraries/Rdk-CvVideoCaptureLib/Build/CodeBlocks/Rdk-VideoCaptureLib.cbp" />
 			<Depends filename="../../../Libraries/Rdk-CRLib/Build/CodeBlocks/Rdk-CRLib.cbp" />
 			<Depends filename="../../../Libraries/Rdk-NoiseGenLib/Build/CodeBlocks/Rdk-NoiseGenLib.cbp" />
+			<Depends filename="../../../Libraries/Rdk-PyMachineLearningLib/Build/CodeBlocks/Rdk-PyMachineLearningLib.cbp" />
 		</Project>
 		<Project filename="../../../Libraries/Rdk-CvAriphmeticLib/Build/CodeBlocks/Rdk-CvAriphmeticLib.cbp" />
 		<Project filename="../../../Libraries/Rdk-CvBasicLib/Build/CodeBlocks/Rdk-CvBasicLib.cbp" />
@@ -55,5 +56,6 @@
 		<Project filename="../../../Libraries/Rdk-CvVideoCaptureLib/Build/CodeBlocks/Rdk-VideoCaptureLib.cbp" />
 		<Project filename="../../../Libraries/Rdk-CRLib/Build/CodeBlocks/Rdk-CRLib.cbp" />
 		<Project filename="../../../Libraries/Rdk-NoiseGenLib/Build/CodeBlocks/Rdk-NoiseGenLib.cbp" />
+		<Project filename="../../../Libraries/Rdk-PyMachineLearningLib/Build/CodeBlocks/Rdk-PyMachineLearningLib.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
