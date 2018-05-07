@@ -52,15 +52,15 @@ windows {
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-BasicStatisticLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-IoLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-SourcesLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CRLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvAriphmeticLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvBasicLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvDetectionLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvGuiLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvSimulatorLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvStatisticLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvVideoCaptureLib
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-NoiseGenLib
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CRLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvAriphmeticLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvBasicLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvDetectionLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvGuiLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvSimulatorLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvStatisticLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-CvVideoCaptureLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-NoiseGenLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lNmsdk-ActLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lNmsdk-BasicLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lNmsdk-MathLib.qt
@@ -80,15 +80,15 @@ windows {
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-BasicStatisticLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-IoLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-SourcesLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CRLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvAriphmeticLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvBasicLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvDetectionLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvGuiLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvSimulatorLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvStatisticLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvVideoCaptureLib
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-NoiseGenLib
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CRLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvAriphmeticLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvBasicLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvDetectionLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvGuiLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvSimulatorLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvStatisticLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvVideoCaptureLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-NoiseGenLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-ActLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-BasicLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-MathLib.qt
@@ -151,8 +151,10 @@ SOURCES += \
     ../../../Rdk/GUI/Qt/ULoggerWidget.cpp \
     ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.cpp \
     ../../../Rdk/GUI/Qt/UImageLoader.cpp \
+    ../../../Rdk/GUI/Qt/UCreateTestWidget.cpp \
     ../../../Rdk/GUI/Qt/UComponentPropertyChanger.cpp \
-    ../../../Rdk/GUI/Qt/UCreateTestWidget.cpp
+    ../../../Rdk/GUI/Qt/UStatusPanel.cpp \
+    ../../../Rdk/GUI/Qt/USingleImagePainter.cpp
 
 HEADERS += \
         ../../../Libraries/Libraries.h \
@@ -171,9 +173,12 @@ HEADERS += \
     ../../../Rdk/GUI/Qt/UEngineControlQt.h \
     ../../../Rdk/GUI/Qt/ULoggerWidget.h \
     ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.h \
+    ../../../Rdk/GUI/Qt/USingleImagePainter.h \
     ../../../Rdk/GUI/Qt/UImageLoader.h \
+    ../../../Rdk/GUI/Qt/UCreateTestWidget.h \
     ../../../Rdk/GUI/Qt/UComponentPropertyChanger.h \
-    ../../../Rdk/GUI/Qt/UCreateTestWidget.h
+    ../../../Rdk/GUI/Qt/UStatusPanel.h \
+    ../../../Rdk/GUI/Qt/USettingsReaderWidget.h
 
 FORMS   += \
     ../../../Rdk/GUI/Qt/UComponentsListWidget.ui \
@@ -187,5 +192,6 @@ FORMS   += \
     ../../../Rdk/GUI/Qt/UPropertyXMLWidget.ui \
     ../../../Rdk/GUI/Qt/UCalculationChannelsWidget.ui \
     ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.ui \
+    ../../../Rdk/GUI/Qt/UCreateTestWidget.ui \
     ../../../Rdk/GUI/Qt/UComponentPropertyChanger.ui \
-    ../../../Rdk/GUI/Qt/UCreateTestWidget.ui
+    ../../../Rdk/GUI/Qt/UStatusPanel.ui
