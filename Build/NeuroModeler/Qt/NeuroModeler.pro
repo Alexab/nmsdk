@@ -46,8 +46,6 @@ UI_DIR = GeneratedFiles
 RCC_DIR = GeneratedFiles
 
 #including our libs
-windows {
- LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lrdk.static.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-BasicLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-BasicStatisticLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lRdk-IoLib.qt
@@ -73,38 +71,15 @@ windows {
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lNmsdk-ReceiverLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lNmsdk-SensorLib.qt
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lNmsdk-SourceLib.qt
+ LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lrdk.static.qt
+
+windows {
  LIBS += -L$$PWD/../../../Bin/Platform/Win/Lib.Qt/ -lcurl.qt
 } else:unix {
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lrdk.static.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-BasicLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-BasicStatisticLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-IoLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-SourcesLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CRLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvAriphmeticLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvBasicLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvDetectionLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvGuiLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvSimulatorLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvStatisticLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-CvVideoCaptureLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lRdk-NoiseGenLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-ActLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-BasicLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-MathLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-MotionControlLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-NeuronLifeLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-PhysLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-PulseClassicModelsLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-PulseLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-PulseNeuronLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-ReceiverLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-SensorLib.qt
- LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ -lNmsdk-SourceLib.qt
 }
 
 #including boost
-windows:!windows-g++ {
+windows-msvc*{
  INCLUDEPATH += $$(BOOST_PATH)/include/boost-1_54
 
  LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_chrono-vc100-mt-gd-1_54.lib
@@ -126,11 +101,33 @@ windows:!windows-g++ {
  #LIBS += $$(BOOST_PATH)/lib/libboost_atomic-vc100-mt-1_54.lib
  #LIBS += $$(BOOST_PATH)/lib/libboost_signals-vc100-mt-1_54.lib
  #LIBS += $$(BOOST_PATH)/lib/libboost_timer-vc100-mt-1_54.lib
+}
+
+win32-g++{
+ INCLUDEPATH += $$(BOOST_PATH)/include/boost-1_54
+
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_chrono-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_date_time-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_regex-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_system-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_thread-mgw49-mt-1_54
+
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_chrono-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_date_time-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_regex-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_system-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_thread-mgw49-mt-1_54
+ LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_program_options-mgw49-mt-1_54
+
 } else:unix {
  LIBS += -lboost_thread
  LIBS += -lboost_system
  LIBS += -lpthread
+ LIBS += -lboost_program_options
+ LIBS += -lboost_chrono
+ LIBS += -lboost_system
 }
+
 
 SOURCES += \
         ../../../Libraries/Libraries.cpp \
