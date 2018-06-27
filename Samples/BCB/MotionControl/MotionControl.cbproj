@@ -123,11 +123,11 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_Release>7</VerInfo_Release>
         <BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
-        <VerInfo_Build>14</VerInfo_Build>
+        <VerInfo_Build>15</VerInfo_Build>
         <Defines>_DEBUG;$(Defines)</Defines>
         <VerInfo_Debug>true</VerInfo_Debug>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib;inetwinsockets.lib;xmlrtl.lib;vclactnband.lib</LinkPackageStatics>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.7.14;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.7.15;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;E:\Science\AI\AISD\Nmsdk-new\Libraries\Nmsdk-PulseNeuronLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Nmsdk-PulseLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Rdk-BasicStatisticLib\Core\;E:\OneDrive\Science\AI\AISD\Nmsdk\Rdk\ThirdParty\jpeg\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
@@ -669,6 +669,16 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -678,16 +688,6 @@
                 <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-BasicLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32220.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1212,13 +1212,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
