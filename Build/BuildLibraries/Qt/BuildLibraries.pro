@@ -22,6 +22,7 @@ Rdk_Nmsdk_libs = Rdk-BasicLib \
         Rdk-CvSimulatorLib \
         Rdk-CvStatisticLib \
         Rdk-CvVideoCaptureLib \
+        Rdk-PyMachineLearningLib \
         Rdk-NoiseGenLib \
         Nmsdk-ActLib \
         Nmsdk-BasicLib \

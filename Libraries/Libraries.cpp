@@ -20,6 +20,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&RDK::SimulatorLibrary);
  libs_list.push_back(&RDK::BStatisticLibrary);
  libs_list.push_back(&RDK::NoiseLibrary);
+ libs_list.push_back(&RDK::PyMachineLearningLib);
 
 
  libs_list.push_back(&NMSDK::BCLLibrary);
@@ -39,6 +40,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&NMSDK::WinAPIActLibrary);
  #endif
  libs_list.push_back(&NMSDK::PulseClassicModelsLib);
+
 
  return true;
 }
