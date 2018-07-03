@@ -13,9 +13,16 @@ TEMPLATE = app
 
 windows {
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
-}
-else {
+    INCLUDEPATH += d:/Anaconda3/include/
+    INCLUDEPATH += $$(BOOST_PATH)
+    INCLUDEPATH += $$(OPENCV3_PATH)/build/include
+    INCLUDEPATH += d:/Anaconda3/Lib/site-packages/numpy/core/include/numpy
+
+    LIBS += -Ld:/Anaconda3/libs/
+
+} else {
 DESTDIR = $$PWD/../../../Bin/Platform/Linux/
+    INCLUDEPATH += /usr/include/python3.5
 }
 
 windows:msvc {
@@ -28,6 +35,7 @@ DEFINES += QT_DLL QT_WIDGETS_LIB
 DEFINES += LIBRDK_LIBRARY_EXPORT
 DEFINES += RDK_UNICODE_RUN
 DEFINES += RDK_QT
+#DEFINES += BOOST_LIB_NAME boost_python35
 
 INCLUDEPATH += ../../../Gui/Qt \
     ../../../Deploy/Include \
@@ -128,10 +136,10 @@ windows {
  INCLUDEPATH += $$(OPENCV3_PATH)/build/include
 
  CONFIG(debug){
-  LIBS += -L$$(OPENCV3_PATH)/build/x86/Vc10cuda/lib $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
  }
  CONFIG(release){
-  LIBS += -L$$(OPENCV3_PATH)/build/x86/Vc10cuda/lib $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
  }
 
 } else:unix {
@@ -142,7 +150,8 @@ windows {
 
 windows {
  INCLUDEPATH += $$(BOOST_PATH)
- LIBS += -L$$(BOOST_PATH)/lib32-msvc-10.0/
+ LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/
+ LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/ -llibboost_numpy35-vc120-mt-x64-1_67
 } else:unix {
  LIBS += -lboost_thread \
   -lboost_system \
