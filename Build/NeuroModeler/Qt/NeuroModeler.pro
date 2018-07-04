@@ -35,6 +35,8 @@ DEFINES += QT_DLL QT_WIDGETS_LIB
 DEFINES += LIBRDK_LIBRARY_EXPORT
 DEFINES += RDK_UNICODE_RUN
 DEFINES += RDK_QT
+DEFINES += BOOST_PYTHON_STATIC_LIB
+DEFINES += BOOST_NUMPY_STATIC_LIB
 #DEFINES += BOOST_LIB_NAME boost_python35
 
 INCLUDEPATH += ../../../Gui/Qt \
@@ -136,10 +138,10 @@ windows {
  INCLUDEPATH += $$(OPENCV3_PATH)/build/include
 
  CONFIG(debug){
-  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12cuda/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
  }
  CONFIG(release){
-  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12cuda/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
  }
 
 } else:unix {
@@ -151,7 +153,7 @@ windows {
 windows {
  INCLUDEPATH += $$(BOOST_PATH)
  LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/
- LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/ -llibboost_numpy35-vc120-mt-x64-1_67
+ #LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/ -llibboost_numpy35-vc120-mt-x64-1_67
 } else:unix {
  LIBS += -lboost_thread \
   -lboost_system \
