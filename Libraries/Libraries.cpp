@@ -20,7 +20,9 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&RDK::SimulatorLibrary);
  libs_list.push_back(&RDK::BStatisticLibrary);
  libs_list.push_back(&RDK::NoiseLibrary);
+#ifndef __BORLANDC__
  libs_list.push_back(&RDK::PyMachineLearningLib);
+#endif
 
 
  libs_list.push_back(&NMSDK::BCLLibrary);
