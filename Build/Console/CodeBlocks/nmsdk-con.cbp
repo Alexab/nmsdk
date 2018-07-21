@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="--conf ./../../../Bin/Configs/Cv/ImageProcess/project.ini --ctime 1.5" />
+				<Option parameters=" --info ClassStructure --class NPulseNeuronIzhikevich" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
