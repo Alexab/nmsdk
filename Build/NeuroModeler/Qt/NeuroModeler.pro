@@ -13,12 +13,12 @@ TEMPLATE = app
 
 windows {
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
-    INCLUDEPATH += d:/Anaconda3/include/
+    INCLUDEPATH += $$(ANACONDA_PATH)/include/
     INCLUDEPATH += $$(BOOST_PATH)
     INCLUDEPATH += $$(OPENCV3_PATH)/build/include
-    INCLUDEPATH += d:/Anaconda3/Lib/site-packages/numpy/core/include/numpy
+    INCLUDEPATH += $$(ANACONDA_PATH)/Lib/site-packages/numpy/core/include/numpy
 
-    LIBS += -Ld:/Anaconda3/libs/
+    LIBS += -L$$(ANACONDA_PATH)/libs/
 
 } else {
 DESTDIR = $$PWD/../../../Bin/Platform/Linux/
