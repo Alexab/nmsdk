@@ -101,7 +101,7 @@ windows:!windows-g++ {
 
 windows {
  INCLUDEPATH += $$(BOOST_PATH)
- LIBS += -L$$(BOOST_PATH)/lib32-msvc-10.0/
+ LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/
 } else:unix {
  LIBS += -lboost_thread \
   -lboost_system \
