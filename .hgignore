@@ -79,3 +79,8 @@ Debug
 *.local   
 Debug_Build
 Release_Build
+InstallSources
+build-*
+*.orig
+*.stat
+*.res

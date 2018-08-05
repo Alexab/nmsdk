@@ -13,7 +13,7 @@ namespace po = boost::program_options;
 po::options_description CmdLineDescription("Allowed options");
 po::variables_map CmdVariablesMap;
 
-std::string Version("0.5.2");
+std::string Version("0.6.0");
 //std::map<std::string,std::string> ParsedArgs;
 
 /// Экзепляр прототипа декодера команд
@@ -161,6 +161,22 @@ int main(int argc, char* argv[])
     mask=CmdVariablesMap["mask"].as<unsigned>();
 
    const char * buf=Storage_GetClassProperties(class_name.c_str(), mask);
+   if(buf)
+    result=buf;
+   Engine_FreeBufString(buf);
+   cout<<"<"<<class_name<<">"<<endl<<result<<"</"<<class_name<<">"<<endl;
+   result.clear();
+  }
+  else
+  if(info_target == "ClassStructure")
+  {
+   std::string class_name=CmdVariablesMap["class"].as<std::string>();
+   unsigned mask(0xFFFFFFFF);
+
+   if(CmdVariablesMap.count("mask"))
+    mask=CmdVariablesMap["mask"].as<unsigned>();
+
+   const char * buf=Storage_GetClassStructure(class_name.c_str(), mask);
    if(buf)
     result=buf;
    Engine_FreeBufString(buf);

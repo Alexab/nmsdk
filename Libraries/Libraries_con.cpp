@@ -30,7 +30,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  libs_list.push_back(&NMSDK::ReceiverLibrary);
  libs_list.push_back(&NMSDK::PulseLibrary);
  libs_list.push_back(&NMSDK::NeuronLifeLibrary);
- //libs_list.push_back(&NMSDK::PulseNeuronLibrary);
+ libs_list.push_back(&NMSDK::PulseNeuronLibrary);
  #ifndef NMSDK_DEBUG
  //libs_list.push_back(&NMSDK::MotionControlLibrary);
  #endif
@@ -39,7 +39,7 @@ bool RDK_CALL RdkLoadPredefinedLibraries(std::list<RDK::ULibrary*> &libs_list)
  #endif
  libs_list.push_back(&NMSDK::PulseClassicModelsLib);
 
- libs_list.push_back(&RDK::PyMachineLearningLib);
+// libs_list.push_back(&RDK::PyMachineLearningLib);
 
  return true;
 }

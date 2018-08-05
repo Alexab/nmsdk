@@ -6,19 +6,19 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = NeuroModeler
 TEMPLATE = app
 
 windows {
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
-    INCLUDEPATH += d:/Anaconda3/include/
+    INCLUDEPATH += $$(ANACONDA_PATH)/include/
     INCLUDEPATH += $$(BOOST_PATH)
     INCLUDEPATH += $$(OPENCV3_PATH)/build/include
-    INCLUDEPATH += d:/Anaconda3/Lib/site-packages/numpy/core/include/numpy
+    INCLUDEPATH += $$(ANACONDA_PATH)/Lib/site-packages/numpy/core/include/numpy
 
-    LIBS += -Ld:/Anaconda3/libs/
+    LIBS += -L$$(ANACONDA_PATH)/libs/
 
 } else {
 DESTDIR = $$PWD/../../../Bin/Platform/Linux/
@@ -190,7 +190,11 @@ SOURCES += \
     ../../../Rdk/GUI/Qt/UCreateTestWidget.cpp \
     ../../../Rdk/GUI/Qt/UComponentPropertyChanger.cpp \
     ../../../Rdk/GUI/Qt/UStatusPanel.cpp \
-    ../../../Rdk/GUI/Qt/USingleImagePainter.cpp
+    ../../../Rdk/GUI/Qt/USingleImagePainter.cpp \
+    ../../../Rdk/GUI/Qt/qcustomplot.cpp \
+    ../../../Rdk/GUI/Qt/UGraphWidget.cpp \
+    ../../../Rdk/GUI/Qt/UGraphControlDialog.cpp \
+    ../../../Rdk/GUI/Qt/UGraphPaintWidget.cpp
 
 HEADERS += \
         ../../../Libraries/Libraries.h \
@@ -214,7 +218,12 @@ HEADERS += \
     ../../../Rdk/GUI/Qt/UCreateTestWidget.h \
     ../../../Rdk/GUI/Qt/UComponentPropertyChanger.h \
     ../../../Rdk/GUI/Qt/UStatusPanel.h \
-    ../../../Rdk/GUI/Qt/USettingsReaderWidget.h
+    ../../../Rdk/GUI/Qt/USettingsReaderWidget.h \
+    ../../../Rdk/GUI/Qt/qcustomplot.h \
+    ../../../Rdk/GUI/Qt/UGraphWidget.h \
+    ../../../Rdk/GUI/Qt/UStructSingleGraph.h \
+    ../../../Rdk/GUI/Qt/UGraphControlDialog.h \
+    ../../../Rdk/GUI/Qt/UGraphPaintWidget.h
 
 FORMS   += \
     ../../../Rdk/GUI/Qt/UComponentsListWidget.ui \
@@ -230,4 +239,7 @@ FORMS   += \
     ../../../Rdk/GUI/Qt/UCreateConfigurationWizardWidget.ui \
     ../../../Rdk/GUI/Qt/UCreateTestWidget.ui \
     ../../../Rdk/GUI/Qt/UComponentPropertyChanger.ui \
-    ../../../Rdk/GUI/Qt/UStatusPanel.ui
+    ../../../Rdk/GUI/Qt/UStatusPanel.ui \
+    ../../../Rdk/GUI/Qt/UGraphWidget.ui \
+    ../../../Rdk/GUI/Qt/UGraphControlDialog.ui \
+    ../../../Rdk/GUI/Qt/UGraphPaintWidget.ui

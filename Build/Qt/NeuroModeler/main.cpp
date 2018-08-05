@@ -70,7 +70,8 @@ int main(int argc, char *argv[])
 
     UGEngineControllWidget w(NULL, &application);
 
-    application.OpenProject(startProjectName);
+    if(!startProjectName.empty())
+     application.OpenProject(startProjectName);
     RDK::UIVisualControllerStorage::UpdateInterface(true);
 
     if(hideAdminForm)
