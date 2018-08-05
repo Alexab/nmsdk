@@ -1,7 +1,6 @@
 TEMPLATE = subdirs
 
-CONFIG += ordered #проекты собираются в порядке вписания в SUBDIR, таким образом
-                  #GuiDllSample будет собираться последним
+CONFIG += ordered
 
 defineReplace(addSubdirsRdkNmsdk) {
     for(name, 1) {
@@ -26,6 +25,7 @@ Rdk_Nmsdk_libs = Rdk-BasicLib \
         Rdk-CvStatisticLib \
         Rdk-CvVideoCaptureLib \
         Rdk-NoiseGenLib \
+        Rdk-PyMachineLearningLib \
         Nmsdk-ActLib \
         Nmsdk-BasicLib \
         Nmsdk-MathLib \
