@@ -49,6 +49,8 @@ INCLUDEPATH += ../../../Gui/Qt \
 
 unix {
 INCLUDEPATH += /usr/include/python3.5
+INCLUDEPATH += /usr/lib/python3/dist-packages/numpy/core/include/numpy/
+INCLUDEPATH += /usr/local/include
 #INCLUDEPATH += /usr/local/include/boost
 #INCLUDEPATH += /usr/local/lib64
 #INCLUDEPATH += /usr/include/numpy
