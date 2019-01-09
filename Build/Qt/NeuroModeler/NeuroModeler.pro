@@ -12,6 +12,7 @@ TARGET = NeuroModeler
 TEMPLATE = app
 
 windows {
+message("Using "msvc-$$(VisualStudioVersion) compiler)
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
     INCLUDEPATH += $$(ANACONDA_PATH)/include/
     INCLUDEPATH += $$(BOOST_PATH)
@@ -126,7 +127,9 @@ OPENCV_LIBS_LIST = -L/usr/local/lib/ -lopencv_core \
  -L/usr/local/lib/ -lopencv_imgcodecs
 
 windows {
- OPENCV_LIBS_VERSION = 310
+ OPENCV_LIBS_VERSION = 345
+ OPENCV_COMPILED_VERSION_64 = vc15cuda
+ OPENCV_COMPILED_VERSION_86 = vc15
 
  # функция добавляет постфикс(второй параметр) ко всем элементам первого входного параметра
  defineReplace(addPostfix) {
@@ -139,13 +142,21 @@ windows {
 
  INCLUDEPATH += $$(OPENCV3_PATH)/build/include
 
+ !contains(QMAKE_TARGET.arch, x86_64) {
  CONFIG(debug){
-  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12cuda/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
+  LIBS += -L$$(OPENCV3_PATH)/build/x86/$${OPENCV_COMPILED_VERSION_86}/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
  }
- CONFIG(release){
-  LIBS += -L$$(OPENCV3_PATH)/build/x64/Vc12cuda/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
+ CONFIG(release) {
+  LIBS += -L$$(OPENCV3_PATH)/build/x86/$${OPENCV_COMPILED_VERSION_86}/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
  }
-
+} else {
+ CONFIG(debug){
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/$${OPENCV_COMPILED_VERSION_64}/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
+ }
+ CONFIG(release) {
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/$${OPENCV_COMPILED_VERSION_64}/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
+ }
+}
 } else:unix {
  LIBS += $$OPENCV_LIBS_LIST
 }
@@ -153,9 +164,14 @@ windows {
 #including boost
 
 windows {
+ BOOST_COMPILED_VERSION = msvc-$$(VisualStudioVersion)
+
  INCLUDEPATH += $$(BOOST_PATH)
- LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/
- #LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/ -llibboost_numpy35-vc120-mt-x64-1_67
+!contains(QMAKE_TARGET.arch, x86_64) {
+ LIBS += -L$$(BOOST_PATH)/$${BOOST_COMPILED_VERSION}-x86/lib/
+} else {
+ LIBS += -L$$(BOOST_PATH)/$${BOOST_COMPILED_VERSION}-x64/lib/
+}
 } else:unix {
  LIBS += -lboost_thread \
   -lboost_system \
