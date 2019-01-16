@@ -40,6 +40,10 @@ DEFINES += BOOST_PYTHON_STATIC_LIB
 DEFINES += BOOST_NUMPY_STATIC_LIB
 #DEFINES += BOOST_LIB_NAME boost_python35
 
+
+VERSION = $$system(hg parents --template '{rev}')
+DEFINES += RDK_APP_VERSION=$$VERSION
+
 INCLUDEPATH += ../../../Gui/Qt \
     ../../../Deploy/Include \
     ../../../Rdk/Core/Graphics \
