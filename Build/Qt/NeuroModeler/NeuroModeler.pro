@@ -132,7 +132,7 @@ OPENCV_LIBS_LIST = -L/usr/local/lib/ -lopencv_core \
 
 windows {
  OPENCV_LIBS_VERSION = 345
- OPENCV_COMPILED_VERSION_64 = vc15cuda
+ OPENCV_COMPILED_VERSION_64 = vc15
  OPENCV_COMPILED_VERSION_86 = vc15
 
  # функция добавляет постфикс(второй параметр) ко всем элементам первого входного параметра
