@@ -11,19 +11,15 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 TARGET = NeuroModeler
 TEMPLATE = app
 
+include($$PWD/../../../Rdk/Build/Lib/Qt/RdkDefines.pri)
+
 windows {
 message("Using "msvc-$$(VisualStudioVersion) compiler)
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
-    INCLUDEPATH += $$(ANACONDA_PATH)/include/
-    INCLUDEPATH += $$(BOOST_PATH)
-    INCLUDEPATH += $$(OPENCV3_PATH)/build/include
-    INCLUDEPATH += $$(ANACONDA_PATH)/Lib/site-packages/numpy/core/include/numpy
-
     LIBS += -L$$(ANACONDA_PATH)/libs/
 
 } else {
 DESTDIR = $$PWD/../../../Bin/Platform/Linux/
-    INCLUDEPATH += /usr/include/python3.5
 }
 
 windows:msvc {
@@ -33,13 +29,6 @@ windows:msvc {
 CONFIG -= debug_and_release debug_and_release_target
 
 DEFINES += QT_DLL QT_WIDGETS_LIB
-DEFINES += LIBRDK_LIBRARY_EXPORT
-DEFINES += RDK_UNICODE_RUN
-DEFINES += RDK_QT
-DEFINES += BOOST_PYTHON_STATIC_LIB
-DEFINES += BOOST_NUMPY_STATIC_LIB
-#DEFINES += BOOST_LIB_NAME boost_python35
-
 
 VERSION = $$system(hg parents --template '{rev}')
 DEFINES += RDK_APP_VERSION=$$VERSION
@@ -53,13 +42,7 @@ INCLUDEPATH += ../../../Gui/Qt \
     ../../../Rdk/GUI/Qt
 
 unix {
-INCLUDEPATH += /usr/include/python3.5
-INCLUDEPATH += /usr/lib/python3/dist-packages/numpy/core/include/numpy/
 INCLUDEPATH += /usr/local/include
-#INCLUDEPATH += /usr/local/include/boost
-#INCLUDEPATH += /usr/local/lib64
-#INCLUDEPATH += /usr/include/numpy
-#INCLUDEPATH += /usr/local/include/opencv
 }
 
 MOC_DIR = GeneratedFiles/release
@@ -180,14 +163,10 @@ windows {
  LIBS += -lboost_thread \
   -lboost_system \
   -lboost_program_options \
-  -lboost_python3 \
+  -lboost_python$${RDK_PYTHON_MAJOR}$${RDK_PYTHON_MINOR} \
+  -lboost_numpy$${RDK_PYTHON_MAJOR}$${RDK_PYTHON_MINOR} \
   -lpython3.5m \
-  -lboost_numpy \
   -lpthread
-
-# LIBS += /usr/lib/x86_64-linux-gnu/libboost_python-py35.so
-# LIBS += /usr/lib/x86_64-linux-gnu/libpython3.5m.so
-# LIBS += /usr/local/lib64/libboost_numpy.so
 }
 
 SOURCES += \

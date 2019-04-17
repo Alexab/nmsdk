@@ -2,6 +2,9 @@ TEMPLATE = subdirs
 
 CONFIG += ordered
 
+include($$PWD/../../../Rdk/Build/Lib/Qt/RdkDefines.pri)
+
+
 defineReplace(addSubdirsRdkNmsdk) {
     for(name, 1) {
         SUBDIRS += $$name
@@ -51,4 +54,4 @@ windows {
 }
 
 
-SUBDIRS += NeuroModeler.pro
+SUBDIRS += $$PWD/../NeuroModeler/NeuroModeler.pro

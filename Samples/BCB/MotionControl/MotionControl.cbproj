@@ -58,6 +58,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <VerInfo_Release>6</VerInfo_Release>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
@@ -88,8 +89,6 @@
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <ILINK_LibraryPath>E:\Science\AI\AISD\Nmsdk\Bin\Platform\Win\Lib.Bcb\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <Icon_MainIcon>Program.ico</Icon_MainIcon>
         <VerInfo_Release>0</VerInfo_Release>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -124,11 +123,11 @@
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <VerInfo_Release>7</VerInfo_Release>
         <BCC_AllCodeguardOptions>false</BCC_AllCodeguardOptions>
-        <VerInfo_Build>17</VerInfo_Build>
+        <VerInfo_Build>18</VerInfo_Build>
         <Defines>_DEBUG;$(Defines)</Defines>
         <VerInfo_Debug>true</VerInfo_Debug>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;TVidGrab.lib;vclx.lib;VclSmp.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;inet.lib;Tee.lib;inetwinsockets.lib;xmlrtl.lib;vclactnband.lib</LinkPackageStatics>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.7.17;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.7.18;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Debugger_DebugSourcePath>E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Sources\ThirdParty\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\Sources\Libraries\NeuronLifeLib\;E:\Science\AI\AISD\Nmsdk\Sources\Kernel\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Engine\;E:\Science\AI\AISD\Nmsdk\RDK\Deploy\Include\;E:\Science\AI\AISD\Nmsdk\Kernel\;E:\Science\AI\AISD\Nmsdk\Libraries\PulseLib\;E:\Science\AI\AISD\Nmsdk\RDK\Core\System\Builder\;E:\Science\AI\AISD\Nmsdk\RDK\Core\Utilities\;E:\Science\AI\AISD\Nmsdk\Libraries\MotionControlLib\;E:\Science\AI\AISD\Nmsdk\Libraries\SourceLib\;E:\Science\AI\AISD\Nmsdk\Libraries\PhysLib\WinAPI\;E:\Science\AI\AISD\Nmsdk-new\Libraries\Nmsdk-PulseNeuronLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Nmsdk-PulseLib\Core\;E:\Science\AI\AISD\Nmsdk\Libraries\Rdk-BasicStatisticLib\Core\;E:\OneDrive\Science\AI\AISD\Nmsdk\Rdk\ThirdParty\jpeg\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
@@ -248,6 +247,7 @@
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-NoiseGenLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>75</BuildOrder>
+            <IgnorePath>true</IgnorePath>
         </LibFiles>
         <LibFiles Include="..\..\..\Bin\Platform\Win\Lib.Bcb\Rdk-SourcesLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>59</BuildOrder>
@@ -659,9 +659,8 @@
             </Platforms>
             <ModelSupport>False</ModelSupport>
             <Deployment Version="2">
-                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -671,8 +670,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32220mt.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\Bin\Platform\Win\Lib.Bcb\Nmsdk-PhysLib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1217,8 +1217,8 @@
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
