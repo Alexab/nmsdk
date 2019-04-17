@@ -11,10 +11,14 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 TARGET = NeuroModeler
 TEMPLATE = app
 
+include($$PWD/../../../Rdk/Build/Lib/Qt/RdkDefines.pri)
+
 windows {
+message("Using "msvc-$$(VisualStudioVersion) compiler)
 DESTDIR = $$PWD/../../../Bin/Platform/Win/
-}
-else {
+    LIBS += -L$$(ANACONDA_PATH)/libs/
+
+} else {
 DESTDIR = $$PWD/../../../Bin/Platform/Linux/
 }
 
@@ -25,9 +29,9 @@ windows:msvc {
 CONFIG -= debug_and_release debug_and_release_target
 
 DEFINES += QT_DLL QT_WIDGETS_LIB
-DEFINES += LIBRDK_LIBRARY_EXPORT
-DEFINES += RDK_UNICODE_RUN
-DEFINES += RDK_QT
+
+VERSION = $$system(hg parents --template '{rev}')
+DEFINES += RDK_APP_VERSION=$$VERSION
 
 INCLUDEPATH += ../../../Gui/Qt \
     ../../../Deploy/Include \
@@ -36,6 +40,10 @@ INCLUDEPATH += ../../../Gui/Qt \
     GeneratedFiles/Debug \
     ../../../Rdk/Deploy/Include \
     ../../../Rdk/GUI/Qt
+
+unix {
+INCLUDEPATH += /usr/local/include
+}
 
 MOC_DIR = GeneratedFiles/release
 
@@ -59,6 +67,7 @@ NMSDK_LIBS_NAMES = \
  Rdk-CvSimulatorLib \
  Rdk-CvStatisticLib \
  Rdk-CvVideoCaptureLib \
+ Rdk-PyMachineLearningLib \
  Rdk-NoiseGenLib \
  Nmsdk-ActLib \
  Nmsdk-BasicLib \
@@ -94,70 +103,71 @@ windows:!windows-g++ {
  }
  LIBS += -L$$PWD/../../../Bin/Platform/Linux/Lib.Qt/ $$NMSDK_LIBS_LIST
  PRE_TARGETDEPS += $$NMSDK_LIBS_FILES
+}
 
+#including opencv
+OPENCV_LIBS_LIST = -L/usr/local/lib/ -lopencv_core \
+ -L/usr/local/lib/ -lopencv_highgui \
+ -L/usr/local/lib/ -lopencv_imgproc \
+ -L/usr/local/lib/ -lopencv_videoio \
+ -L/usr/local/lib/ -lopencv_video \
+ -L/usr/local/lib/ -lopencv_imgcodecs
+
+windows {
+ OPENCV_LIBS_VERSION = 345
+ OPENCV_COMPILED_VERSION_64 = vc15
+ OPENCV_COMPILED_VERSION_86 = vc15
+
+ # функция добавляет постфикс(второй параметр) ко всем элементам первого входного параметра
+ defineReplace(addPostfix) {
+  libList = $$1
+  for(lib, libList) {
+   returnValue += $${lib}$${2}
+  }
+  return($$returnValue)
+ }
+
+ INCLUDEPATH += $$(OPENCV3_PATH)/build/include
+
+ !contains(QMAKE_TARGET.arch, x86_64) {
+ CONFIG(debug){
+  LIBS += -L$$(OPENCV3_PATH)/build/x86/$${OPENCV_COMPILED_VERSION_86}/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
+ }
+ CONFIG(release) {
+  LIBS += -L$$(OPENCV3_PATH)/build/x86/$${OPENCV_COMPILED_VERSION_86}/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
+ }
+} else {
+ CONFIG(debug){
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/$${OPENCV_COMPILED_VERSION_64}/lib/Debug $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION}d)
+ }
+ CONFIG(release) {
+  LIBS += -L$$(OPENCV3_PATH)/build/x64/$${OPENCV_COMPILED_VERSION_64}/lib/Release $$addPostfix($$OPENCV_LIBS_LIST, $${OPENCV_LIBS_VERSION})
+ }
+}
+} else:unix {
+ LIBS += $$OPENCV_LIBS_LIST
 }
 
 #including boost
 
 windows {
+ BOOST_COMPILED_VERSION = msvc-$$(VisualStudioVersion)
+
  INCLUDEPATH += $$(BOOST_PATH)
- LIBS += -L$$(BOOST_PATH)/msvc-12.0-x64/lib/
+!contains(QMAKE_TARGET.arch, x86_64) {
+ LIBS += -L$$(BOOST_PATH)/$${BOOST_COMPILED_VERSION}-x86/lib/
+} else {
+ LIBS += -L$$(BOOST_PATH)/$${BOOST_COMPILED_VERSION}-x64/lib/
+}
 } else:unix {
  LIBS += -lboost_thread \
   -lboost_system \
   -lboost_program_options \
+  -lboost_python$${RDK_PYTHON_MAJOR}$${RDK_PYTHON_MINOR} \
+  -lboost_numpy$${RDK_PYTHON_MAJOR}$${RDK_PYTHON_MINOR} \
+  -lpython3.5m \
   -lpthread
 }
-
-#windows-msvc*{
-# INCLUDEPATH += $$(BOOST_PATH)/include/boost-1_54
-
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_chrono-vc100-mt-gd-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_date_time-vc100-mt-gd-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_regex-vc100-mt-gd-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_system-vc100-mt-gd-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_thread-vc100-mt-gd-1_54.lib
-
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_chrono-vc100-mt-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_date_time-vc100-mt-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_regex-vc100-mt-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_system-vc100-mt-1_54.lib
-# LIBS += $$(BOOST_PATH)/lib32-msvc-10.0/libboost_thread-vc100-mt-1_54.lib
-
-# #LIBS += $$(BOOST_PATH)/lib/libboost_atomic-vc100-mt-gd-1_54.lib
-# #LIBS += $$(BOOST_PATH)/lib/libboost_signals-vc100-mt-gd-1_54.lib
-# #LIBS += $$(BOOST_PATH)/lib/libboost_timer-vc100-mt-gd-1_54.lib
-
-# #LIBS += $$(BOOST_PATH)/lib/libboost_atomic-vc100-mt-1_54.lib
-# #LIBS += $$(BOOST_PATH)/lib/libboost_signals-vc100-mt-1_54.lib
-# #LIBS += $$(BOOST_PATH)/lib/libboost_timer-vc100-mt-1_54.lib
-#}
-
-#win32-g++{
-# INCLUDEPATH += $$(BOOST_PATH)/include/boost-1_54
-
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_chrono-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_date_time-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_regex-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_system-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_thread-mgw49-mt-1_54
-
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_chrono-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_date_time-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_regex-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_system-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_thread-mgw49-mt-1_54
-# LIBS += $$(BOOST_PATH)/lib32-mgw492/lib/libboost_program_options-mgw49-mt-1_54
-
-#} else:unix {
-# LIBS += -lboost_thread
-# LIBS += -lboost_system
-# LIBS += -lpthread
-# LIBS += -lboost_program_options
-# LIBS += -lboost_chrono
-# LIBS += -lboost_system
-#}
-
 
 SOURCES += \
         ../../../Libraries/Libraries.cpp \

@@ -1,7 +1,9 @@
 TEMPLATE = subdirs
 
-CONFIG += ordered #проекты собираются в порядке вписания в SUBDIR, таким образом
-                  #GuiDllSample будет собираться последним
+CONFIG += ordered
+
+include($$PWD/../../../Rdk/Build/Lib/Qt/RdkDefines.pri)
+
 
 defineReplace(addSubdirsRdkNmsdk) {
     for(name, 1) {
@@ -26,6 +28,7 @@ Rdk_Nmsdk_libs = Rdk-BasicLib \
         Rdk-CvStatisticLib \
         Rdk-CvVideoCaptureLib \
         Rdk-NoiseGenLib \
+        Rdk-PyMachineLearningLib \
         Nmsdk-ActLib \
         Nmsdk-BasicLib \
         Nmsdk-MathLib \
@@ -51,4 +54,4 @@ windows {
 }
 
 
-SUBDIRS += NeuroModeler.pro
+SUBDIRS += $$PWD/../NeuroModeler/NeuroModeler.pro

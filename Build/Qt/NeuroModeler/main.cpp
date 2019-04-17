@@ -33,18 +33,61 @@ int main(int argc, char *argv[])
     /// Экземпляр класса менеджера тестов
     RDK::UTestManager rdkTestManager;
 
+    // Инициализация из стартового ini файла
+    RDK::UIniFile<char> projectIniFile;
+    projectIniFile.LoadFromFile("VideoAnalytics.ini");
+    std::string startProjectName = projectIniFile("General", "AutoexecProjectFileName", "");
+    int autoStartProjectFlag = atoi(projectIniFile("General", "autoStartProjectFlag", "0").c_str());
+    int hideAdminForm        = atoi(projectIniFile("General", "HideAdminForm", "0").c_str());
+    int startMinimized       = atoi(projectIniFile("General", "StartMinimized", "0").c_str());
+
+    std::string mainFormName=projectIniFile("General", "MainFormName", "");
+    int minimizeToTray=atoi(projectIniFile("General","MinimizeToTray","0").c_str());
+    std::string programName=projectIniFile("General","ProgramName","Server");
+    std::string configsMainPath=projectIniFile("General", "ConfigsMainPath", "../../../Configs/");
+    int neverSleepOnMMThreadContention=atoi(projectIniFile("General","NeverSleepOnMMThreadContention","0").c_str());
+    std::string logDir=projectIniFile("Log","Dir","");
+    int startupDelay=atoi(projectIniFile("General","StartupDelay","0").c_str());
+
+    int useNewXmlFormatProjectFile=atoi(projectIniFile("General","UseNewXmlFormatProjectFile","0").c_str());
+    int useNewProjectFilesStructure=atoi(projectIniFile("General","UseNewProjectFilesStructure","0").c_str());
+
+    if(startupDelay>0)
+    {
+     RDK::Sleep(startupDelay);
+    }
+
+    int logDebugMode=atoi(projectIniFile("Log","DebugMode","1").c_str());
+
+    int disableAdminForm=atoi(projectIniFile("General","DisableAdminForm","0").c_str());
+
+
     rdkTestManager.SetApplication(&application);
 
     rpcDispatcher.SetDecoderPrototype(&rpcDecoder);
     rpcDispatcher.SetCommonDecoder(&rpcDecoderCommon);
 
-    application.SetApplicationFileName(QApplication::applicationFilePath().toLocal8Bit().constData());
     application.SetRpcDispatcher(&rpcDispatcher);
     application.SetServerControl(&serverControl);
     application.SetEngineControl(&engineControl);
     application.SetProject(&project);
-    application.SetLogDir((QApplication::applicationDirPath()+"/").toLocal8Bit().constData());
-    application.SetDebugMode(true);
+
+    application.SetApplicationFileName(QApplication::applicationFilePath().toLocal8Bit().constData());
+    std::string log_dir_path;
+    if(logDir.empty())
+     log_dir_path=(QApplication::applicationDirPath()+"/EventsLog/").toLocal8Bit().constData();
+    else
+     log_dir_path=logDir;
+
+    RDK::CreateNewDirectory(log_dir_path.c_str());
+    application.SetLogDir(log_dir_path);
+
+    application.SetDebugMode(logDebugMode);
+
+    application.SetConfigsMainPath(configsMainPath);
+    application.ChangeUseNewXmlFormatProjectFile(useNewXmlFormatProjectFile);
+    application.ChangeUseNewProjectFilesStructure(useNewProjectFilesStructure);
+
     application.SetTestManager(&rdkTestManager);
 
     if(argc > 1)
@@ -59,14 +102,6 @@ int main(int argc, char *argv[])
       if(closeAfterTests)
         return returnCode;
     }
-
-    // Инициализация из стартового ini файла
-    RDK::UIniFile<char> projectIniFile;
-    projectIniFile.LoadFromFile("NeuroModeler.ini");
-    std::string startProjectName = projectIniFile("General", "AutoexecProjectFileName", "");
-    int autoStartProjectFlag = atoi(projectIniFile("General", "autoStartProjectFlag", "").c_str());
-    int hideAdminForm        = atoi(projectIniFile("General", "HideAdminForm", "").c_str());
-    int startMinimized       = atoi(projectIniFile("General", "StartMinimized", "").c_str());
 
     UGEngineControllWidget w(NULL, &application);
 

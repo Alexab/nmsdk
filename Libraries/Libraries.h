@@ -16,6 +16,10 @@
 #include "Rdk-CvSimulatorLib/Deploy/Include/Lib.h"
 #include "Rdk-CRLib/Deploy/Include/Lib.h"
 #include "Rdk-NoiseGenLib/Deploy/Include/Lib.h"
+
+#ifndef __BORLANDC__
+#include "Rdk-PyMachineLearningLib/Core/Lib.h"
+#endif
 #include "Nmsdk-ActLib/Deploy/Include/Lib.h"
 #include "Nmsdk-BasicLib/Deploy/Include/Lib.h"
 #include "Nmsdk-MathLib/Deploy/Include/Lib.h"
