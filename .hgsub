@@ -26,6 +26,7 @@ Libraries/Rdk-CvStatisticLib = Libraries/Rdk-CvStatisticLib
 Libraries/Rdk-NoiseGenLib = Libraries/Rdk-NoiseGenLib
 Libraries/Rdk-CvVideoCaptureLib = Libraries/Rdk-CvVideoCaptureLib
 Libraries/Rdk-PyMachineLearningLib = Libraries/Rdk-PyMachineLearningLib
+Libraries/Rdk-TensorflowLib = Libraries/Rdk-TensorflowLib
 
 [subpaths]
 https://bitbucket.org/aicommunity/nmsdk/Rdk = https://bitbucket.org/aicommunity/rdk
@@ -56,3 +57,4 @@ https://bitbucket.org/aicommunity/nmsdk/Libraries/Rdk-CvStatisticLib = https://b
 https://bitbucket.org/aicommunity/nmsdk/Libraries/Rdk-NoiseGenLib = https://bitbucket.org/aicommunity/Rdk-NoiseGenLib
 https://bitbucket.org/aicommunity/nmsdk/Libraries/Rdk-CvVideoCaptureLib = https://bitbucket.org/aicommunity/Rdk-CvVideoCaptureLib
 https://bitbucket.org/aicommunity/nmsdk/Libraries/Rdk-PyMachineLearningLib = https://bitbucket.org/aicommunity/Rdk-PyMachineLearningLib
+https://bitbucket.org/aicommunity/nmsdk/Libraries/Rdk-TensorflowLib = Rdk-TensorflowLib
