@@ -2,7 +2,7 @@
 #include <QMessageBox>
 
 #include "UGEngineControllWidget.h"
-#include "../../../../Rdk/Core/Utilities/UIniFile.h"
+#include "../../../Rdk/Core/Utilities/UIniFile.h"
 
 int main(int argc, char *argv[])
 {
