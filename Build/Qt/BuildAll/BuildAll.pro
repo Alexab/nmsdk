@@ -55,3 +55,4 @@ windows {
 
 
 SUBDIRS += $$PWD/../NeuroModeler/NeuroModeler.pro
+SUBDIRS += $$PWD/../NeuroModelerConsole/NeuroModelerConsole.pro
